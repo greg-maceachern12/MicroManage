@@ -1,6 +1,6 @@
-#include "mainpage.h"
+#include "settings_page.h"
 
-MainPage::MainPage(QWidget *parent) : QWidget(parent), ui(new Ui::MainPage) {
+SettingsPage::SettingsPage(QWidget *parent) : QWidget(parent), ui(new Ui::SettingsPage) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
     ui->pushButton->setText("Change page");
@@ -12,6 +12,6 @@ MainPage::MainPage(QWidget *parent) : QWidget(parent), ui(new Ui::MainPage) {
 }
 
 
-void MainPage::changeText() {
+void SettingsPage::changeText() {
     ui->pushButton->setText("YES");
 }

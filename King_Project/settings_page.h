@@ -3,15 +3,15 @@
 #include <QtWidgets> // NOTE: This should be here so you don't have to include each type of widget individually
 
 namespace Ui {
-    class MainPage;
+    class SettingsPage;
 }
 
-class MainPage : public QWidget
+class SettingsPage : public QWidget
 {
         Q_OBJECT
 
     public:
-        explicit MainPage(QWidget *parent);
+        explicit SettingsPage(QWidget *parent);
 
     signals:
 
@@ -19,6 +19,6 @@ class MainPage : public QWidget
         void changeText();
 
     private:
-        Ui::MainPage *ui;
+        Ui::SettingsPage *ui;
         //int userRole;
 };
