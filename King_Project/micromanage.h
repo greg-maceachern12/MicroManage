@@ -1,9 +1,11 @@
 #pragma once
 #include "ui_micromanageform.h"
 #include "mainpage.h"
+#include "settings_page.h"
 
 namespace Ui {
     class MicroManage;
+
 }
 
 class MicroManage : public QMainWindow
@@ -23,6 +25,7 @@ class MicroManage : public QMainWindow
         QDockWidget *sideMenu;
         QStackedWidget *stackedWidget;
         MainPage *mainPage;
+        SettingsPage *settingsPage;
         void createInterface();
 
 };

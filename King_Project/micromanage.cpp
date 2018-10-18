@@ -7,6 +7,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     sideMenu = new QDockWidget("Menu", this);
     stackedWidget = new QStackedWidget;
     mainPage = new MainPage(this);
+    settingsPage = new SettingsPage(this);
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
     sideMenu->setFeatures(QDockWidget::NoDockWidgetFeatures);
@@ -22,7 +23,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(mainPage);
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
-    stackedWidget->addWidget(line); // Adds another page to the stack with this widget
+    stackedWidget->addWidget(settingsPage); // Adds another page to the stack with this widget
     setCentralWidget(stackedWidget); //
 
 }
