@@ -1,12 +1,23 @@
-#include "propertymain.ui"
+#pragma once
+#include "ui_propertymain.h"
+#include <QtWidgets>
 
-
-class PropertyMain : public QWidget{
+namespace Ui {
+    class PropertyMain;
+}
+class PropertyMain : public QWidget
+{
     Q_OBJECT
 
 public:
-    PropertyMain(QWidget *parent=0);
-    ~PropertyMain();
+    explicit PropertyMain(QWidget *parent);
 
+signals:
+
+public slots:
+
+private:
     Ui::PropertyMain *ui;
-}
+    //int userRole;
+};
+

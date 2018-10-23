@@ -3,6 +3,7 @@
 #include "settings.h"
 #include "messages.h"
 #include "profile.h"
+#include "propertymain.h"
 
 MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
@@ -17,6 +18,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     settings = new Settings(this);
     messages = new Messages(this);
     profile = new Profile(this);
+    property = new PropertyMain(this);
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -44,11 +46,17 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     profileButton->setObjectName("profileButton");
     connect(profileButton, SIGNAL(clicked()), this, SLOT(openProfile()));
 
+    QPushButton *propertyButton = new QPushButton;
+    propertyButton->setText("Properties");
+    propertyButton->setObjectName("propertyButton");
+    connect(propertyButton, SIGNAL(clicked()), this, SLOT(openProperty()));
+
 
     layout->addWidget(settingsButton);
     layout->addWidget(signUpButton);
     layout->addWidget(messagesButton);
     layout->addWidget(profileButton);
+    layout->addWidget(propertyButton);
     multiWidget->setLayout(layout);
     sideMenu->setWidget(multiWidget);
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
@@ -58,6 +66,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(settings);
     stackedWidget->addWidget(messages);
     stackedWidget->addWidget(profile);
+    stackedWidget->addWidget(property);
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
     stackedWidget->addWidget(line); // Adds another page to the stack with this widget
@@ -80,7 +89,6 @@ void MicroManage::changePage(){
     /* This is just rough so you get an idea of how this could work */
     stackedWidget->setCurrentIndex(2); // Should change it to the second page with the line edit
 }
-
 void MicroManage::openSettings() {
     stackedWidget->setCurrentIndex(2);
 }
@@ -92,6 +100,9 @@ void MicroManage::openMessages() {
 }
 void MicroManage::openProfile() {
     stackedWidget->setCurrentIndex(4);
+}
+void MicroManage::openProperty() {
+    stackedWidget->setCurrentIndex(5);
 }
 
 

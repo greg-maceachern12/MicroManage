@@ -31,6 +31,7 @@ SOURCES += \
     signup.cpp \
     settings.cpp \
     messages.cpp \
+    propertymain.cpp \
     profile.cpp
 
 HEADERS += \
@@ -39,6 +40,7 @@ HEADERS += \
     signup.h \
     settings.h \
     messages.h \
+    propertymain.h \
     profile.h
 
 FORMS += \
@@ -47,6 +49,7 @@ FORMS += \
     signup.ui \
     settings.ui \
     messagesform.ui \
+    propertymain.ui \
     profile.ui
 
 # Default rules for deployment.
