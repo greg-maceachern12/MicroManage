@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-10-09T15:07:07
+# Project created by QtCreator 2018-10-22T17:49:16
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = King_Project
+TARGET = MyProject
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,29 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    micromanage.cpp \
-    mainpage.cpp \
-    RunMicroManage.cpp \
-    signup.cpp \
-    settings.cpp \
-    messages.cpp \
-    profile.cpp
+        main.cpp \
+        profile.cpp
 
 HEADERS += \
-    mainpage.h \
-    micromanage.h \
-    signup.h \
-    settings.h \
-    messages.h \
-    profile.h
+        profile.h
 
 FORMS += \
-    micromanageform.ui \
-    mainpageform.ui \
-    signup.ui \
-    settings.ui \
-    messagesform.ui \
-    profile.ui
+        profile.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
