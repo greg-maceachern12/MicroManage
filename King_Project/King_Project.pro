@@ -28,17 +28,23 @@ SOURCES += \
     micromanage.cpp \
     mainpage.cpp \
     RunMicroManage.cpp \
-    SettingsPage.cpp
+    signup.cpp \
+    settings.cpp \
+    messages.cpp
 
 HEADERS += \
     mainpage.h \
     micromanage.h \
-    settings_page.h
+    signup.h \
+    settings.h \
+    messages.h
 
 FORMS += \
     micromanageform.ui \
     mainpageform.ui \
-    SettingsPageForm.ui
+    signup.ui \
+    settings.ui \
+    messagesform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,11 +1,11 @@
 #pragma once
 #include "ui_micromanageform.h"
 #include "mainpage.h"
-#include "settings_page.h"
+#include "signup.h"
+#include "settings.h"
 
 namespace Ui {
     class MicroManage;
-
 }
 
 class MicroManage : public QMainWindow
@@ -19,13 +19,17 @@ class MicroManage : public QMainWindow
     public slots:
         void changePage();
         void showSideMenu();
+        void openSettings();
+        void openSignUp();
+
 
     private:
         Ui::MicroManage *ui;
         QDockWidget *sideMenu;
         QStackedWidget *stackedWidget;
         MainPage *mainPage;
-        SettingsPage *settingsPage;
+        SignUp *signUp;
+        Settings *settings;
         void createInterface();
 
 };
