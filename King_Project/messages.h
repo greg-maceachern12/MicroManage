@@ -2,9 +2,6 @@
 #include "ui_messagesform.h"
 #include <QtWidgets>
 
-#ifndef MESSAGES_H
-#define MESSAGES_H
-
 namespace Ui {
     class Messages;
 }
@@ -24,4 +21,3 @@ private:
     //int userRole;
 };
 
-#endif // MESSAGES_H
