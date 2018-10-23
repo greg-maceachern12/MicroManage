@@ -13,31 +13,42 @@
   <property name="windowTitle">
    <string>HEY</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>60</y>
-     <width>281</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton">
+  <widget class="QToolButton" name="menuButton">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>51</width>
-     <height>51</height>
+     <width>41</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>...</string>
    </property>
+  </widget>
+  <widget class="QLabel" name="welcomeLabel">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>40</y>
+     <width>411</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Welcome back, </string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>79</x>
+     <y>89</y>
+     <width>491</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout"/>
   </widget>
  </widget>
  <resources/>

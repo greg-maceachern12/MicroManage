@@ -45,9 +45,3 @@ void MicroManage::changePage(){
 
 
 
-/*MicroManage::~MicroManage() Probably don't need this
-{
-    delete ui;
-}*/
-
-
