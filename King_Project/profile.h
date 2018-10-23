@@ -18,8 +18,13 @@ public:
     ~Profile();
 
 
+public slots:
+    void makeEditable();
+
+
 private:
     //QPushButton *sideButton;
+    QPushButton *editButton;
     //QDockWidget *sideMenu;
     Ui::Profile *ui;
 };
