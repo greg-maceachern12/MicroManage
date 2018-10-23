@@ -1,6 +1,7 @@
 #include "micromanage.h"
 #include "signup.h"
 #include "settings.h"
+#include "messages.h"
 #include <iostream>
 
 MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
@@ -14,6 +15,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     mainPage = new MainPage(this);
     signUp = new SignUp(this);
     settings = new Settings(this);
+    messages = new Messages(this);
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -31,9 +33,15 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     settingsButton->setObjectName("settingsButton");
     connect(settingsButton, SIGNAL(clicked()), this, SLOT(openSettings()));
 
+    QPushButton *messagesButton = new QPushButton;
+    messagesButton->setText("Messages");
+    messagesButton->setObjectName("messagesButton");
+    connect(messagesButton, SIGNAL(clicked()), this, SLOT(openMessages()));
+
 
     layout->addWidget(settingsButton);
     layout->addWidget(signUpButton);
+    layout->addWidget(messagesButton);
     multiWidget->setLayout(layout);
     sideMenu->setWidget(multiWidget);
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
@@ -41,6 +49,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(mainPage);
     stackedWidget->addWidget(signUp);
     stackedWidget->addWidget(settings);
+    stackedWidget->addWidget(messages);
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
     stackedWidget->addWidget(line); // Adds another page to the stack with this widget
@@ -65,10 +74,13 @@ void MicroManage::changePage(){
 }
 
 void MicroManage::openSettings() {
-    stackedWidget->setCurrentIndex(1);
+    stackedWidget->setCurrentIndex(2);
 }
 void MicroManage::openSignUp() {
-    stackedWidget->setCurrentIndex(2);
+    stackedWidget->setCurrentIndex(1);
+}
+void MicroManage::openMessages() {
+    stackedWidget->setCurrentIndex(3);
 }
 
 
