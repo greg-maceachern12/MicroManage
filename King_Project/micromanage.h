@@ -4,6 +4,7 @@
 #include "signup.h"
 #include "settings.h"
 #include "messages.h"
+#include "profile.h"
 
 namespace Ui {
     class MicroManage;
@@ -23,6 +24,7 @@ class MicroManage : public QMainWindow
         void openSettings();
         void openSignUp();
         void openMessages();
+        void openProfile();
 
 
     private:
@@ -33,6 +35,7 @@ class MicroManage : public QMainWindow
         SignUp *signUp;
         Settings *settings;
         Messages *messages;
+        Profile *profile;
         void createInterface();
 
 };

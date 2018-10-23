@@ -2,7 +2,7 @@
 #include "signup.h"
 #include "settings.h"
 #include "messages.h"
-#include <iostream>
+#include "profile.h"
 
 MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
@@ -16,6 +16,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     signUp = new SignUp(this);
     settings = new Settings(this);
     messages = new Messages(this);
+    profile = new Profile(this);
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -38,10 +39,16 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     messagesButton->setObjectName("messagesButton");
     connect(messagesButton, SIGNAL(clicked()), this, SLOT(openMessages()));
 
+    QPushButton *profileButton = new QPushButton;
+    profileButton->setText("Profile");
+    profileButton->setObjectName("profileButton");
+    connect(profileButton, SIGNAL(clicked()), this, SLOT(openProfile()));
+
 
     layout->addWidget(settingsButton);
     layout->addWidget(signUpButton);
     layout->addWidget(messagesButton);
+    layout->addWidget(profileButton);
     multiWidget->setLayout(layout);
     sideMenu->setWidget(multiWidget);
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
@@ -50,6 +57,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(signUp);
     stackedWidget->addWidget(settings);
     stackedWidget->addWidget(messages);
+    stackedWidget->addWidget(profile);
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
     stackedWidget->addWidget(line); // Adds another page to the stack with this widget
@@ -81,6 +89,9 @@ void MicroManage::openSignUp() {
 }
 void MicroManage::openMessages() {
     stackedWidget->setCurrentIndex(3);
+}
+void MicroManage::openProfile() {
+    stackedWidget->setCurrentIndex(4);
 }
 
 
