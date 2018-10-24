@@ -4,6 +4,7 @@
 #include "messages.h"
 #include "profile.h"
 #include "propertymain.h"
+#include "login.h"
 
 MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
@@ -19,6 +20,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     messages = new Messages(this);
     profile = new Profile(this);
     property = new PropertyMain(this);
+    login = new Login(this);
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -51,12 +53,18 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     propertyButton->setObjectName("propertyButton");
     connect(propertyButton, SIGNAL(clicked()), this, SLOT(openProperty()));
 
+    QPushButton *loginButton = new QPushButton;
+    loginButton->setText("Login");
+    loginButton->setObjectName("loginButton");
+    connect(loginButton, SIGNAL(clicked()), this, SLOT(openLogin()));
+
 
     layout->addWidget(settingsButton);
     layout->addWidget(signUpButton);
     layout->addWidget(messagesButton);
     layout->addWidget(profileButton);
     layout->addWidget(propertyButton);
+    layout->addWidget(loginButton);
     multiWidget->setLayout(layout);
     sideMenu->setWidget(multiWidget);
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
@@ -67,6 +75,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(messages);
     stackedWidget->addWidget(profile);
     stackedWidget->addWidget(property);
+    stackedWidget->addWidget(login);
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
     stackedWidget->addWidget(line); // Adds another page to the stack with this widget
@@ -103,6 +112,9 @@ void MicroManage::openProfile() {
 }
 void MicroManage::openProperty() {
     stackedWidget->setCurrentIndex(5);
+}
+void MicroManage::openLogin() {
+    stackedWidget->setCurrentIndex(6);
 }
 
 

@@ -6,6 +6,7 @@
 #include "messages.h"
 #include "profile.h"
 #include "propertymain.h"
+#include "login.h"
 
 namespace Ui {
     class MicroManage;
@@ -27,6 +28,7 @@ class MicroManage : public QMainWindow
         void openMessages();
         void openProfile();
         void openProperty();
+        void openLogin();
 
     private:
         Ui::MicroManage *ui;
@@ -38,6 +40,7 @@ class MicroManage : public QMainWindow
         Messages *messages;
         Profile *profile;
         PropertyMain *property;
+        Login *login;
 
         void createInterface();
 

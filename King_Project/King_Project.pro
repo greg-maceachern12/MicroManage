@@ -32,7 +32,8 @@ SOURCES += \
     settings.cpp \
     messages.cpp \
     propertymain.cpp \
-    profile.cpp
+    profile.cpp \
+    login.cpp
 
 HEADERS += \
     mainpage.h \
@@ -41,7 +42,8 @@ HEADERS += \
     settings.h \
     messages.h \
     propertymain.h \
-    profile.h
+    profile.h \
+    login.h
 
 FORMS += \
     micromanageform.ui \
@@ -50,7 +52,8 @@ FORMS += \
     settings.ui \
     messagesform.ui \
     propertymain.ui \
-    profile.ui
+    profile.ui \
+    login.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
