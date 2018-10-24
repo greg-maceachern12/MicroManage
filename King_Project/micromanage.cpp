@@ -119,9 +119,3 @@ void MicroManage::openLogin() {
 
 
 
-/*MicroManage::~MicroManage() Probably don't need this
-{
-    delete ui;
-}*/
-
-
