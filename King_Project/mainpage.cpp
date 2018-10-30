@@ -3,8 +3,21 @@
 MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(parent), ui(new Ui::MainPage) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
+    QSqlDatabase myDb = QSqlDatabase::addDatabase("QSQLITE");
+    myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/King_Project/micro.db");
 
-    userName = user_name;
+    if (!myDb.open()) {
+        ui->welcomeLabel->setText("");
+    } else {
+        ui->welcomeLabel->setText("No Connection");
+    }
+
+    QSqlQuery query;
+    query.exec("SELECT name FROM user");
+    while (query.next()) {
+         userName = query.value(0).toString();
+    }
+
     userRole = user_role;
 
     ui->menuButton->setCheckable(true);
@@ -12,7 +25,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
     // Set welcome message
-    ui->welcomeLabel->setText(ui->welcomeLabel->text() + userName);
+    ui->welcomeLabel->setText("Welcome back, " + userName);
 
     // Set up buttons with icons and texts in grid layout
     QToolButton *profile_button = new QToolButton();
