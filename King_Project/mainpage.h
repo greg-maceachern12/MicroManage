@@ -6,7 +6,7 @@
 using namespace std;
 
 namespace Ui {
-    class MainPage;
+    class MainPageForm;
 }
 
 class MainPage : public QWidget {
@@ -18,9 +18,10 @@ class MainPage : public QWidget {
     signals:
 
     public slots:
+        void handleButtonClick(int);
 
     private:
-        Ui::MainPage *ui;
+        Ui::MainPageForm *ui;
         QString userName;
         int userRole;
 

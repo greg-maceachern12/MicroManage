@@ -94,9 +94,9 @@ void MicroManage::showSideMenu() {
     repaint(); // Forces the repaint so the menu opens and closes without glitch
 }
 
-void MicroManage::changePage(){
+void MicroManage::changePage(int index){
     /* This is just rough so you get an idea of how this could work */
-    stackedWidget->setCurrentIndex(2); // Should change it to the second page with the line edit
+    stackedWidget->setCurrentIndex(index); // Should change it to the second page with the line edit
 }
 void MicroManage::openSettings() {
     stackedWidget->setCurrentIndex(2);
@@ -115,6 +115,10 @@ void MicroManage::openProperty() {
 }
 void MicroManage::openLogin() {
     stackedWidget->setCurrentIndex(6);
+}
+
+void MicroManage::closeEvent(QCloseEvent *event) {
+    QWidget::closeEvent(event);
 }
 
 

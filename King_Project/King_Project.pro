@@ -28,6 +28,10 @@ SOURCES += \
     micromanage.cpp \
     mainpage.cpp \
     RunMicroManage.cpp \
+    welcome.cpp \
+    help.cpp \
+    notices.cpp \
+    maintenance.cpp \
     signup.cpp \
     settings.cpp \
     messages.cpp \
@@ -38,6 +42,10 @@ SOURCES += \
 HEADERS += \
     mainpage.h \
     micromanage.h \
+    welcome.h \
+    help.h \
+    notices.h \
+    maintenance.h \
     signup.h \
     settings.h \
     messages.h \
@@ -48,6 +56,10 @@ HEADERS += \
 FORMS += \
     micromanageform.ui \
     mainpageform.ui \
+    welcomeform.ui \
+    helpform.ui \
+    noticesform.ui \
+    maintenanceform.ui \
     signup.ui \
     settings.ui \
     messagesform.ui \
