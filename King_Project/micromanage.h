@@ -12,10 +12,13 @@ class MicroManage : public QMainWindow
 
     public:
         explicit MicroManage(QWidget *parent = nullptr);
+        void changePage(int);
         //~MicroManage() override; Probably don't need this because it already inherits the destructor from QMainWindow
 
+    signals:
+
     public slots:
-        void changePage();
+        //void changePage(int index);
         void showSideMenu();
 
     private:
@@ -24,6 +27,7 @@ class MicroManage : public QMainWindow
         QStackedWidget *stackedWidget;
         MainPage *mainPage;
         void createInterface();
+        void closeEvent(QCloseEvent *event);
 
 };
 

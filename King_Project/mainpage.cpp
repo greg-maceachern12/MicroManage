@@ -1,6 +1,6 @@
 #include "mainpage.h"
 
-MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(parent), ui(new Ui::MainPage) {
+MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(parent), ui(new Ui::MainPageForm) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
     userName = user_name;
@@ -18,13 +18,16 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     profile_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     profile_button->setText("My Profile");
     //profile_button->setIcon()
-    connect(profile_button, SIGNAL(clicked()), parent, SLOT(changePage(5)));
+    //connect(profile_button, SIGNAL(clicked()), parent, SLOT(changePage(5)));
+    //int i(1);
+    connect(profile_button, &QToolButton::clicked, [this] { handleButtonClick(1);} );
+
 
     QToolButton *second_button = new QToolButton();
-    second_button->setToolButtonStyle((Qt::ToolButtonTextUnderIcon));
+    second_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     if (userRole == 0) {
         second_button->setText("My Properties");
-        connect(second_button, SIGNAL(clicked()), parent, SLOT(changePage(6)));
+        //connect(second_button, SIGNAL(clicked()), parent, SLOT(changePage(6)));
     }
     else if (userRole == 1) {
         second_button->setText("My Landlord");
@@ -34,22 +37,22 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     QToolButton *notices_button = new QToolButton();
     notices_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     notices_button->setText("Notices");
-    connect(notices_button, SIGNAL(clicked()), parent, SLOT(changePage(7)));
+    //connect(notices_button, SIGNAL(clicked()), parent, SLOT(changePage(7)));
 
     QToolButton *maintenance_button = new QToolButton();
     maintenance_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     maintenance_button->setText("Maintenance");
-    connect(maintenance_button, SIGNAL(clicked()), parent, SLOT(changePage(8)));
+    //connect(maintenance_button, SIGNAL(clicked()), parent, SLOT(changePage(8)));
 
     QToolButton *messages_button = new QToolButton();
     messages_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     messages_button->setText("Messages");
-    connect(messages_button, SIGNAL(clicked()), parent, SLOT(changePage(9)));
+    //connect(messages_button, SIGNAL(clicked()), parent, SLOT(changePage(9)));
 
     QToolButton *settings_button = new QToolButton();
     settings_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     settings_button->setText("Settings");
-    connect(settings_button, SIGNAL(clicked()), parent, SLOT(changePage(10)));
+    //connect(settings_button, SIGNAL(clicked()), parent, SLOT(changePage(10)));
 
 
     ui->gridLayout->addWidget(profile_button, 0, 0);
@@ -60,3 +63,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     ui->gridLayout->addWidget(settings_button, 1, 2);
 }
 
+
+void MainPage::handleButtonClick(int index) {
+    this->parentWidget()->changePage(index);
+}

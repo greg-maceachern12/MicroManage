@@ -27,15 +27,28 @@ CONFIG += c++11
 SOURCES += \
     micromanage.cpp \
     mainpage.cpp \
-    RunMicroManage.cpp
+    RunMicroManage.cpp \
+    welcome.cpp \
+    welcome.cpp \
+    help.cpp \
+    notices.cpp \
+    maintenance.cpp
 
 HEADERS += \
     mainpage.h \
-    micromanage.h
+    micromanage.h \
+    welcome.h \
+    help.h \
+    notices.h \
+    maintenance.h
 
 FORMS += \
     micromanageform.ui \
-    mainpageform.ui
+    mainpageform.ui \
+    welcomeform.ui \
+    helpform.ui \
+    noticesform.ui \
+    maintenanceform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
