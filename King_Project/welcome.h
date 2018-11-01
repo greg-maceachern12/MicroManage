@@ -3,7 +3,7 @@
 #include <QtWidgets>
 
 namespace Ui {
-class Welcome;
+class WelcomeForm;
 }
 
 class Welcome : public QWidget
@@ -15,6 +15,6 @@ public:
     ~Welcome();
 
 private:
-    Ui::Welcome *ui;
+    Ui::WelcomeForm *ui;
 };
 
