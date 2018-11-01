@@ -8,9 +8,20 @@ Profile::Profile(QWidget *parent) :QWidget(parent),ui(new Ui::Profile)
     //set page size to 689 height to 547 width
 
 
-    editButton = new QPushButton("Edit", this);
+    editButton = new QToolButton(this);
+    editButton->setText("Edit");
+    editButton->setCheckable(true);
 
-    editButton->setGeometry(QRect(QPoint(450, 475), QSize(200, 50)));
+    //setting text boxes tp read only
+    ui->name->setReadOnly(true);
+    ui->contact->setReadOnly(true);
+    ui->description->setReadOnly(true);
+    ui->properties->setReadOnly(true);
+    ui->age->setReadOnly(true);
+    ui->landlord->setReadOnly(true);
+
+
+    editButton->setGeometry(QRect(QPoint(650, 500), QSize(50, 50)));
 
     connect(editButton, SIGNAL (released()), this, SLOT (makeEditable()));
 
@@ -38,11 +49,28 @@ Profile::Profile(QWidget *parent) :QWidget(parent),ui(new Ui::Profile)
 
 void Profile::makeEditable()
  {
-    ui->textEdit->setReadOnly(true);
-    // change the text
-    editButton->setText("Save");
-    // resize button
-    editButton->resize(100,100);
+    if (editButton->isChecked() ){
+        ui->name->setReadOnly(false);
+        ui->description->setReadOnly(false);
+        ui->contact->setReadOnly(false);
+        ui->properties->setReadOnly(false);
+        ui->age->setReadOnly(false);
+
+
+        // change the text
+        editButton->setText("Save");
+
+    }
+   else{
+        ui->name->setReadOnly(true);
+        ui->description->setReadOnly(true);
+        ui->contact->setReadOnly(true);
+        ui->properties->setReadOnly(true);
+        ui->age->setReadOnly(true);
+
+        editButton->setText("Edit");
+    }
+
  }
 
 

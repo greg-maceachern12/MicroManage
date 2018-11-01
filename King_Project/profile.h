@@ -24,7 +24,7 @@ public slots:
 
 private:
     //QPushButton *sideButton;
-    QPushButton *editButton;
+    QToolButton *editButton;
     //QDockWidget *sideMenu;
     Ui::Profile *ui;
 };
