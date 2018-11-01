@@ -24,8 +24,13 @@ public:
     ~Profile();
 
 
+public slots:
+    void makeEditable();
+
+
 private:
     //QPushButton *sideButton;
+    QToolButton *editButton;
     //QDockWidget *sideMenu;
     Ui::Profile *ui;
 };

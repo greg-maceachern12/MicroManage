@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,35 +25,46 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    micromanage.cpp \
-    mainpage.cpp \
-    RunMicroManage.cpp \
-    signup.cpp \
-    settings.cpp \
-    messages.cpp \
-    propertymain.cpp \
-    profile.cpp \
-    login.cpp
+   micromanage.cpp \
+   mainpage.cpp \
+   RunMicroManage.cpp \
+   welcome.cpp \
+   help.cpp \
+   notices.cpp \
+   maintenance.cpp \
+   signup.cpp \
+   settings.cpp \
+   messages.cpp \
+   propertymain.cpp \
+   profile.cpp \
+   login.cpp
 
 HEADERS += \
-    mainpage.h \
-    micromanage.h \
-    signup.h \
-    settings.h \
-    messages.h \
-    propertymain.h \
-    profile.h \
-    login.h
+   mainpage.h \
+   micromanage.h \
+   help.h \
+   notices.h \
+   maintenance.h \
+   signup.h \
+   settings.h \
+   messages.h \
+   propertymain.h \
+   profile.h \
+   login.h
 
 FORMS += \
-    micromanageform.ui \
-    mainpageform.ui \
-    signup.ui \
-    settings.ui \
-    messagesform.ui \
-    propertymain.ui \
-    profile.ui \
-    login.ui
+   micromanageform.ui \
+   mainpageform.ui \
+   welcomeform.ui \
+   helpform.ui \
+   noticesform.ui \
+   maintenanceform.ui \
+   signup.ui \
+   settings.ui \
+   messagesform.ui \
+   propertymain.ui \
+   profile.ui \
+   login.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
