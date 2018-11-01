@@ -3,7 +3,7 @@
 #include <QtWidgets>
 
 namespace Ui {
-class Help;
+class HelpForm;
 }
 
 class Help : public QWidget
@@ -15,6 +15,6 @@ public:
     ~Help();
 
 private:
-    Ui::Help *ui;
+    Ui::HelpForm *ui;
 };
 

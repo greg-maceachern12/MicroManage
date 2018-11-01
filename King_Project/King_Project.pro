@@ -29,10 +29,9 @@ SOURCES += \
     mainpage.cpp \
     RunMicroManage.cpp \
     welcome.cpp \
-    welcome.cpp \
     help.cpp \
     notices.cpp \
-    maintenance.cpp
+    maintenance.cpp \
     signup.cpp \
     settings.cpp \
     messages.cpp \
@@ -46,7 +45,7 @@ HEADERS += \
     welcome.h \
     help.h \
     notices.h \
-    maintenance.h
+    maintenance.h \
     signup.h \
     settings.h \
     messages.h \
@@ -60,7 +59,7 @@ FORMS += \
     welcomeform.ui \
     helpform.ui \
     noticesform.ui \
-    maintenanceform.ui
+    maintenanceform.ui \
     signup.ui \
     settings.ui \
     messagesform.ui \

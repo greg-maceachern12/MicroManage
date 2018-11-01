@@ -2,7 +2,7 @@
 #include "ui_maintenanceform.h"
 
 namespace Ui {
-class Maintenance;
+class MaintenanceForm;
 }
 
 class Maintenance : public QWidget

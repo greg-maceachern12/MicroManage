@@ -117,5 +117,9 @@ void MicroManage::openLogin() {
     stackedWidget->setCurrentIndex(6);
 }
 
+void MicroManage::closeEvent(QCloseEvent *event) {
+    QWidget::closeEvent(event);
+}
+
 
 
