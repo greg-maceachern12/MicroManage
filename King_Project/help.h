@@ -1,5 +1,5 @@
 #pragma once
-//#include "ui_helpform.h"
+#include "ui_helpform.h"
 #include <QtWidgets>
 
 namespace Ui {

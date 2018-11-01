@@ -1,0 +1,13 @@
+INPUT(
+./release\micromanage.o
+./release\mainpage.o
+./release\RunMicroManage.o
+./release\signup.o
+./release\settings.o
+./release\messages.o
+./release\moc_mainpage.o
+./release\moc_micromanage.o
+./release\moc_signup.o
+./release\moc_settings.o
+./release\moc_messages.o
+);

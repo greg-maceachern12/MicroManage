@@ -1,0 +1,13 @@
+INPUT(
+./debug\micromanage.o
+./debug\mainpage.o
+./debug\RunMicroManage.o
+./debug\signup.o
+./debug\settings.o
+./debug\messages.o
+./debug\moc_mainpage.o
+./debug\moc_micromanage.o
+./debug\moc_signup.o
+./debug\moc_settings.o
+./debug\moc_messages.o
+);
