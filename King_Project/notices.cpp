@@ -1,11 +1,10 @@
 #include "notices.h"
 
-Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm)
-{
+Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm) {
     ui->setupUi(this);
 }
 
-Notices::~Notices()
-{
+
+Notices::~Notices() {
     delete ui;
 }

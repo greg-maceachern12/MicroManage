@@ -6,7 +6,7 @@
 #include "propertymain.h"
 #include "login.h"
 
-MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
+MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManageForm) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
     // IMPORTANT: This initializes your Qt attributes for this class
@@ -83,10 +83,12 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
 
 }
 
+
 void MicroManage::createInterface() {
     // WIP
 
 }
+
 
 void MicroManage::showSideMenu() {
     /* Toggles the side menu */
@@ -94,32 +96,48 @@ void MicroManage::showSideMenu() {
     repaint(); // Forces the repaint so the menu opens and closes without glitch
 }
 
+
 void MicroManage::changePage(int index){
     /* This is just rough so you get an idea of how this could work */
     stackedWidget->setCurrentIndex(index); // Should change it to the second page with the line edit
 }
+
+
 void MicroManage::openSettings() {
     stackedWidget->setCurrentIndex(2);
 }
+
+
 void MicroManage::openSignUp() {
     stackedWidget->setCurrentIndex(1);
 }
+
+
 void MicroManage::openMessages() {
     stackedWidget->setCurrentIndex(3);
 }
+
+
 void MicroManage::openProfile() {
     stackedWidget->setCurrentIndex(4);
 }
+
+
 void MicroManage::openProperty() {
     stackedWidget->setCurrentIndex(5);
 }
+
+
 void MicroManage::openLogin() {
     stackedWidget->setCurrentIndex(6);
 }
+
 
 void MicroManage::closeEvent(QCloseEvent *event) {
     QWidget::closeEvent(event);
 }
 
 
-
+MicroManage::~MicroManage() {
+    delete ui;
+}

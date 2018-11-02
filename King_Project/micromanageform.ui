@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MicroManage</class>
- <widget class="QMainWindow" name="MicroManage">
+ <class>MicroManageForm</class>
+ <widget class="QMainWindow" name="MicroManageForm">
   <property name="geometry">
    <rect>
     <x>0</x>
