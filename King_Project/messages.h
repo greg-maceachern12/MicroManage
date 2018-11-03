@@ -10,6 +10,8 @@ class Messages : public QWidget {
 
     public:
         explicit Messages(QWidget *parent);
+        void pullMessages();
+        void sendMessage(char message, int uid);
         ~Messages();
 
     signals:

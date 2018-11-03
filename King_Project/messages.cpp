@@ -8,7 +8,12 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->toolButton->setText("Menu");
     connect(ui->toolButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 }
+void Messages::pullMessages() {
 
+}
+void Messages::sendMessage(char message, int uid){
+
+}
 
 Messages::~Messages() {
     delete ui;
