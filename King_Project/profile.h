@@ -13,6 +13,15 @@ class Profile : public QWidget {
         explicit Profile(QWidget *parent = nullptr);
         ~Profile();
 
+    public slots:
+        void makeEditable();
+
+
     private:
+        //QPushButton *sideButton;
+        QToolButton *editButton;
+        //QDockWidget *sideMenu;
         Ui::ProfileForm *ui;
+
 };
+
