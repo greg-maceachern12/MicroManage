@@ -1,11 +1,8 @@
 #include "profile.h"
 
-Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm) {
+Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
+{
     ui->setupUi(this);
-    ui->toolButton->setCheckable(true);
-    ui->toolButton->setText("Menu");
-    connect(ui->toolButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-
 
     //set page size to 689 height to 547 width
 
@@ -26,7 +23,54 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm) {
     editButton->setGeometry(QRect(QPoint(650, 500), QSize(50, 50)));
 
     connect(editButton, SIGNAL (released()), this, SLOT (makeEditable()));
+
+
+    //set button checkable to true so that it can be clicked to edit and clicked to save
+
+
+    //ui->toolButton->setText("Menu");
+
+    // Create the button, make "this" the parent
+    //sideButton = new QPushButton("My Button", this);
+    // set size and location of the button
+    //sideButton->setGeometry(QRect(QPoint(100, 100),QSize(200, 50)));
+
+    // Connect button signal to appropriate slot
+    //connect(sideButton, SIGNAL (released()), this, SLOT (handleButton()));
+
+
+    //sideMenu = new QDockWidget("Menu", this);
+
+
+
+
+}
+
+void Profile::makeEditable()
+ {
+    if (editButton->isChecked() ){
+        ui->name->setReadOnly(false);
+        ui->description->setReadOnly(false);
+        ui->contact->setReadOnly(false);
+        ui->properties->setReadOnly(false);
+        ui->age->setReadOnly(false);
+
+
+        // change the text
+        editButton->setText("Save");
+
     }
+   else{
+        ui->name->setReadOnly(true);
+        ui->description->setReadOnly(true);
+        ui->contact->setReadOnly(true);
+        ui->properties->setReadOnly(true);
+        ui->age->setReadOnly(true);
+
+        editButton->setText("Edit");
+    }
+
+ }
 
 
 //void MyTextEdit::paintEvent(QPaintEvent* event)
@@ -37,6 +81,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm) {
 //}
 
 
+
 //void Profile::handleButton()
 // {
 //    // change the text
@@ -44,9 +89,6 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm) {
 //    // resize button
 //    sideButton->resize(100,100);
 // }
-
-
-
 
 
 Profile::~Profile()

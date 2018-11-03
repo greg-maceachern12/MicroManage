@@ -16,38 +16,28 @@
   <widget class="QLineEdit" name="landlord">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>70</y>
-     <width>113</width>
-     <height>21</height>
+     <x>600</x>
+     <y>60</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>22</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Landlord</string>
    </property>
   </widget>
-  <widget class="QPlainTextEdit" name="age">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>150</y>
-     <width>104</width>
-     <height>74</height>
-    </rect>
-   </property>
-   <property name="plainText">
-    <string>Age: 38
-673 King St
-Kingston, ON</string>
-   </property>
-  </widget>
   <widget class="QTextEdit" name="contact">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>280</y>
-     <width>161</width>
-     <height>74</height>
+     <x>130</x>
+     <y>470</y>
+     <width>531</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -68,10 +58,10 @@ p, li { white-space: pre-wrap; }
   <widget class="QTextEdit" name="textEdit_4">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>113</x>
      <y>70</y>
-     <width>104</width>
-     <height>74</height>
+     <width>151</width>
+     <height>141</height>
     </rect>
    </property>
    <property name="html">
@@ -85,9 +75,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QTextEdit" name="properties">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>220</y>
-     <width>141</width>
+     <x>130</x>
+     <y>400</y>
+     <width>531</width>
      <height>61</height>
     </rect>
    </property>
@@ -105,9 +95,9 @@ p, li { white-space: pre-wrap; }
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>100</y>
-     <width>131</width>
-     <height>41</height>
+     <y>90</y>
+     <width>311</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="html">
@@ -115,16 +105,16 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Daniel Wellington&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:600;&quot;&gt;Daniel Wellington&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="description">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>140</y>
-     <width>104</width>
-     <height>74</height>
+     <x>130</x>
+     <y>290</y>
+     <width>531</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="html">
@@ -132,7 +122,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hi, I am a landlord in the Kingston area.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Hi, I am a landlord in the Kingston area.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QToolButton" name="toolButton">
@@ -146,6 +136,25 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>...</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="age">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>170</y>
+     <width>181</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Age: 38&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;673 King St,&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kingston, ON Canada&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>
