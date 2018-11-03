@@ -3,21 +3,20 @@
 #include <QtWidgets>
 
 namespace Ui {
-    class Messages;
+    class MessagesForm;
 }
-class Messages : public QWidget
-{
-    Q_OBJECT
+class Messages : public QWidget {
+        Q_OBJECT
 
-public:
-    explicit Messages(QWidget *parent);
+    public:
+        explicit Messages(QWidget *parent);
+        ~Messages();
 
-signals:
+    signals:
 
-public slots:
+    public slots:
 
-private:
-    Ui::Messages *ui;
-    //int userRole;
+    private:
+        Ui::MessagesForm *ui;
 };
 

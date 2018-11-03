@@ -1,23 +1,23 @@
 #pragma once
-#include "ui_login.h"
+#include "ui_loginform.h"
 #include <QtWidgets>
 
 namespace Ui {
-    class Login;
+    class LoginForm;
 }
-class Login : public QWidget
-{
-    Q_OBJECT
 
-public:
-    explicit Login(QWidget *parent);
+class Login : public QWidget {
+        Q_OBJECT
 
-signals:
+    public:
+        explicit Login(QWidget *parent);
+        ~Login();
 
-public slots:
+    signals:
 
-private:
-    Ui::Login *ui;
-    //int userRole;
+    public slots:
+
+    private:
+        Ui::LoginForm *ui;
 };
 

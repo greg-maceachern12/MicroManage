@@ -3,18 +3,17 @@
 #include <QtWidgets>
 
 namespace Ui {
-class HelpForm;
+    class HelpForm;
 }
 
-class Help : public QWidget
-{
-    Q_OBJECT
+class Help : public QWidget {
+        Q_OBJECT
 
-public:
-    explicit Help(QWidget *parent = nullptr);
-    ~Help();
+    public:
+        explicit Help(QWidget *parent = nullptr);
+        ~Help();
 
-private:
-    Ui::HelpForm *ui;
+    private:
+        Ui::HelpForm *ui;
 };
 

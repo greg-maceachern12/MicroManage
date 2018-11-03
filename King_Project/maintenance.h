@@ -1,18 +1,18 @@
 #pragma once
 #include "ui_maintenanceform.h"
+#include <QtWidgets>
 
 namespace Ui {
-class MaintenanceForm;
+    class MaintenanceForm;
 }
 
-class Maintenance : public QWidget
-{
-    Q_OBJECT
+class Maintenance : public QWidget {
+        Q_OBJECT
 
-public:
-    explicit Maintenance(QWidget *parent = nullptr);
-    ~Maintenance();
+    public:
+        explicit Maintenance(QWidget *parent = nullptr);
+        ~Maintenance();
 
-private:
-    Ui::MaintenanceForm *ui;
+    private:
+        Ui::MaintenanceForm *ui;
 };

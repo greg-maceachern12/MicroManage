@@ -1,23 +1,23 @@
 #pragma once
-#include "ui_propertymain.h"
+#include "ui_propertymainform.h"
 #include <QtWidgets>
 
 namespace Ui {
-    class PropertyMain;
+    class PropertyMainForm;
 }
-class PropertyMain : public QWidget
-{
-    Q_OBJECT
 
-public:
-    explicit PropertyMain(QWidget *parent);
+class PropertyMain : public QWidget {
+        Q_OBJECT
 
-signals:
+    public:
+        explicit PropertyMain(QWidget *parent);
+        ~PropertyMain();
 
-public slots:
+    signals:
 
-private:
-    Ui::PropertyMain *ui;
-    //int userRole;
+    public slots:
+
+    private:
+        Ui::PropertyMainForm *ui;
 };
 

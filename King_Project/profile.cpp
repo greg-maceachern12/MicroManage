@@ -1,7 +1,6 @@
 #include "profile.h"
-#include "ui_profile.h"
 
-Profile::Profile(QWidget *parent) :QWidget(parent),ui(new Ui::Profile)
+Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
     ui->setupUi(this);
 

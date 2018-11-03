@@ -14,6 +14,7 @@ class MainPage : public QWidget {
 
     public:
         explicit MainPage(QWidget *parent, QString user_name="", int user_role=0);
+        ~MainPage();
 
     signals:
 
