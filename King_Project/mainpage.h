@@ -1,13 +1,8 @@
 #pragma once
 #include "ui_mainpageform.h"
+#include "dbmodel.h"
 #include <QtWidgets> // NOTE: This should be here so you don't have to include each type of widget individually
 #include <string>
-#include <QSqlDatabase>
-#include <QSqlDriver>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QSqlQueryModel>
-#include <QFileInfo>
 
 using namespace std;
 

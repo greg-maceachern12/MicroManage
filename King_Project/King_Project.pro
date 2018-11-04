@@ -51,7 +51,8 @@ HEADERS += \
     messages.h \
     propertymain.h \
     profile.h \
-    login.h
+    login.h \
+    dbmodel.h
 
 FORMS += \
     micromanageform.ui \

@@ -1,15 +1,16 @@
+#include "login.h"
 #include "mainpage.h"
+
 
 MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(parent), ui(new Ui::MainPageForm) {
     ui->setupUi(this); // Sets up the .ui file GUI
-
-    QSqlDatabase myDb = QSqlDatabase::addDatabase("QSQLITE");
+    myDb = QSqlDatabase::addDatabase("QSQLITE");
     myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/King_Project/micro.db");
 
     if (!myDb.open()) {
-        ui->welcomeLabel->setText("");
+        qDebug() <<"error-";
     } else {
-        ui->welcomeLabel->setText("No Connection");
+        qDebug() <<"success";
     }
 
     QSqlQuery query;

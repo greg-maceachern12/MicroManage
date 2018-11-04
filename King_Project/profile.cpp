@@ -1,4 +1,5 @@
 #include "profile.h"
+#include "dbmodel.h"
 
 Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
@@ -25,33 +26,9 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     connect(editButton, SIGNAL (released()), this, SLOT (makeEditable()));
 
 
-    //set button checkable to true so that it can be clicked to edit and clicked to save
-
-
-    //ui->toolButton->setText("Menu");
-
-    // Create the button, make "this" the parent
-    //sideButton = new QPushButton("My Button", this);
-    // set size and location of the button
-    //sideButton->setGeometry(QRect(QPoint(100, 100),QSize(200, 50)));
-
-    // Connect button signal to appropriate slot
-    //connect(sideButton, SIGNAL (released()), this, SLOT (handleButton()));
-
-
-    //sideMenu = new QDockWidget("Menu", this);
-
-//    QSqlDatabase myDb = QSqlDatabase::addDatabase("QSQLITE");
-//    myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/King_Project/micro.db");
-
-//    if (!myDb.open()) {
-//        ui->txtName->setText("");
-//    } else {
-//        ui->txtName->setText("No Connection");
-//    }
-
     QSqlQuery query;
-    query.exec("SELECT name, age, type, address, email, phone FROM user");
+    qDebug() << username;
+    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
     while (query.next()) {
          ui->name->setText(query.value(0).toString());
          ui->age->setText(query.value(1).toString());
