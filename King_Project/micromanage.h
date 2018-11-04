@@ -9,7 +9,7 @@
 #include "login.h"
 
 namespace Ui {
-    class MicroManage;
+    class MicroManageForm;
 }
 
 class MicroManage : public QMainWindow
@@ -19,7 +19,7 @@ class MicroManage : public QMainWindow
     public:
         explicit MicroManage(QWidget *parent = nullptr);
         void changePage(int);
-        //~MicroManage() override; Probably don't need this because it already inherits the destructor from QMainWindow
+        ~MicroManage();
 
     signals:
 
@@ -34,7 +34,7 @@ class MicroManage : public QMainWindow
         void openLogin();
 
     private:
-        Ui::MicroManage *ui;
+        Ui::MicroManageForm *ui;
         QDockWidget *sideMenu;
         QStackedWidget *stackedWidget;
         MainPage *mainPage;

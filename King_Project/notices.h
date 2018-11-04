@@ -3,18 +3,17 @@
 #include <QtWidgets>
 
 namespace Ui {
-class NoticesForm;
+    class NoticesForm;
 }
 
-class Notices : public QWidget
-{
-    Q_OBJECT
+class Notices : public QWidget {
+        Q_OBJECT
 
-public:
-    explicit Notices(QWidget *parent = nullptr);
-    ~Notices();
+    public:
+        explicit Notices(QWidget *parent = nullptr);
+        ~Notices();
 
-private:
-    Ui::NoticesForm *ui;
+    private:
+        Ui::NoticesForm *ui;
 };
 

@@ -60,12 +60,12 @@ FORMS += \
     helpform.ui \
     noticesform.ui \
     maintenanceform.ui \
-    signup.ui \
-    settings.ui \
     messagesform.ui \
-    propertymain.ui \
-    profile.ui \
-    login.ui
+    profileform.ui \
+    loginform.ui \
+    settingsform.ui \
+    signupform.ui \
+    propertymainform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

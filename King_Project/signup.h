@@ -1,5 +1,5 @@
 #pragma once
-#include "ui_signup.h"
+#include "ui_signupform.h"
 #include <QtWidgets> // NOTE: This should be here so you don't have to include each type of widget individually
 #include <QSqlDatabase>
 #include <QSqlDriver>
@@ -9,7 +9,7 @@
 #include <QFileInfo>
 
 namespace Ui {
-    class SignUp;
+    class SignUpForm;
 }
 
 class SignUp : public QWidget
@@ -18,12 +18,12 @@ class SignUp : public QWidget
 
     public:
         explicit SignUp(QWidget *parent);
+        ~SignUp();
 
     signals:
 
     public slots:
 
     private:
-        Ui::SignUp *ui;
-        //int userRole;
+        Ui::SignUpForm *ui;
 };

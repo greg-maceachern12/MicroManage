@@ -1,23 +1,22 @@
 #pragma once
-#include "ui_settings.h"
-#include <QtWidgets> // NOTE: This should be here so you don't have to include each type of widget individually
+#include "ui_settingsform.h"
+#include <QtWidgets>
 
 namespace Ui {
-    class Settings;
+    class SettingsForm;
 }
 
-class Settings : public QWidget
-{
+class Settings : public QWidget {
         Q_OBJECT
 
     public:
         explicit Settings(QWidget *parent);
+        ~Settings();
 
     signals:
 
     public slots:
 
     private:
-        Ui::Settings *ui;
-        //int userRole;
+        Ui::SettingsForm *ui;
 };

@@ -81,3 +81,8 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 void MainPage::handleButtonClick(int index) {
     //this->parentWidget()->changePage(index);
 }
+
+
+MainPage::~MainPage() {
+    delete ui;
+}
