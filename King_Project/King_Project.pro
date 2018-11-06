@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -51,7 +51,8 @@ HEADERS += \
     messages.h \
     propertymain.h \
     profile.h \
-    login.h
+    login.h \
+    dbmodel.h
 
 FORMS += \
     micromanageform.ui \
