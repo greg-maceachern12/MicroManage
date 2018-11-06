@@ -15,11 +15,6 @@ void Login::on_pushButton_clicked()
 
     txt_username = ui->txtUser->text();
     txt_password = ui->txtPass->text();
-
-//    if (!myDb.isOpen()) {
-//        qDebug() <<"error";
-//        return;
-//    }
     QSqlQuery qry;
     if (qry.exec("SELECT username FROM user WHERE username='"+txt_username+"'and password='"+ txt_password+"'" )) {
         int count = 0;
