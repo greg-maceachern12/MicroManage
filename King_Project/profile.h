@@ -1,6 +1,13 @@
 #pragma once
 #include "ui_profileform.h"
 #include <QtWidgets>
+#include <QPushButton>
+#include <QSqlDatabase>
+#include <QSqlDriver>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QFileInfo>
 
 namespace Ui {
     class ProfileForm;

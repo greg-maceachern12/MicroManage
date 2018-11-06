@@ -1,6 +1,8 @@
 #pragma once
 #include "ui_loginform.h"
+#include "dbmodel.h"
 #include <QtWidgets>
+
 
 namespace Ui {
     class LoginForm;
@@ -17,7 +19,11 @@ class Login : public QWidget {
 
     public slots:
 
-    private:
+private slots:
+    void on_pushButton_clicked();
+
+private:
         Ui::LoginForm *ui;
+        int us;
 };
 
