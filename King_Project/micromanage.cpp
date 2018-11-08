@@ -72,8 +72,8 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(mainPage);
     stackedWidget->addWidget(signUp);
     stackedWidget->addWidget(settings);
-    stackedWidget->addWidget(messages);
     stackedWidget->addWidget(profile);
+    stackedWidget->addWidget(messages);
     stackedWidget->addWidget(property);
     stackedWidget->addWidget(login);
     QLineEdit *line = new QLineEdit;

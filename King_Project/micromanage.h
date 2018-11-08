@@ -19,6 +19,7 @@ class MicroManage : public QMainWindow
     public:
         explicit MicroManage(QWidget *parent = nullptr);
         void changePage(int);
+        Profile& getProfile();
         ~MicroManage();
 
     signals:

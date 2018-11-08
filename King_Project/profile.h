@@ -1,5 +1,6 @@
 #pragma once
 #include "ui_profileform.h"
+//#include "micromanage.h"
 #include <QtWidgets>
 #include <QPushButton>
 #include <QSqlDatabase>

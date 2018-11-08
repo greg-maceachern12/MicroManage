@@ -20,26 +20,40 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     ui->age->setReadOnly(true);
     ui->landlord->setReadOnly(true);
 
+        QSqlQuery query;
+        qDebug() << username;
+        query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
+        while (query.next()) {
+             ui->name->setText(query.value(0).toString());
+             ui->age->setText(query.value(1).toString());
+             ui->landlord->setText(query.value(2).toString());
+             ui->properties->setText(query.value(3).toString());
+             ui->txtEmail->setText(query.value(4).toString());
+             ui->contact->setText(query.value(5).toString());
+
+        }
+
 
     editButton->setGeometry(QRect(QPoint(650, 500), QSize(50, 50)));
 
     connect(editButton, SIGNAL (released()), this, SLOT (makeEditable()));
 
-
-    QSqlQuery query;
-    qDebug() << username;
-    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
-    while (query.next()) {
-         ui->name->setText(query.value(0).toString());
-         ui->age->setText(query.value(1).toString());
-         ui->landlord->setText(query.value(2).toString());
-         ui->properties->setText(query.value(3).toString());
-         ui->txtEmail->setText(query.value(4).toString());
-         ui->contact->setText(query.value(5).toString());
-
-    }
-
 }
+
+//void Profile::update(QString* name) {
+//    QSqlQuery query;
+//    qDebug() << name;
+//    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+*name+"'");
+//    while (query.next()) {
+//         ui->name->setText(query.value(0).toString());
+//         ui->age->setText(query.value(1).toString());
+//         ui->landlord->setText(query.value(2).toString());
+//         ui->properties->setText(query.value(3).toString());
+//         ui->txtEmail->setText(query.value(4).toString());
+//         ui->contact->setText(query.value(5).toString());
+
+//    }
+//}
 
 void Profile::makeEditable()
  {
@@ -68,22 +82,6 @@ void Profile::makeEditable()
  }
 
 
-//void MyTextEdit::paintEvent(QPaintEvent* event)
-//{
-//	QTextEdit::paintEvent(event);
-//	QPainter p(viewport());
-//	p.fillRect(cursorRect(), QBrush(Qt::white));
-//}
-
-
-
-//void Profile::handleButton()
-// {
-//    // change the text
-//    sideButton->setText("Example");
-//    // resize button
-//    sideButton->resize(100,100);
-// }
 
 
 Profile::~Profile()
