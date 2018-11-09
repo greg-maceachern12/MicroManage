@@ -11,46 +11,55 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QPushButton>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainPage
+class Ui_MainPageForm
 {
 public:
-    QPushButton *pushButton;
-    QToolButton *toolButton;
+    QToolButton *menuButton;
+    QLabel *welcomeLabel;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
 
-    void setupUi(QWidget *MainPage)
+    void setupUi(QWidget *MainPageForm)
     {
-        if (MainPage->objectName().isEmpty())
-            MainPage->setObjectName(QStringLiteral("MainPage"));
-        MainPage->resize(647, 487);
-        pushButton = new QPushButton(MainPage);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(200, 60, 281, 301));
-        toolButton = new QToolButton(MainPage);
-        toolButton->setObjectName(QStringLiteral("toolButton"));
-        toolButton->setGeometry(QRect(10, 10, 51, 51));
+        if (MainPageForm->objectName().isEmpty())
+            MainPageForm->setObjectName(QStringLiteral("MainPageForm"));
+        MainPageForm->resize(647, 487);
+        menuButton = new QToolButton(MainPageForm);
+        menuButton->setObjectName(QStringLiteral("menuButton"));
+        menuButton->setGeometry(QRect(10, 10, 41, 41));
+        welcomeLabel = new QLabel(MainPageForm);
+        welcomeLabel->setObjectName(QStringLiteral("welcomeLabel"));
+        welcomeLabel->setGeometry(QRect(120, 40, 411, 61));
+        gridLayoutWidget = new QWidget(MainPageForm);
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(79, 89, 491, 331));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
 
-        retranslateUi(MainPage);
+        retranslateUi(MainPageForm);
 
-        QMetaObject::connectSlotsByName(MainPage);
+        QMetaObject::connectSlotsByName(MainPageForm);
     } // setupUi
 
-    void retranslateUi(QWidget *MainPage)
+    void retranslateUi(QWidget *MainPageForm)
     {
-        MainPage->setWindowTitle(QApplication::translate("MainPage", "HEY", nullptr));
-        pushButton->setText(QApplication::translate("MainPage", "PushButton", nullptr));
-        toolButton->setText(QApplication::translate("MainPage", "...", nullptr));
+        MainPageForm->setWindowTitle(QApplication::translate("MainPageForm", "HEY", nullptr));
+        menuButton->setText(QApplication::translate("MainPageForm", "...", nullptr));
+        welcomeLabel->setText(QApplication::translate("MainPageForm", "Welcome back, ", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class MainPage: public Ui_MainPage {};
+    class MainPageForm: public Ui_MainPageForm {};
 } // namespace Ui
 
 QT_END_NAMESPACE

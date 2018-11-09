@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainPage_t {
     QByteArrayData data[3];
-    char stringdata0[21];
+    char stringdata0[28];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,11 @@ struct qt_meta_stringdata_MainPage_t {
 static const qt_meta_stringdata_MainPage_t qt_meta_stringdata_MainPage = {
     {
 QT_MOC_LITERAL(0, 0, 8), // "MainPage"
-QT_MOC_LITERAL(1, 9, 10), // "changeText"
-QT_MOC_LITERAL(2, 20, 0) // ""
+QT_MOC_LITERAL(1, 9, 17), // "handleButtonClick"
+QT_MOC_LITERAL(2, 27, 0) // ""
 
     },
-    "MainPage\0changeText\0"
+    "MainPage\0handleButtonClick\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,10 +54,10 @@ static const uint qt_meta_data_MainPage[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+       1,    1,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    2,
 
        0        // eod
 };
@@ -68,11 +68,10 @@ void MainPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         MainPage *_t = static_cast<MainPage *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->changeText(); break;
+        case 0: _t->handleButtonClick((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject MainPage::staticMetaObject = {

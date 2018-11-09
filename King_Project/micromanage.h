@@ -9,7 +9,7 @@
 #include "login.h"
 
 namespace Ui {
-    class MicroManageForm;
+    class MicroManage;
 }
 
 class MicroManage : public QMainWindow
@@ -34,7 +34,7 @@ class MicroManage : public QMainWindow
         void openLogin();
 
     private:
-        Ui::MicroManageForm *ui;
+        Ui::MicroManage *ui;
         QDockWidget *sideMenu;
         QStackedWidget *stackedWidget;
         MainPage *mainPage;

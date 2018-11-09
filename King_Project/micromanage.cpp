@@ -6,7 +6,7 @@
 #include "propertymain.h"
 #include "login.h"
 
-MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManageForm) {
+MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
     // IMPORTANT: This initializes your Qt attributes for this class
