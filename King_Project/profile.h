@@ -8,6 +8,8 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QFileInfo>
+#include "dbmodel.h"
+
 
 namespace Ui {
     class ProfileForm;
@@ -18,6 +20,8 @@ class Profile : public QWidget {
 
     public:
         explicit Profile(QWidget *parent = nullptr);
+        void updateProfile(QSqlQuery query);
+        Ui::ProfileForm* getUi();
         ~Profile();
 
 

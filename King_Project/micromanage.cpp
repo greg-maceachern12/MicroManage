@@ -20,7 +20,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     messages = new Messages(this);
     profile = new Profile(this);
     property = new PropertyMain(this);
-    login = new Login(this);
+    login = new Login(this, profile);
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -81,6 +81,11 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(line); // Adds another page to the stack with this widget
     setCentralWidget(stackedWidget); //
 
+}
+
+
+Profile* MicroManage::getProfile() {
+    return profile;
 }
 
 

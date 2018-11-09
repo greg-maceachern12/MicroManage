@@ -11,7 +11,7 @@
 #include <QFileInfo>
 
 static QSqlDatabase myDb;
-static QString username;
+extern QString username;
 
 
 #endif

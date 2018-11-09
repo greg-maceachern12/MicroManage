@@ -1,8 +1,8 @@
 #include "login.h"
-#include "dbmodel.h"
 
-Login::Login(QWidget *parent) : QWidget(parent), ui(new Ui::LoginForm) {
+Login::Login(QWidget *parent, Profile *pro) : QWidget(parent), ui(new Ui::LoginForm) {
     ui->setupUi(this);
+    profile = pro;
 }
 
 Login::~Login() {
@@ -25,6 +25,10 @@ void Login::on_pushButton_clicked()
         if (count == 1) {
             qDebug() << "user and password correct";
             username = txt_username;
+            QSqlQuery qry2;
+            qry2.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
+            profile->updateProfile(qry2);
+
         }
         if (count > 1) {
             qDebug() << "Duplicate user and password correct";
@@ -33,4 +37,5 @@ void Login::on_pushButton_clicked()
             qDebug() << "user and password incorrect";
         }
     }
+
 }
