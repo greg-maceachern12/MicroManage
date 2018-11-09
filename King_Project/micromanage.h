@@ -7,6 +7,8 @@
 #include "profile.h"
 #include "propertymain.h"
 #include "login.h"
+#include "dbmodel.h"
+
 
 namespace Ui {
     class MicroManageForm;
@@ -19,6 +21,7 @@ class MicroManage : public QMainWindow
     public:
         explicit MicroManage(QWidget *parent = nullptr);
         void changePage(int);
+        Profile* getProfile();
         ~MicroManage();
 
     signals:
@@ -44,6 +47,7 @@ class MicroManage : public QMainWindow
         Profile *profile;
         PropertyMain *property;
         Login *login;
+
 
         void createInterface();
         void closeEvent(QCloseEvent *event);
