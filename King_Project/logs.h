@@ -3,7 +3,7 @@
 #include <QtWidgets>
 
 namespace Ui {
-    class logs;
+    class LogsForm;
 }
 
 class logs : public QWidget {
@@ -11,9 +11,9 @@ class logs : public QWidget {
 
     public:
         explicit logs(QWidget *parent = nullptr);
-        ~logs();
+        virtual ~logs();
 
     private:
-        Ui::logs *ui;
+        Ui::LogsForm *ui;
 };
 

@@ -24,6 +24,7 @@ class Profile : public QWidget {
 
     public slots:
         void makeEditable();
+        void refresh();
 
 
 

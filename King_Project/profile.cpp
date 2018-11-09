@@ -37,7 +37,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     editButton->setGeometry(QRect(QPoint(650, 500), QSize(50, 50)));
 
     connect(editButton, SIGNAL (released()), this, SLOT (makeEditable()));
-
+    connect(ui->refresh, SIGNAL (released()), this, SLOT (refresh()));
 }
 
 //void Profile::update(QString* name) {
@@ -81,6 +81,10 @@ void Profile::makeEditable()
 
  }
 
+void Profile::refresh()
+ {
+    qDebug() << username;
+ }
 
 
 
