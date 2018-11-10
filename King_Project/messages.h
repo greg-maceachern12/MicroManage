@@ -12,11 +12,13 @@ class Messages : public QWidget {
         explicit Messages(QWidget *parent);
         void pullMessages();
         void sendMessage(char message, int uid);
+
         ~Messages();
 
     signals:
 
-    public slots:
+    private slots:
+        void on_refresh_clicked();
 
     private:
         Ui::MessagesForm *ui;

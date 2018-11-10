@@ -5,7 +5,7 @@
 MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(parent), ui(new Ui::MainPageForm) {
     ui->setupUi(this); // Sets up the .ui file GUI
     myDb = QSqlDatabase::addDatabase("QSQLITE");
-    myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/King_Project/micro.db");
+    myDb.setDatabaseName("/Users/michaelbriggs/Desktop/320/kingrepo/King_Project/micro.db");
 
     if (!myDb.open()) {
         qDebug() <<"error-";
