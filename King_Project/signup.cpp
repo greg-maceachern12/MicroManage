@@ -16,9 +16,35 @@ SignUp::~SignUp() {
 
 void SignUp::createUser() {
     QString username = ui->txtUid->text();
-    QSqlQuery qryWrite;
-    qDebug() << username;
-    qryWrite.prepare("insert into user (username,name,age,type, address, email, phone, password) VALUES ('"+username+"', '"+ ui->txtName->text() +"', '"+ ui->txtAge->text() +"', ''"+ ui->txtType->text() +"'', '"+ ui->txtAddress->text() +"', '"+ ui->txtEmail->text() +"' , '"+ ui->txtPhone->text() +"', '"+ ui->txtPassword->text()+"')");
-    qryWrite.exec();
+    QSqlQuery qry;
+    int count = 0;
+    if (qry.exec("SELECT username FROM user WHERE username='"+username+"'")) {
+        while (qry.next()) {
+            count ++;
+        }
+        qDebug() << count;
+        if (count == 0){
+            QSqlQuery qryWrite;
+            qDebug() << username;
+
+            qryWrite.prepare("insert into user (username,name,age,type, address, email, phone, password)"
+                             "VALUES (:username, :name, :age, :type, :address, :email, :phone, :password)");
+                             qryWrite.bindValue(":username", username);
+                             qryWrite.bindValue(":name", ui->txtName->text());
+                             qryWrite.bindValue(":age", ui->txtAge->text());
+                             qryWrite.bindValue(":type", ui->txtType->text());
+                             qryWrite.bindValue(":address", ui->txtAddress->text());
+                             qryWrite.bindValue(":email", ui->txtEmail->text());
+                             qryWrite.bindValue(":phone", ui->txtPhone->text());
+                             qryWrite.bindValue(":password", ui->txtPassword->text());
+            if (qryWrite.exec()) {
+                ui->logMsg->setText("Success");
+            } else {
+               qDebug() << qryWrite.lastError();
+            }
+        } else {
+            ui->logMsg->setText("Error. User already exists");
+        }
+    }
 
 }
