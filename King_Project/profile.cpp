@@ -5,6 +5,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
     ui->setupUi(this);
 
+
     //set page size to 689 height to 547 width
 
 
@@ -34,10 +35,36 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
         }
 
 
-    editButton->setGeometry(QRect(QPoint(650, 500), QSize(50, 50)));
+    /*QSqlQuery query;
+    qDebug() << username;
+    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
+    while (query.next()) {
+         ui->name->setText(query.value(0).toString());
+         ui->age->setText(query.value(1).toString());
+         ui->landlord->setText(query.value(2).toString());
+         ui->properties->setText(query.value(3).toString());
+         ui->txtEmail->setText(query.value(4).toString());
+         ui->contact->setText(query.value(5).toString());
 
-    connect(editButton, SIGNAL (released()), this, SLOT (makeEditable()));
-    connect(ui->refresh, SIGNAL (released()), this, SLOT (refresh()));
+    }*/
+
+}
+
+Ui::ProfileForm* Profile::getUi() {
+    return ui;
+}
+
+void Profile::updateProfile(QSqlQuery query) {
+    qDebug() << "test" + username;
+    //query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
+    while (query.next()) {
+         ui->name->setText(query.value(0).toString());
+         ui->age->setText(query.value(1).toString());
+         ui->landlord->setText(query.value(2).toString());
+         ui->properties->setText(query.value(3).toString());
+         ui->txtEmail->setText(query.value(4).toString());
+         ui->contact->setText(query.value(5).toString());
+    }
 }
 
 //void Profile::update(QString* name) {

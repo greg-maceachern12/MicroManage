@@ -7,9 +7,12 @@
 #include "profile.h"
 #include "propertymain.h"
 #include "login.h"
+#include "logs.h"
+#include "dbmodel.h"
+
 
 namespace Ui {
-    class MicroManageForm;
+    class MicroManage;
 }
 
 class MicroManage : public QMainWindow
@@ -19,7 +22,7 @@ class MicroManage : public QMainWindow
     public:
         explicit MicroManage(QWidget *parent = nullptr);
         void changePage(int);
-        Profile& getProfile();
+        Profile* getProfile();
         ~MicroManage();
 
     signals:
@@ -33,9 +36,10 @@ class MicroManage : public QMainWindow
         void openProfile();
         void openProperty();
         void openLogin();
+        void openLogs();
 
     private:
-        Ui::MicroManageForm *ui;
+        Ui::MicroManage *ui;
         QDockWidget *sideMenu;
         QStackedWidget *stackedWidget;
         MainPage *mainPage;
@@ -45,6 +49,8 @@ class MicroManage : public QMainWindow
         Profile *profile;
         PropertyMain *property;
         Login *login;
+        Logs *logs;
+
 
         void createInterface();
         void closeEvent(QCloseEvent *event);

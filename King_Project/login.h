@@ -3,7 +3,7 @@
 #include "dbmodel.h"
 //#include "micromanage.h"
 #include <QtWidgets>
-
+#include "profile.h"
 
 namespace Ui {
     class LoginForm;
@@ -13,7 +13,7 @@ class Login : public QWidget {
         Q_OBJECT
 
     public:
-        explicit Login(QWidget *parent);
+        explicit Login(QWidget *parent, Profile *pro);
         ~Login();
 
     signals:
@@ -26,6 +26,6 @@ private slots:
 private:
         Ui::LoginForm *ui;
         int us;
-//        QWidget* mainParent;
+        Profile *profile;
 };
 

@@ -5,8 +5,9 @@
 #include "profile.h"
 #include "propertymain.h"
 #include "login.h"
+#include "logs.h"
 
-MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManageForm) {
+MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
     // IMPORTANT: This initializes your Qt attributes for this class
@@ -20,7 +21,9 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     messages = new Messages(this);
     profile = new Profile(this);
     property = new PropertyMain(this);
-    login = new Login(this);
+    logs = new Logs(this);
+    login = new Login(this, profile);
+
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -58,6 +61,12 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     loginButton->setObjectName("loginButton");
     connect(loginButton, SIGNAL(clicked()), this, SLOT(openLogin()));
 
+    QPushButton *logsButton = new QPushButton;
+    logsButton->setText("Logs");
+    logsButton->setObjectName("logsButton");
+    connect(logsButton, SIGNAL(clicked()), this, SLOT(openLogs()));
+
+
 
     layout->addWidget(settingsButton);
     layout->addWidget(signUpButton);
@@ -65,6 +74,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     layout->addWidget(profileButton);
     layout->addWidget(propertyButton);
     layout->addWidget(loginButton);
+    layout->addWidget(logsButton);
     multiWidget->setLayout(layout);
     sideMenu->setWidget(multiWidget);
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
@@ -76,11 +86,17 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(messages);
     stackedWidget->addWidget(property);
     stackedWidget->addWidget(login);
+    stackedWidget->addWidget(logs);
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
     stackedWidget->addWidget(line); // Adds another page to the stack with this widget
     setCentralWidget(stackedWidget); //
 
+}
+
+
+Profile* MicroManage::getProfile() {
+    return profile;
 }
 
 
@@ -114,12 +130,12 @@ void MicroManage::openSignUp() {
 
 
 void MicroManage::openMessages() {
-    stackedWidget->setCurrentIndex(3);
+    stackedWidget->setCurrentIndex(4);
 }
 
 
 void MicroManage::openProfile() {
-    stackedWidget->setCurrentIndex(4);
+    stackedWidget->setCurrentIndex(3);
 }
 
 
@@ -130,6 +146,10 @@ void MicroManage::openProperty() {
 
 void MicroManage::openLogin() {
     stackedWidget->setCurrentIndex(6);
+}
+
+void MicroManage::openLogs() {
+    stackedWidget->setCurrentIndex(7);
 }
 
 

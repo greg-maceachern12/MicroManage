@@ -29,16 +29,6 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>25</x>
-     <y>51</y>
-     <width>571</width>
-     <height>391</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="refresh">
    <property name="geometry">
     <rect>
@@ -50,6 +40,16 @@
    </property>
    <property name="text">
     <string>R</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>60</y>
+     <width>491</width>
+     <height>371</height>
+    </rect>
    </property>
   </widget>
  </widget>
