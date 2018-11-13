@@ -23,6 +23,7 @@ class SignUp : public QWidget
     signals:
 
     public slots:
+    void createUser();
 
     private:
         Ui::SignUpForm *ui;
