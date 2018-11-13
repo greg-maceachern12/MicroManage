@@ -1,6 +1,7 @@
 #pragma once
 #include "ui_loginform.h"
 #include "dbmodel.h"
+//#include "micromanage.h"
 #include <QtWidgets>
 #include "profile.h"
 
