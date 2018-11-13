@@ -11,8 +11,8 @@ Login::~Login() {
 
 void Login::on_pushButton_clicked()
 {
+    qDebug() << username;
     QString txt_username, txt_password;
-
     txt_username = ui->txtUser->text();
     txt_password = ui->txtPass->text();
     QSqlQuery qry;

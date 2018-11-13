@@ -7,6 +7,7 @@
 #include "profile.h"
 #include "propertymain.h"
 #include "login.h"
+#include "logs.h"
 #include "dbmodel.h"
 
 
@@ -35,6 +36,7 @@ class MicroManage : public QMainWindow
         void openProfile();
         void openProperty();
         void openLogin();
+        void openLogs();
 
     private:
         Ui::MicroManage *ui;
@@ -47,6 +49,7 @@ class MicroManage : public QMainWindow
         Profile *profile;
         PropertyMain *property;
         Login *login;
+        Logs *logs;
 
 
         void createInterface();
