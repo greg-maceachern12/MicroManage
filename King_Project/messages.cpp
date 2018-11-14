@@ -9,6 +9,10 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
+    ui->addButton->setIcon(QIcon(":images/icons/plus_icon.png"));
+    ui->addButton->setIconSize(QSize(45, 45));
+
+
 
 }
 

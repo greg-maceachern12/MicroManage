@@ -28,7 +28,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
     sideMenu->setFeatures(QDockWidget::NoDockWidgetFeatures);
     sideMenu->setVisible(false);
-    sideMenu->setFixedWidth(130);
+    sideMenu->setFixedWidth(150);
     sideMenu->toggleViewAction()->setVisible(false); // This hides the action so you don't see it when you RMB-click on the QDockWidget
 
     QPushButton *signUpButton = new QPushButton;
@@ -96,6 +96,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
     setCentralWidget(stackedWidget); //
 
+    //stackedWidget->setCurrentIndex(2);
 }
 
 
