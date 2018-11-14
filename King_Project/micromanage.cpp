@@ -10,8 +10,11 @@
 MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
+    this->setFixedSize(this->size());
+
+
     // IMPORTANT: This initializes your Qt attributes for this class
-    sideMenu = new QDockWidget("Menu", this);
+    sideMenu = new QDockWidget("", this);
     QWidget* multiWidget = new QWidget();
     QVBoxLayout* layout = new QVBoxLayout();
     stackedWidget = new QStackedWidget;
@@ -29,6 +32,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
     sideMenu->setFeatures(QDockWidget::NoDockWidgetFeatures);
     sideMenu->setVisible(false);
+    sideMenu->setFixedWidth(130);
     sideMenu->toggleViewAction()->setVisible(false); // This hides the action so you don't see it when you RMB-click on the QDockWidget
 
     QPushButton *signUpButton = new QPushButton;
@@ -109,6 +113,13 @@ void MicroManage::createInterface() {
 void MicroManage::showSideMenu() {
     /* Toggles the side menu */
     sideMenu->setVisible(!sideMenu->isVisible()); // If it's visible, it hides it; if it's already hidden, it shows it
+    bool sideMenuIsVisible = sideMenu->isVisible();
+    mainPage->getMenuButton()->setChecked(sideMenuIsVisible);
+    signUp->getMenuButton()->setChecked(sideMenuIsVisible);
+    settings->getMenuButton()->setChecked(sideMenuIsVisible);
+    messages->getMenuButton()->setChecked(sideMenuIsVisible);
+    profile->getMenuButton()->setChecked(sideMenuIsVisible);
+    property->getMenuButton()->setChecked(sideMenuIsVisible);
     repaint(); // Forces the repaint so the menu opens and closes without glitch
 }
 
@@ -154,6 +165,7 @@ void MicroManage::openLogs() {
 
 
 void MicroManage::closeEvent(QCloseEvent *event) {
+    myDb.close(); // FIX
     QWidget::closeEvent(event);
 }
 

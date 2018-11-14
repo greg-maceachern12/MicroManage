@@ -1,0 +1,13 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>images/icons/menu_icon.png</file>
+    <file>images/icons/profile_icon.png</file>
+    <file>images/icons/properties_icon.png</file>
+    <file>images/icons/landlord_icon.png</file>
+    <file>images/icons/notices_icon.png</file>
+    <file>images/icons/messages_icon.png</file>
+    <file>images/icons/settings_icon.png</file>
+    <file>images/icons/maintenance_icon.png</file>
+    <file>images/icons/edit_icon.png</file>
+</qresource>
+</RCC>

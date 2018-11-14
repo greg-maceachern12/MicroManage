@@ -16,10 +16,10 @@
   <widget class="QToolButton" name="menuButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>20</y>
-     <width>41</width>
-     <height>41</height>
+     <width>45</width>
+     <height>45</height>
     </rect>
    </property>
    <property name="text">

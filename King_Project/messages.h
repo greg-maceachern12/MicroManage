@@ -10,6 +10,7 @@ class Messages : public QWidget {
 
     public:
         explicit Messages(QWidget *parent);
+        QToolButton* getMenuButton();
         ~Messages();
 
     signals:

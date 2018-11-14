@@ -16,10 +16,10 @@
   <widget class="QToolButton" name="menuButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>41</width>
-     <height>41</height>
+     <x>20</x>
+     <y>20</y>
+     <width>45</width>
+     <height>45</height>
     </rect>
    </property>
    <property name="text">
@@ -48,7 +48,11 @@
      <height>331</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout"/>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetFixedSize</enum>
+    </property>
+   </layout>
   </widget>
  </widget>
  <resources/>

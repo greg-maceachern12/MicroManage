@@ -61,7 +61,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Login</string>
+    <string>Log In</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txtUser">
