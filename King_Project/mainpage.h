@@ -21,7 +21,6 @@ class MainPage : public QWidget {
     signals:
 
     public slots:
-        void handleButtonClick(int);
 
     private:
         Ui::MainPageForm *ui;

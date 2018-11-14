@@ -6,15 +6,15 @@ namespace Ui {
 class WelcomeForm;
 }
 
-class Welcome : public QWidget
-{
-    Q_OBJECT
+class Welcome : public QWidget {
+        Q_OBJECT
 
-public:
-    explicit Welcome(QWidget *parent = nullptr);
-    ~Welcome();
+    public:
+        explicit Welcome(QWidget *parent = nullptr);
+        ~Welcome();
 
-private:
-    Ui::WelcomeForm *ui;
+    private:
+        Ui::WelcomeForm *ui;
+
 };
 

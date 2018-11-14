@@ -36,10 +36,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     profile_button->setText("My Profile");
     profile_button->setIcon(QIcon(":images/icons/profile_icon.png"));
     profile_button->setIconSize(icon_size);
-    //profile_button->setIcon()
-    //connect(profile_button, SIGNAL(clicked()), parent, SLOT(changePage(5)));
-    //int i(1);
-    connect(profile_button, &QToolButton::clicked, [this] { handleButtonClick(1);} );
+    connect(profile_button, SIGNAL(clicked()), parent, SLOT(openProfile()));
 
 
     QToolButton *second_button = new QToolButton();
@@ -48,13 +45,13 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
         second_button->setText("My Properties");
         second_button->setIcon(QIcon(":images/icons/properties_icon.png"));
         second_button->setIconSize(icon_size);
-        //connect(second_button, SIGNAL(clicked()), parent, SLOT(changePage(6)));
+        connect(second_button, SIGNAL(clicked()), parent, SLOT(openProperties()));
     }
     else if (userRole == 1) {
         second_button->setText("My Landlord");
         second_button->setIcon(QIcon(":images/icons/landlord_icon.png"));
         second_button->setIconSize(icon_size);
-        //connect(second_button, SIGNAL(clicked()), parent, SLOT(changePage(6)));
+        connect(second_button, SIGNAL(clicked()), parent, SLOT(openLandlord()));
     }
 
     QToolButton *notices_button = new QToolButton();
@@ -62,28 +59,28 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     notices_button->setText("Notices");
     notices_button->setIcon(QIcon(":images/icons/notices_icon.png"));
     notices_button->setIconSize(icon_size);
-    //connect(notices_button, SIGNAL(clicked()), parent, SLOT(changePage(7)));
+    connect(notices_button, SIGNAL(clicked()), parent, SLOT(openNotices()));
 
     QToolButton *maintenance_button = new QToolButton();
     maintenance_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     maintenance_button->setText("Maintenance");
     maintenance_button->setIcon(QIcon(":images/icons/maintenance_icon.png"));
     maintenance_button->setIconSize(icon_size);
-    //connect(maintenance_button, SIGNAL(clicked()), parent, SLOT(changePage(8)));
+    connect(maintenance_button, SIGNAL(clicked()), parent, SLOT(openMaintenance()));
 
     QToolButton *messages_button = new QToolButton();
     messages_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     messages_button->setText("Messages");
     messages_button->setIcon(QIcon(":images/icons/messages_icon.png"));
     messages_button->setIconSize(icon_size);
-    //connect(messages_button, SIGNAL(clicked()), parent, SLOT(changePage(9)));
+    connect(messages_button, SIGNAL(clicked()), parent, SLOT(openMessages()));
 
     QToolButton *settings_button = new QToolButton();
     settings_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     settings_button->setText("Settings");
     settings_button->setIcon(QIcon(":images/icons/settings_icon.png"));
     settings_button->setIconSize(icon_size);
-    //connect(settings_button, SIGNAL(clicked()), parent, SLOT(changePage(10)));
+    connect(settings_button, SIGNAL(clicked()), parent, SLOT(openSettings()));
 
     ui->gridLayout->setSpacing(50);
     ui->gridLayout->addWidget(profile_button, 0, 0);
@@ -108,10 +105,6 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 
 QToolButton* MainPage::getMenuButton() {
     return ui->menuButton;
-}
-
-void MainPage::handleButtonClick(int index) {
-    //this->parentWidget()->changePage(index);
 }
 
 

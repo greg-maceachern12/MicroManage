@@ -3,6 +3,8 @@
 Login::Login(QWidget *parent, Profile *pro) : QWidget(parent), ui(new Ui::LoginForm) {
     ui->setupUi(this);
     profile = pro;
+
+    connect(ui->signupButton, SIGNAL(clicked()), parent, SLOT(openWelcome()));
 }
 
 Login::~Login() {
