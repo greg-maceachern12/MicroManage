@@ -19,6 +19,7 @@ class Messages : public QWidget {
 
     private slots:
         void on_refresh_clicked();
+        void on_send_clicked();
 
     private:
         Ui::MessagesForm *ui;
