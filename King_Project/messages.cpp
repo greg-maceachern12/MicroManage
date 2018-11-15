@@ -64,6 +64,8 @@ void Messages::on_send_clicked(){
     QString rid = ui->to->currentText();
     QString username = "mike";
 
+    if(ui->message->toPlainText()!="" && ui->subject->text() != ""){
+
     QSqlQuery query;
        query.prepare("INSERT INTO messages (rid, content, subject, sid, date) "
                   "VALUES (:rid, :content, :subject, :sid, :date)");
@@ -73,6 +75,12 @@ void Messages::on_send_clicked(){
            query.bindValue(":sid", username);
            query.bindValue(":date", QDateTime::currentDateTime());
     query.exec();
+
+    }
+
+    else{
+        ui->error->setText("please fill in all fields");
+    }
 
     ui->message->clear();
     ui->subject->clear();

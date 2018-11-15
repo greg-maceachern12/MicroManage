@@ -67,7 +67,7 @@
      <x>80</x>
      <y>80</y>
      <width>501</width>
-     <height>381</height>
+     <height>371</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -146,7 +146,7 @@
      <x>80</x>
      <y>460</y>
      <width>501</width>
-     <height>101</height>
+     <height>118</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -199,11 +199,22 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="send_message">
-      <property name="text">
-       <string>Send</string>
-      </property>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="error">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="send_message">
+        <property name="text">
+         <string>Send</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
