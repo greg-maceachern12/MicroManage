@@ -30,18 +30,23 @@ public:
     {
         if (MainPageForm->objectName().isEmpty())
             MainPageForm->setObjectName(QString::fromUtf8("MainPageForm"));
-        MainPageForm->resize(647, 487);
+        MainPageForm->resize(829, 590);
         menuButton = new QToolButton(MainPageForm);
         menuButton->setObjectName(QString::fromUtf8("menuButton"));
-        menuButton->setGeometry(QRect(10, 10, 41, 41));
+        menuButton->setGeometry(QRect(20, 20, 45, 45));
         welcomeLabel = new QLabel(MainPageForm);
         welcomeLabel->setObjectName(QString::fromUtf8("welcomeLabel"));
-        welcomeLabel->setGeometry(QRect(120, 40, 411, 61));
+        welcomeLabel->setGeometry(QRect(210, 40, 411, 61));
+        QFont font;
+        font.setPointSize(24);
+        welcomeLabel->setFont(font);
+        welcomeLabel->setAlignment(Qt::AlignCenter);
         gridLayoutWidget = new QWidget(MainPageForm);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(79, 89, 491, 331));
+        gridLayoutWidget->setGeometry(QRect(170, 150, 491, 331));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setSizeConstraint(QLayout::SetFixedSize);
         gridLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(MainPageForm);

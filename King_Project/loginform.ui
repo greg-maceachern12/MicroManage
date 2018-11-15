@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>752</width>
-    <height>617</height>
+    <width>829</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>-180</x>
-     <y>160</y>
-     <width>1061</width>
+     <x>310</x>
+     <y>190</y>
+     <width>211</width>
      <height>41</height>
     </rect>
    </property>
@@ -35,10 +35,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>-180</x>
-     <y>30</y>
-     <width>1061</width>
-     <height>151</height>
+     <x>220</x>
+     <y>60</y>
+     <width>391</width>
+     <height>121</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -54,21 +54,21 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>350</y>
+     <x>360</x>
+     <y>380</y>
      <width>114</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Login</string>
+    <string>Log In</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txtUser">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>230</y>
+     <x>270</x>
+     <y>260</y>
      <width>291</width>
      <height>31</height>
     </rect>
@@ -80,14 +80,32 @@
   <widget class="QLineEdit" name="txtPass">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>270</y>
+     <x>270</x>
+     <y>300</y>
      <width>291</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="signupButton">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>440</y>
+     <width>231</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Don't have an account? Sign up here</string>
    </property>
   </widget>
  </widget>

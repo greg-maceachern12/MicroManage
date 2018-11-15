@@ -16,6 +16,7 @@
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -40,21 +41,21 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QToolButton *menuButton;
 
     void setupUi(QWidget *PropertyMainForm)
     {
         if (PropertyMainForm->objectName().isEmpty())
             PropertyMainForm->setObjectName(QString::fromUtf8("PropertyMainForm"));
         PropertyMainForm->setEnabled(true);
-        PropertyMainForm->resize(738, 547);
+        PropertyMainForm->resize(829, 590);
         PropertyMainForm->setMouseTracking(false);
         PropertyMainForm->setAutoFillBackground(false);
         PropertyMainForm->setStyleSheet(QString::fromUtf8(""));
         titleText = new QTextEdit(PropertyMainForm);
         titleText->setObjectName(QString::fromUtf8("titleText"));
         titleText->setEnabled(true);
-        titleText->setGeometry(QRect(140, 10, 470, 70));
+        titleText->setGeometry(QRect(180, 30, 470, 70));
         QFont font;
         font.setPointSize(36);
         font.setKerning(true);
@@ -72,41 +73,41 @@ public:
         textBrowser = new QTextBrowser(PropertyMainForm);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
         textBrowser->setEnabled(true);
-        textBrowser->setGeometry(QRect(70, 90, 110, 40));
+        textBrowser->setGeometry(QRect(110, 110, 110, 40));
         textBrowser->setFrameShape(QFrame::NoFrame);
         textBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_2 = new QTextBrowser(PropertyMainForm);
         textBrowser_2->setObjectName(QString::fromUtf8("textBrowser_2"));
         textBrowser_2->setEnabled(true);
-        textBrowser_2->setGeometry(QRect(70, 140, 120, 40));
+        textBrowser_2->setGeometry(QRect(110, 160, 120, 40));
         textBrowser_2->setFrameShape(QFrame::NoFrame);
         textBrowser_2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_3 = new QTextBrowser(PropertyMainForm);
         textBrowser_3->setObjectName(QString::fromUtf8("textBrowser_3"));
         textBrowser_3->setEnabled(true);
-        textBrowser_3->setGeometry(QRect(270, 210, 160, 40));
+        textBrowser_3->setGeometry(QRect(310, 230, 160, 40));
         textBrowser_3->setFrameShape(QFrame::NoFrame);
         textBrowser_3->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_3->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_5 = new QTextBrowser(PropertyMainForm);
         textBrowser_5->setObjectName(QString::fromUtf8("textBrowser_5"));
         textBrowser_5->setEnabled(true);
-        textBrowser_5->setGeometry(QRect(190, 90, 500, 40));
+        textBrowser_5->setGeometry(QRect(230, 110, 500, 40));
         textBrowser_5->setFrameShape(QFrame::NoFrame);
         textBrowser_5->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_5->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_6 = new QTextBrowser(PropertyMainForm);
         textBrowser_6->setObjectName(QString::fromUtf8("textBrowser_6"));
         textBrowser_6->setEnabled(true);
-        textBrowser_6->setGeometry(QRect(260, 140, 300, 40));
+        textBrowser_6->setGeometry(QRect(300, 160, 300, 40));
         textBrowser_6->setFrameShape(QFrame::NoFrame);
         textBrowser_6->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser_6->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea = new QScrollArea(PropertyMainForm);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(80, 260, 541, 220));
+        scrollArea->setGeometry(QRect(120, 280, 541, 220));
         scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         scrollArea->setWidgetResizable(true);
@@ -146,22 +147,21 @@ public:
         scrollArea->setWidget(scrollAreaWidgetContents);
         pushButton = new QPushButton(PropertyMainForm);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(40, 490, 190, 50));
+        pushButton->setGeometry(QRect(80, 510, 190, 50));
         QFont font1;
         font1.setPointSize(14);
         pushButton->setFont(font1);
         pushButton_2 = new QPushButton(PropertyMainForm);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(250, 490, 190, 50));
+        pushButton_2->setGeometry(QRect(290, 510, 190, 50));
         pushButton_2->setFont(font1);
         pushButton_3 = new QPushButton(PropertyMainForm);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(460, 490, 190, 50));
+        pushButton_3->setGeometry(QRect(500, 510, 190, 50));
         pushButton_3->setFont(font1);
-        pushButton_4 = new QPushButton(PropertyMainForm);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(0, 0, 61, 50));
-        pushButton_4->setFont(font1);
+        menuButton = new QToolButton(PropertyMainForm);
+        menuButton->setObjectName(QString::fromUtf8("menuButton"));
+        menuButton->setGeometry(QRect(20, 20, 45, 45));
 
         retranslateUi(PropertyMainForm);
 
@@ -221,7 +221,7 @@ public:
         pushButton->setText(QApplication::translate("PropertyMainForm", "Notification", nullptr));
         pushButton_2->setText(QApplication::translate("PropertyMainForm", "Repair request", nullptr));
         pushButton_3->setText(QApplication::translate("PropertyMainForm", "Chat Channel", nullptr));
-        pushButton_4->setText(QApplication::translate("PropertyMainForm", "Menu", nullptr));
+        menuButton->setText(QApplication::translate("PropertyMainForm", "...", nullptr));
     } // retranslateUi
 
 };

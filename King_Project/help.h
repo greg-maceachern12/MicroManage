@@ -11,6 +11,7 @@ class Help : public QWidget {
 
     public:
         explicit Help(QWidget *parent = nullptr);
+        QToolButton* getMenuButton();
         ~Help();
 
     private:

@@ -5,13 +5,16 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
     ui->setupUi(this);
 
+    ui->menuButton->setCheckable(true);
+    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menuButton->setIconSize(QSize(25, 25));
+    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+
+    ui->editButton->setIcon(QIcon(":images/icons/edit_icon.png"));
+    ui->editButton->setIconSize(QSize(45, 45));
+    connect(ui->editButton, SIGNAL(clicked()), this, SLOT(makeEditable()));
 
     //set page size to 689 height to 547 width
-
-
-    editButton = new QToolButton(this);
-    editButton->setText("Edit");
-    editButton->setCheckable(true);
 
     //setting text boxes tp read only
     ui->name->setReadOnly(true);
@@ -21,10 +24,18 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     ui->age->setReadOnly(true);
     ui->landlord->setReadOnly(true);
 
+        QSqlQuery query;
+        qDebug() << username;
+        query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
+        while (query.next()) {
+             ui->name->setText(query.value(0).toString());
+             ui->age->setText(query.value(1).toString());
+             ui->landlord->setText(query.value(2).toString());
+             ui->properties->setText(query.value(3).toString());
+             ui->txtEmail->setText(query.value(4).toString());
+             ui->contact->setText(query.value(5).toString());
 
-    editButton->setGeometry(QRect(QPoint(650, 500), QSize(50, 50)));
-
-    connect(editButton, SIGNAL (released()), this, SLOT (makeEditable()));
+        }
 
 
     /*QSqlQuery query;
@@ -40,6 +51,10 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 
     }*/
 
+}
+
+QToolButton* Profile::getMenuButton() {
+    return ui->menuButton;
 }
 
 Ui::ProfileForm* Profile::getUi() {
@@ -59,9 +74,24 @@ void Profile::updateProfile(QSqlQuery query) {
     }
 }
 
+//void Profile::update(QString* name) {
+//    QSqlQuery query;
+//    qDebug() << name;
+//    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+*name+"'");
+//    while (query.next()) {
+//         ui->name->setText(query.value(0).toString());
+//         ui->age->setText(query.value(1).toString());
+//         ui->landlord->setText(query.value(2).toString());
+//         ui->properties->setText(query.value(3).toString());
+//         ui->txtEmail->setText(query.value(4).toString());
+//         ui->contact->setText(query.value(5).toString());
+
+//    }
+//}
+
 void Profile::makeEditable()
  {
-    if (editButton->isChecked() ){
+    if (ui->editButton->isChecked() ){
         ui->name->setReadOnly(false);
         ui->description->setReadOnly(false);
         ui->contact->setReadOnly(false);
@@ -70,7 +100,7 @@ void Profile::makeEditable()
 
 
         // change the text
-        editButton->setText("Save");
+        //editButton->setText("Save");
 
     }
    else{
@@ -80,28 +110,16 @@ void Profile::makeEditable()
         ui->properties->setReadOnly(true);
         ui->age->setReadOnly(true);
 
-        editButton->setText("Edit");
+        //editButton->setText("Edit");
     }
 
  }
 
+void Profile::refresh()
+ {
+    qDebug() << username;
+ }
 
-//void MyTextEdit::paintEvent(QPaintEvent* event)
-//{
-//	QTextEdit::paintEvent(event);
-//	QPainter p(viewport());
-//	p.fillRect(cursorRect(), QBrush(Qt::white));
-//}
-
-
-
-//void Profile::handleButton()
-// {
-//    // change the text
-//    sideButton->setText("Example");
-//    // resize button
-//    sideButton->resize(100,100);
-// }
 
 
 Profile::~Profile()

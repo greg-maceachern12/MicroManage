@@ -41,100 +41,100 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QPushButton *pushButton_3;
-    QToolButton *toolButton;
+    QToolButton *menuButton;
     QLineEdit *nameLbl;
 
     void setupUi(QWidget *SignUpForm)
     {
         if (SignUpForm->objectName().isEmpty())
             SignUpForm->setObjectName(QString::fromUtf8("SignUpForm"));
-        SignUpForm->resize(834, 571);
+        SignUpForm->resize(829, 590);
         textEdit_5 = new QTextEdit(SignUpForm);
         textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
-        textEdit_5->setGeometry(QRect(330, 370, 41, 21));
+        textEdit_5->setGeometry(QRect(370, 370, 41, 21));
         label_5 = new QLabel(SignUpForm);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(250, 320, 71, 41));
+        label_5->setGeometry(QRect(290, 320, 71, 41));
         label_5->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         textEdit_3 = new QTextEdit(SignUpForm);
         textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
-        textEdit_3->setGeometry(QRect(330, 290, 201, 21));
+        textEdit_3->setGeometry(QRect(370, 290, 201, 21));
         textEdit_7 = new QTextEdit(SignUpForm);
         textEdit_7->setObjectName(QString::fromUtf8("textEdit_7"));
-        textEdit_7->setGeometry(QRect(330, 450, 201, 21));
+        textEdit_7->setGeometry(QRect(370, 450, 201, 21));
         label_7 = new QLabel(SignUpForm);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(230, 400, 91, 41));
+        label_7->setGeometry(QRect(270, 400, 91, 41));
         label_7->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         textEdit_6 = new QTextEdit(SignUpForm);
         textEdit_6->setObjectName(QString::fromUtf8("textEdit_6"));
-        textEdit_6->setGeometry(QRect(330, 410, 201, 21));
+        textEdit_6->setGeometry(QRect(370, 410, 201, 21));
         label_9 = new QLabel(SignUpForm);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(380, 360, 71, 41));
+        label_9->setGeometry(QRect(420, 360, 71, 41));
         label_9->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_9->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_10 = new QLabel(SignUpForm);
         label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(330, 50, 191, 131));
+        label_10->setGeometry(QRect(340, 50, 191, 131));
         label_10->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";\n"
 "font-size: 20px;\n"
 "background-color: white;"));
         label_10->setAlignment(Qt::AlignCenter);
         label_6 = new QLabel(SignUpForm);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(190, 360, 131, 41));
+        label_6->setGeometry(QRect(230, 360, 131, 41));
         label_6->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_4 = new QLabel(SignUpForm);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(240, 280, 81, 41));
+        label_4->setGeometry(QRect(280, 280, 81, 41));
         label_4->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         textEdit_8 = new QTextEdit(SignUpForm);
         textEdit_8->setObjectName(QString::fromUtf8("textEdit_8"));
-        textEdit_8->setGeometry(QRect(460, 370, 71, 21));
+        textEdit_8->setGeometry(QRect(500, 370, 71, 21));
         label_8 = new QLabel(SignUpForm);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(220, 440, 101, 41));
+        label_8->setGeometry(QRect(260, 440, 101, 41));
         label_8->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         textEdit_4 = new QTextEdit(SignUpForm);
         textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
-        textEdit_4->setGeometry(QRect(330, 330, 201, 21));
+        textEdit_4->setGeometry(QRect(370, 330, 201, 21));
         textEdit_2 = new QTextEdit(SignUpForm);
         textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
-        textEdit_2->setGeometry(QRect(330, 250, 201, 21));
+        textEdit_2->setGeometry(QRect(370, 250, 201, 21));
         pushButton_4 = new QPushButton(SignUpForm);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(330, 490, 101, 41));
+        pushButton_4->setGeometry(QRect(370, 490, 101, 41));
         pushButton_4->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";\n"
 "background-color: transparent;\n"
 "font-size: 15px;"));
         label_2 = new QLabel(SignUpForm);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(230, 200, 91, 41));
+        label_2->setGeometry(QRect(270, 200, 91, 41));
         label_2->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_3 = new QLabel(SignUpForm);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(260, 240, 61, 41));
+        label_3->setGeometry(QRect(300, 240, 61, 41));
         label_3->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";"));
         label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         pushButton_3 = new QPushButton(SignUpForm);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(430, 490, 101, 41));
+        pushButton_3->setGeometry(QRect(470, 490, 101, 41));
         pushButton_3->setStyleSheet(QString::fromUtf8("font-family: \"Avenir Next\";\n"
 "background-color: orange;\n"
 "font-size: 15px;"));
-        toolButton = new QToolButton(SignUpForm);
-        toolButton->setObjectName(QString::fromUtf8("toolButton"));
-        toolButton->setGeometry(QRect(20, 10, 51, 51));
+        menuButton = new QToolButton(SignUpForm);
+        menuButton->setObjectName(QString::fromUtf8("menuButton"));
+        menuButton->setGeometry(QRect(20, 20, 45, 45));
         nameLbl = new QLineEdit(SignUpForm);
         nameLbl->setObjectName(QString::fromUtf8("nameLbl"));
-        nameLbl->setGeometry(QRect(330, 210, 201, 21));
+        nameLbl->setGeometry(QRect(370, 210, 201, 21));
 
         retranslateUi(SignUpForm);
 
@@ -190,7 +190,7 @@ public:
         label_2->setText(QApplication::translate("SignUpForm", "Full Name*", nullptr));
         label_3->setText(QApplication::translate("SignUpForm", "Age", nullptr));
         pushButton_3->setText(QApplication::translate("SignUpForm", "Submit", nullptr));
-        toolButton->setText(QApplication::translate("SignUpForm", "...", nullptr));
+        menuButton->setText(QApplication::translate("SignUpForm", "...", nullptr));
     } // retranslateUi
 
 };

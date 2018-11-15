@@ -9,6 +9,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QFileInfo>
+#include <QDebug>
 
 static QSqlDatabase myDb;
 static QString username;

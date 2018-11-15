@@ -1,6 +1,7 @@
 #pragma once
 #include "ui_loginform.h"
 #include "dbmodel.h"
+//#include "micromanage.h"
 #include <QtWidgets>
 #include "profile.h"
 
@@ -12,7 +13,7 @@ class Login : public QWidget {
         Q_OBJECT
 
     public:
-        explicit Login(QWidget *parent, Profile *pro);
+        explicit Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro);
         ~Login();
 
     signals:
@@ -26,5 +27,6 @@ private:
         Ui::LoginForm *ui;
         int us;
         Profile *profile;
+        QStackedWidget *stackedWidget;
 };
 

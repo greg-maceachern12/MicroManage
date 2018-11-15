@@ -1,5 +1,6 @@
 #pragma once
 #include "ui_profileform.h"
+//#include "micromanage.h"
 #include <QtWidgets>
 #include <QPushButton>
 #include <QSqlDatabase>
@@ -22,16 +23,17 @@ class Profile : public QWidget {
         explicit Profile(QWidget *parent = nullptr);
         void updateProfile(QSqlQuery query);
         Ui::ProfileForm* getUi();
+        QToolButton* getMenuButton();
         ~Profile();
 
 
     public slots:
         void makeEditable();
+        void refresh();
 
 
 
     private:
-        QToolButton *editButton;
         Ui::ProfileForm *ui;
 
 };

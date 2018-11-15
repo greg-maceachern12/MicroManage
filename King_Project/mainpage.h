@@ -15,12 +15,12 @@ class MainPage : public QWidget {
 
     public:
         explicit MainPage(QWidget *parent, QString user_name="", int user_role=0);
+        QToolButton* getMenuButton();
         ~MainPage();
 
     signals:
 
     public slots:
-        void handleButtonClick(int);
 
     private:
         Ui::MainPageForm *ui;

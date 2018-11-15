@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>689</width>
-    <height>547</height>
+    <width>829</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>190</y>
+     <x>290</x>
+     <y>290</y>
      <width>271</width>
      <height>51</height>
     </rect>
@@ -33,8 +33,8 @@ font-size: 15px;</string>
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>120</y>
+     <x>290</x>
+     <y>220</y>
      <width>271</width>
      <height>51</height>
     </rect>
@@ -47,38 +47,35 @@ font-size: 15px;</string>
     <string>Forgot Password</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>70</y>
-     <width>691</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;
-font-size: 24px;
-color: #F26552;</string>
-   </property>
-   <property name="text">
-    <string>Settings</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton">
+  <widget class="QToolButton" name="menuButton">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>10</y>
-     <width>51</width>
-     <height>51</height>
+     <y>20</y>
+     <width>45</width>
+     <height>45</height>
     </rect>
    </property>
    <property name="text">
     <string>...</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="headerLabel">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>160</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Settings</string>
    </property>
   </widget>
  </widget>

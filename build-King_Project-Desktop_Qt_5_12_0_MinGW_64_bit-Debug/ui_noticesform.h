@@ -25,26 +25,33 @@ public:
     QLabel *noticesLabel;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
+    QToolButton *addButton;
 
     void setupUi(QWidget *NoticesForm)
     {
         if (NoticesForm->objectName().isEmpty())
             NoticesForm->setObjectName(QString::fromUtf8("NoticesForm"));
-        NoticesForm->resize(712, 520);
+        NoticesForm->resize(829, 590);
         menuButton = new QToolButton(NoticesForm);
         menuButton->setObjectName(QString::fromUtf8("menuButton"));
-        menuButton->setGeometry(QRect(30, 20, 41, 41));
+        menuButton->setGeometry(QRect(20, 20, 45, 45));
         noticesLabel = new QLabel(NoticesForm);
         noticesLabel->setObjectName(QString::fromUtf8("noticesLabel"));
-        noticesLabel->setGeometry(QRect(120, 20, 241, 51));
+        noticesLabel->setGeometry(QRect(110, 20, 211, 51));
+        QFont font;
+        font.setPointSize(24);
+        noticesLabel->setFont(font);
         scrollArea = new QScrollArea(NoticesForm);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(100, 90, 541, 391));
+        scrollArea->setGeometry(QRect(90, 90, 661, 391));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 539, 389));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 659, 389));
         scrollArea->setWidget(scrollAreaWidgetContents);
+        addButton = new QToolButton(NoticesForm);
+        addButton->setObjectName(QString::fromUtf8("addButton"));
+        addButton->setGeometry(QRect(720, 490, 45, 45));
 
         retranslateUi(NoticesForm);
 
@@ -56,6 +63,7 @@ public:
         NoticesForm->setWindowTitle(QApplication::translate("NoticesForm", "Form", nullptr));
         menuButton->setText(QApplication::translate("NoticesForm", "...", nullptr));
         noticesLabel->setText(QApplication::translate("NoticesForm", "Notices", nullptr));
+        addButton->setText(QApplication::translate("NoticesForm", "...", nullptr));
     } // retranslateUi
 
 };
