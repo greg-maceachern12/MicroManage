@@ -10,5 +10,6 @@
     <file>images/icons/maintenance_icon.png</file>
     <file>images/icons/edit_icon.png</file>
     <file>images/icons/plus_icon.png</file>
+    <file>images/icons/micromanage_logo.png</file>
 </qresource>
 </RCC>

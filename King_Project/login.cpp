@@ -31,6 +31,7 @@ void Login::on_pushButton_clicked()
             qry2.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
             profile->updateProfile(qry2);
 
+
         }
         if (count > 1) {
             qDebug() << "Duplicate user and password correct";
