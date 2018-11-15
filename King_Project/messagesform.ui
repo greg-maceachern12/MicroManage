@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>939</width>
-    <height>749</height>
+    <width>829</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,8 +29,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>30</y>
+     <x>170</x>
+     <y>120</y>
      <width>302</width>
      <height>41</height>
     </rect>
@@ -64,54 +64,15 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>80</y>
+     <x>170</x>
+     <y>160</y>
      <width>501</width>
-     <height>371</height>
+     <height>251</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="2">
-     <widget class="QPlainTextEdit" name="message3"/>
-    </item>
-    <item row="5" column="2">
-     <widget class="QPlainTextEdit" name="message6">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QPlainTextEdit" name="message5"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label4">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QPlainTextEdit" name="message1"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label3">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPlainTextEdit" name="message2"/>
-    </item>
-    <item row="3" column="2">
-     <widget class="QPlainTextEdit" name="message4"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label5">
+    <item row="5" column="0">
+     <widget class="QLabel" name="label6">
       <property name="text">
        <string>TextLabel</string>
       </property>
@@ -124,8 +85,14 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label6">
+    <item row="3" column="2">
+     <widget class="QPlainTextEdit" name="message4"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPlainTextEdit" name="message2"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label5">
       <property name="text">
        <string>TextLabel</string>
       </property>
@@ -138,15 +105,48 @@
       </property>
      </widget>
     </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label3">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPlainTextEdit" name="message1"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label4">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPlainTextEdit" name="message5"/>
+    </item>
+    <item row="5" column="2">
+     <widget class="QPlainTextEdit" name="message6">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPlainTextEdit" name="message3"/>
+    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>460</y>
+     <x>170</x>
+     <y>440</y>
      <width>501</width>
-     <height>118</height>
+     <height>91</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -217,6 +217,24 @@
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="headerLabel">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>20</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Messages</string>
+   </property>
   </widget>
  </widget>
  <resources/>
