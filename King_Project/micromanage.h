@@ -1,18 +1,22 @@
 #pragma once
 #include "ui_micromanageform.h"
+#include "welcome.h"
 #include "mainpage.h"
 #include "signup.h"
 #include "settings.h"
 #include "messages.h"
 #include "profile.h"
+#include "notices.h"
+#include "maintenance.h"
 #include "propertymain.h"
 #include "login.h"
 #include "logs.h"
+#include "help.h"
 #include "dbmodel.h"
 
 
 namespace Ui {
-    class MicroManage;
+    class MicroManageForm;
 }
 
 class MicroManage : public QMainWindow
@@ -21,25 +25,30 @@ class MicroManage : public QMainWindow
 
     public:
         explicit MicroManage(QWidget *parent = nullptr);
-        void changePage(int);
         Profile* getProfile();
         ~MicroManage();
 
     signals:
 
     public slots:
-        //void changePage(int index);
         void showSideMenu();
+        void openWelcome();
+        void openMainPage();
         void openSettings();
         void openSignUp();
         void openMessages();
         void openProfile();
-        void openProperty();
+        void openProperties();
         void openLogin();
-        void openLogs();
+        //void openLogs();
+        void openMaintenance();
+        void openNotices();
+        //void openLandlord();
+        void openHelp();
 
     private:
-        Ui::MicroManage *ui;
+        Ui::MicroManageForm *ui;
+        Welcome *welcomePage;
         QDockWidget *sideMenu;
         QStackedWidget *stackedWidget;
         MainPage *mainPage;
@@ -47,9 +56,13 @@ class MicroManage : public QMainWindow
         Settings *settings;
         Messages *messages;
         Profile *profile;
-        PropertyMain *property;
+        PropertyMain *properties;
+        Maintenance *maintenance;
+        Notices *notices;
         Login *login;
         Logs *logs;
+        Profile *landlord;
+        Help *helpPage;
 
 
         void createInterface();

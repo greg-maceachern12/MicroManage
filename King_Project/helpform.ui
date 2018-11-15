@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>717</width>
-    <height>527</height>
+    <width>829</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>110</y>
-     <width>541</width>
+     <y>120</y>
+     <width>651</width>
      <height>391</height>
     </rect>
    </property>
@@ -31,8 +31,8 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>41</width>
-     <height>41</height>
+     <width>45</width>
+     <height>45</height>
     </rect>
    </property>
    <property name="text">
@@ -43,7 +43,7 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>70</y>
+     <y>80</y>
      <width>211</width>
      <height>20</height>
     </rect>
@@ -52,14 +52,19 @@
     <string>Get the most out of MicroManage</string>
    </property>
   </widget>
-  <widget class="QLabel" name="helpLabel">
+  <widget class="QLabel" name="headerLabel">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>110</x>
      <y>20</y>
-     <width>321</width>
+     <width>101</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Help</string>

@@ -11,6 +11,7 @@ class Settings : public QWidget {
 
     public:
         explicit Settings(QWidget *parent);
+        QToolButton* getMenuButton();
         ~Settings();
 
     signals:

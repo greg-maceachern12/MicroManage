@@ -11,6 +11,7 @@ class Notices : public QWidget {
 
     public:
         explicit Notices(QWidget *parent = nullptr);
+        QToolButton* getMenuButton();
         ~Notices();
 
     private:

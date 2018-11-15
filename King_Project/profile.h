@@ -23,6 +23,7 @@ class Profile : public QWidget {
         explicit Profile(QWidget *parent = nullptr);
         void updateProfile(QSqlQuery query);
         Ui::ProfileForm* getUi();
+        QToolButton* getMenuButton();
         ~Profile();
 
 
@@ -33,7 +34,6 @@ class Profile : public QWidget {
 
 
     private:
-        QToolButton *editButton;
         Ui::ProfileForm *ui;
 
 };

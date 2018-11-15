@@ -1,8 +1,13 @@
 #include "login.h"
+#include "micromanage.h"
 
-Login::Login(QWidget *parent, Profile *pro) : QWidget(parent), ui(new Ui::LoginForm) {
+Login::Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro) : QWidget(parent), ui(new Ui::LoginForm) {
     ui->setupUi(this);
+
+    stackedWidget = stacked_widget;
     profile = pro;
+
+    connect(ui->signupButton, SIGNAL(clicked()), parent, SLOT(openWelcome()));
 }
 
 Login::~Login() {
@@ -28,7 +33,7 @@ void Login::on_pushButton_clicked()
             QSqlQuery qry2;
             qry2.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
             profile->updateProfile(qry2);
-
+            stackedWidget->setCurrentIndex(4); // Go to main page
         }
         if (count > 1) {
             qDebug() << "Duplicate user and password correct";
