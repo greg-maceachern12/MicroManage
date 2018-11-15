@@ -5,13 +5,16 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
     ui->setupUi(this);
 
+    ui->menuButton->setCheckable(true);
+    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menuButton->setIconSize(QSize(25, 25));
+    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+
+    ui->editButton->setIcon(QIcon(":images/icons/edit_icon.png"));
+    ui->editButton->setIconSize(QSize(45, 45));
+    connect(ui->editButton, SIGNAL(clicked()), this, SLOT(makeEditable()));
 
     //set page size to 689 height to 547 width
-
-
-    editButton = new QToolButton(this);
-    editButton->setText("Edit");
-    editButton->setCheckable(true);
 
     //setting text boxes tp read only
     ui->name->setReadOnly(true);
@@ -50,6 +53,10 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 
 }
 
+QToolButton* Profile::getMenuButton() {
+    return ui->menuButton;
+}
+
 Ui::ProfileForm* Profile::getUi() {
     return ui;
 }
@@ -84,7 +91,7 @@ void Profile::updateProfile(QSqlQuery query) {
 
 void Profile::makeEditable()
  {
-    if (editButton->isChecked() ){
+    if (ui->editButton->isChecked() ){
         ui->name->setReadOnly(false);
         ui->description->setReadOnly(false);
         ui->contact->setReadOnly(false);
@@ -93,7 +100,7 @@ void Profile::makeEditable()
 
 
         // change the text
-        editButton->setText("Save");
+        //editButton->setText("Save");
 
     }
    else{
@@ -103,7 +110,7 @@ void Profile::makeEditable()
         ui->properties->setReadOnly(true);
         ui->age->setReadOnly(true);
 
-        editButton->setText("Edit");
+        //editButton->setText("Edit");
     }
 
  }

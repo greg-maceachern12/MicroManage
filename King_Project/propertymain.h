@@ -11,6 +11,7 @@ class PropertyMain : public QWidget {
 
     public:
         explicit PropertyMain(QWidget *parent);
+        QToolButton* getMenuButton();
         ~PropertyMain();
 
     signals:

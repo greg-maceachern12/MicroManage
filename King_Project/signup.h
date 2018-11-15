@@ -18,6 +18,7 @@ class SignUp : public QWidget
 
     public:
         explicit SignUp(QWidget *parent);
+        QToolButton* getMenuButton();
         ~SignUp();
 
     signals:

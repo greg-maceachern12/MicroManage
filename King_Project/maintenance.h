@@ -11,6 +11,7 @@ class Maintenance : public QWidget {
 
     public:
         explicit Maintenance(QWidget *parent = nullptr);
+        QToolButton* getMenuButton();
         ~Maintenance();
 
     private:
