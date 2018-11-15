@@ -5,6 +5,7 @@
 #include "profile.h"
 #include "propertymain.h"
 #include "login.h"
+#include "help.h"
 
 MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
@@ -21,6 +22,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     profile = new Profile(this);
     property = new PropertyMain(this);
     login = new Login(this, profile);
+    help = new Help(this);
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -58,6 +60,11 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     loginButton->setObjectName("loginButton");
     connect(loginButton, SIGNAL(clicked()), this, SLOT(openLogin()));
 
+    QPushButton *helpButton = new QPushButton;
+    helpButton->setText("Help");
+    helpButton->setObjectName("helpButton");
+    connect(helpButton, SIGNAL(clicked()), this, SLOT(openhelp()));
+
 
     layout->addWidget(settingsButton);
     layout->addWidget(signUpButton);
@@ -65,6 +72,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     layout->addWidget(profileButton);
     layout->addWidget(propertyButton);
     layout->addWidget(loginButton);
+    layout->addWidget(helpButton);
     multiWidget->setLayout(layout);
     sideMenu->setWidget(multiWidget);
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
@@ -76,6 +84,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(profile);
     stackedWidget->addWidget(property);
     stackedWidget->addWidget(login);
+    stackedWidget->addWidget(help);
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
     stackedWidget->addWidget(line); // Adds another page to the stack with this widget
@@ -135,6 +144,10 @@ void MicroManage::openProperty() {
 
 void MicroManage::openLogin() {
     stackedWidget->setCurrentIndex(6);
+}
+
+void MicroManage::openhelp() {
+    stackedWidget->setCurrentIndex(7);
 }
 
 

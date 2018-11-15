@@ -8,7 +8,7 @@
 #include "propertymain.h"
 #include "login.h"
 #include "dbmodel.h"
-
+#include "help.h"
 
 namespace Ui {
     class MicroManage;
@@ -35,6 +35,7 @@ class MicroManage : public QMainWindow
         void openProfile();
         void openProperty();
         void openLogin();
+        void openhelp();
 
     private:
         Ui::MicroManage *ui;
@@ -47,6 +48,7 @@ class MicroManage : public QMainWindow
         Profile *profile;
         PropertyMain *property;
         Login *login;
+        Help *help;
 
 
         void createInterface();
