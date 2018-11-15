@@ -20,7 +20,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     notices = new Notices(this);
     //logs = new Logs(this);
     maintenance = new Maintenance(this);
-    login = new Login(this, profile);
+    login = new Login(this, stackedWidget, profile);
     helpPage = new Help(this);
 
 
