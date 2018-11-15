@@ -14,10 +14,6 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
-    ui->addButton->setIcon(QIcon(":images/icons/plus_icon.png"));
-    ui->addButton->setIconSize(QSize(45, 45));
-
-
     
     connect(ui->refresh, SIGNAL(clicked()), this, SLOT(on_refresh_clicked()));
     connect(ui->send_message, SIGNAL(clicked()), this, SLOT(on_send_clicked()));
@@ -87,16 +83,17 @@ void Messages::on_send_clicked(){
 
     else{
         ui->error->setText("please fill in all fields");
-    }
 
-<<<<<<< HEAD
-QToolButton* Messages::getMenuButton() {
-    return ui->menuButton;
-=======
+    }
     ui->message->clear();
     ui->subject->clear();
-
 }
+
+
+QToolButton* Messages::getMenuButton() {
+    return ui->menuButton;
+}
+
 
 void Messages::on_refresh_clicked(){
     QSqlQuery qry;
@@ -191,10 +188,8 @@ void Messages::on_refresh_clicked(){
             ui->label6->setText(s2.at(5));
             ui->message6->setPlainText(s.at(5));
         }
-
-
->>>>>>> a1385d804d34780f2f0459420aed7441ab91a525
 }
+
 
 Messages::~Messages() {
     delete ui;
