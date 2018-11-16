@@ -1,5 +1,6 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
+	<file>css/master.qss</file>
 	<file>images/icons/menu_icon.png</file>
     <file>images/icons/profile_icon.png</file>
     <file>images/icons/properties_icon.png</file>
