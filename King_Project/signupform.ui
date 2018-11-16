@@ -35,10 +35,10 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>80</y>
+     <x>300</x>
+     <y>10</y>
      <width>201</width>
-     <height>21</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -168,8 +168,8 @@ font-size: 15px;</string>
   <widget class="QToolButton" name="toolButton">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>180</y>
+     <x>40</x>
+     <y>170</y>
      <width>81</width>
      <height>41</height>
     </rect>
@@ -191,14 +191,14 @@ font-size: 15px;</string>
   <widget class="QLabel" name="logMsg">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>530</y>
+     <x>190</x>
+     <y>520</y>
      <width>381</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>Def</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

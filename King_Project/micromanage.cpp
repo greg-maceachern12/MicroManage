@@ -12,7 +12,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget = new QStackedWidget;
     welcomePage = new Welcome(this);
     mainPage = new MainPage(this);
-    signUp = new SignUp(this);
+    signUp = new SignUp(this, stackedWidget, profile);
     settings = new Settings(this);
     messages = new Messages(this);
     profile = new Profile(this);
@@ -20,7 +20,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     notices = new Notices(this);
     //logs = new Logs(this);
     maintenance = new Maintenance(this);
-    login = new Login(this, stackedWidget, profile);
+    login = new Login(this, stackedWidget, profile, mainPage);
     helpPage = new Help(this);
 
 
@@ -61,14 +61,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     loginButton->setObjectName("loginButton");
     connect(loginButton, SIGNAL(clicked()), this, SLOT(openLogin()));
 
-    /*QPushButton *logsButton = new QPushButton;
-    logsButton->setText("Logs");
-    logsButton->setObjectName("logsButton");
-    connect(logsButton, SIGNAL(clicked()), this, SLOT(openLogs()));*/
-
-
-
-    layout->addWidget(settingsButton);
+    layout->addWidget(profileButton);
     layout->addWidget(signUpButton);
     layout->addWidget(messagesButton);
     layout->addWidget(profileButton);
@@ -181,7 +174,7 @@ void MicroManage::openHelp() {
 
 
 void MicroManage::closeEvent(QCloseEvent *event) {
-    myDb.close(); // FIX
+    dbmodel::myDb.close(); // FIX
     QWidget::closeEvent(event);
 }
 

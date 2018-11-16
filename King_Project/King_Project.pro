@@ -38,7 +38,8 @@ SOURCES += \
     propertymain.cpp \
     profile.cpp \
     login.cpp \
-    logs.cpp
+    logs.cpp \
+    dbmodel.cpp
 
 HEADERS += \
     mainpage.h \
