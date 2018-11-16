@@ -11,11 +11,16 @@ class Messages : public QWidget {
     public:
         explicit Messages(QWidget *parent);
         QToolButton* getMenuButton();
+        void pullMessages();
+        void sendMessage(char message, int uid);
+
         ~Messages();
 
     signals:
 
-    public slots:
+    private slots:
+        void on_refresh_clicked();
+        void on_send_clicked();
 
     private:
         Ui::MessagesForm *ui;

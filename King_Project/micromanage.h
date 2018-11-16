@@ -13,7 +13,7 @@
 #include "logs.h"
 #include "help.h"
 #include "dbmodel.h"
-
+#include "help.h"
 
 namespace Ui {
     class MicroManageForm;
@@ -47,7 +47,7 @@ class MicroManage : public QMainWindow
         void openHelp();
 
     private:
-        Ui::MicroManageForm *ui;
+        Ui::MicroManage *ui;
         Welcome *welcomePage;
         QDockWidget *sideMenu;
         QStackedWidget *stackedWidget;
@@ -67,6 +67,7 @@ class MicroManage : public QMainWindow
 
         void createInterface();
         void closeEvent(QCloseEvent *event);
+
 
 };
 

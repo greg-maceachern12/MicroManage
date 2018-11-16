@@ -1,6 +1,13 @@
 #include "micromanage.h"
+#include "signup.h"
+#include "settings.h"
+#include "messages.h"
+#include "profile.h"
+#include "propertymain.h"
+#include "login.h"
+#include "help.h"
 
-MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManageForm) {
+MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::MicroManage) {
     ui->setupUi(this); // Sets up the .ui file GUI
 
     this->setFixedSize(this->size());
@@ -22,7 +29,6 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     maintenance = new Maintenance(this);
     login = new Login(this, stackedWidget, profile, mainPage);
     helpPage = new Help(this);
-
 
 
     sideMenu->setAllowedAreas(Qt::LeftDockWidgetArea);
@@ -61,13 +67,20 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     loginButton->setObjectName("loginButton");
     connect(loginButton, SIGNAL(clicked()), this, SLOT(openLogin()));
 
+
+    QPushButton *helpButton = new QPushButton;
+    helpButton->setText("Help");
+    helpButton->setObjectName("helpButton");
+    connect(helpButton, SIGNAL(clicked()), this, SLOT(openHelp()));
+
     layout->addWidget(profileButton);
+    layout->addWidget(settingsButton);
     layout->addWidget(signUpButton);
     layout->addWidget(messagesButton);
     layout->addWidget(profileButton);
     layout->addWidget(propertiesButton);
     layout->addWidget(loginButton);
-    //layout->addWidget(logsButton);
+    layout->addWidget(helpButton);
     multiWidget->setLayout(layout);
     sideMenu->setWidget(multiWidget);
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
@@ -83,7 +96,6 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(maintenance);
     stackedWidget->addWidget(messages);
     stackedWidget->addWidget(helpPage);
-
 
     QLineEdit *line = new QLineEdit;
     line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
@@ -152,6 +164,10 @@ void MicroManage::openProperties() {
     stackedWidget->setCurrentIndex(6);
 }
 
+void MicroManage::openHelp() {
+    stackedWidget->setCurrentIndex(10);
+}
+
 
 void MicroManage::openNotices() {
     stackedWidget->setCurrentIndex(7);
@@ -167,10 +183,6 @@ void MicroManage::openMessages() {
     stackedWidget->setCurrentIndex(9);
 }
 
-
-void MicroManage::openHelp() {
-    stackedWidget->setCurrentIndex(10);
-}
 
 
 void MicroManage::closeEvent(QCloseEvent *event) {
