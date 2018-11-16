@@ -1,9 +1,12 @@
 #include "signup.h"
 #include "micromanage.h"
+#include "dbmodel.h"
 #include <string>
 
-SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro) : QWidget(parent), ui(new Ui::SignUpForm) {
+SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main) : QWidget(parent), ui(new Ui::SignUpForm) {
     stackedWidget = stacked_widget;
+    mainPage = main;
+
 
     ui->setupUi(this); // Sets up the .ui file GUI
     ui->menuButton->setCheckable(true);
@@ -48,9 +51,8 @@ void SignUp::createUser() {
                              qryWrite.bindValue(":password", ui->txtPassword->text());
             if (qryWrite.exec()) {
                 ui->logMsg->setText("Success");
-                QSqlQuery qry2;
-                //qry2.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
-                //profile->updateProfile(qry2);
+                dbmodel::username = username;
+                mainPage->updateMain();
                 stackedWidget->setCurrentIndex(4); // Go to main page
             } else {
                qDebug() << qryWrite.lastError();

@@ -19,7 +19,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget = new QStackedWidget;
     welcomePage = new Welcome(this);
     mainPage = new MainPage(this);
-    signUp = new SignUp(this, stackedWidget, profile);
+    signUp = new SignUp(this, stackedWidget, profile, mainPage);
     settings = new Settings(this);
     messages = new Messages(this);
     profile = new Profile(this);

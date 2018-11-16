@@ -1,6 +1,7 @@
 #pragma once
 #include "ui_signupform.h"
 #include "profile.h"
+#include "mainpage.h"
 #include <QtWidgets> // NOTE: This should be here so you don't have to include each type of widget individually
 #include <QSqlDatabase>
 #include <QSqlDriver>
@@ -18,7 +19,7 @@ class SignUp : public QWidget
         Q_OBJECT
 
     public:
-        explicit SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro);
+        explicit SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main);
         QToolButton* getMenuButton();
         ~SignUp();
 
@@ -30,5 +31,6 @@ class SignUp : public QWidget
     private:
         Ui::SignUpForm *ui;
         Profile *profile;
+        MainPage *mainPage;
         QStackedWidget *stackedWidget;
 };
