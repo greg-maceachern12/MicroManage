@@ -18,8 +18,8 @@
     <rect>
      <x>40</x>
      <y>30</y>
-     <width>71</width>
-     <height>71</height>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="text">
@@ -120,6 +120,27 @@
     <string>Already have an account? Log in here</string>
    </property>
   </widget>
+  <widget class="QWidget" name="Welcome" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <zorder>Welcome</zorder>
+  <zorder>logoLabel</zorder>
+  <zorder>welcomeLabel</zorder>
+  <zorder>micromanageLabel</zorder>
+  <zorder>chooseLabel</zorder>
+  <zorder>landlordButton</zorder>
+  <zorder>tenantButton</zorder>
+  <zorder>loginButton</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -441,6 +441,28 @@ p, li { white-space: pre-wrap; }
     <string>...</string>
    </property>
   </widget>
+  <widget class="QWidget" name="Properties" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>Properties</zorder>
+  <zorder>titleText</zorder>
+  <zorder>textBrowser</zorder>
+  <zorder>textBrowser_2</zorder>
+  <zorder>textBrowser_3</zorder>
+  <zorder>textBrowser_5</zorder>
+  <zorder>textBrowser_6</zorder>
+  <zorder>scrollArea</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>menuButton</zorder>
  </widget>
  <resources/>
  <connections/>

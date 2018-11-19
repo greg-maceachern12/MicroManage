@@ -1,5 +1,0 @@
-
-
-#profileButton, #secondButton, #noticesButton, #maintenanceButton, #messagesButton, #settingsButton {
-	background: transparent;
-}

@@ -29,9 +29,9 @@
   <widget class="QLabel" name="welcomeLabel">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>80</x>
      <y>40</y>
-     <width>411</width>
+     <width>671</width>
      <height>61</height>
     </rect>
    </property>
@@ -62,6 +62,20 @@
     </property>
    </layout>
   </widget>
+  <widget class="QWidget" name="MainPage" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>MainPage</zorder>
+  <zorder>menuButton</zorder>
+  <zorder>welcomeLabel</zorder>
+  <zorder>gridLayoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>
