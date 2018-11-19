@@ -202,6 +202,7 @@ void MicroManage::showSideMenu() {
     messages->getMenuButton()->setChecked(sideMenuIsVisible);
     profile->getMenuButton()->setChecked(sideMenuIsVisible);
     properties->getMenuButton()->setChecked(sideMenuIsVisible);
+    helpPage->getMenuButton()->setChecked(sideMenuIsVisible);
     repaint(); // Forces the repaint so the menu opens and closes without glitch
 }
 
