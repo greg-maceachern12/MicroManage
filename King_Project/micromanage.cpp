@@ -119,7 +119,11 @@ void MicroManage::setUpDefaultMenu() {
     QPushButton *logout_menu_button = new QPushButton("Logout");
     logout_menu_button->setObjectName("logoutMenuButton");
     logout_menu_button->setMinimumHeight(25);
-    connect(logout_menu_button, &QPushButton::clicked, this, [this] {openWelcome(); showSideMenu();});
+    connect(logout_menu_button, &QPushButton::clicked, this, [this] {
+        openWelcome();
+        showSideMenu();
+        ui->statusBar->showMessage("You have successfully logged out.", 10000);
+    });
 
     QVBoxLayout *label_layout = new QVBoxLayout();
     label_layout->setContentsMargins(0, 0, 0, 0);

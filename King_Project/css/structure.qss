@@ -1,18 +1,19 @@
 /* Master Style Sheet for MicroManage application */
 
+
 /* Background colours for pages */
 #Welcome, #SignUp, #MainPage, #Profile, #Properties, #Messages, #Maintenance, 
 #Notices, #Settings {
 	background: white;
 }
 
-#Login {
-	background: rgb(242, 101, 34);
 
+#statusBar, #Login, #sideMenu::title, #menuButtonWidget {
+	background-color: rgb(242, 101, 34);
 }
 
-#sideMenu::title, #menuButtonWidget {
-	background-color: rgb(242, 101, 34);
+#statusBar {
+	color: white;
 }
 
 #getStartedLabel {
