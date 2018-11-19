@@ -26,6 +26,7 @@ class MicroManage : public QMainWindow
     public:
         explicit MicroManage(QWidget *parent = nullptr);
         Profile* getProfile();
+        void setUserRole(int);
         ~MicroManage();
 
     signals:
@@ -63,11 +64,14 @@ class MicroManage : public QMainWindow
         Logs *logs;
         Profile *landlord;
         Help *helpPage;
+        QList<QPushButton *> menuButtons;
 
+        int userRole;
 
         void createInterface();
+        void setUpDefaultMenu();
+        void setUpCreateAccountMenu();
         void closeEvent(QCloseEvent *event);
-
 
 };
 

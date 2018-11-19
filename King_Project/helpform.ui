@@ -268,6 +268,36 @@
     <string>email.</string>
    </property>
   </widget>
+  <widget class="QWidget" name="Help" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>Help</zorder>
+  <zorder>helpDocEdit</zorder>
+  <zorder>menuButton</zorder>
+  <zorder>quoteLabel</zorder>
+  <zorder>headerLabel</zorder>
+  <zorder>quoteLabel_2</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label_13</zorder>
+  <zorder>label_14</zorder>
  </widget>
  <resources/>
  <connections/>

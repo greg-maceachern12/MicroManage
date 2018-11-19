@@ -178,6 +178,27 @@ p, li { white-space: pre-wrap; }
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QWidget" name="Profile" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>Profile</zorder>
+  <zorder>landlord</zorder>
+  <zorder>contact</zorder>
+  <zorder>properties</zorder>
+  <zorder>name</zorder>
+  <zorder>description</zorder>
+  <zorder>txtEmail</zorder>
+  <zorder>age</zorder>
+  <zorder>refresh</zorder>
+  <zorder>menuButton</zorder>
+  <zorder>editButton</zorder>
  </widget>
  <resources/>
  <connections/>

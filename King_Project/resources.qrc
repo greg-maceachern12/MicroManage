@@ -1,5 +1,12 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
+	<file>css/structure.qss</file>
+	<file>css/fonts/AvenirNextLTPro-Regular.otf</file>
+	<file>css/fonts/AvenirNextLTPro-MediumCn.otf</file>
+	<file>css/fonts/AvenirNextLTPro-MediumCnIt.otf</file>
+	<file>css/fonts/AvenirNextLTPro-Demi.otf</file>
+	<file>css/fonts/AvenirNextLTPro-Bold.otf</file>
+	
 	<file>images/icons/menu_icon.png</file>
     <file>images/icons/profile_icon.png</file>
     <file>images/icons/properties_icon.png</file>
