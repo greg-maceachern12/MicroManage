@@ -200,6 +200,8 @@ void MicroManage::showSideMenu() {
     signUp->getMenuButton()->setChecked(sideMenuIsVisible);
     settings->getMenuButton()->setChecked(sideMenuIsVisible);
     messages->getMenuButton()->setChecked(sideMenuIsVisible);
+    notices->getMenuButton()->setChecked(sideMenuIsVisible);
+    maintenance->getMenuButton()->setChecked(sideMenuIsVisible);
     profile->getMenuButton()->setChecked(sideMenuIsVisible);
     properties->getMenuButton()->setChecked(sideMenuIsVisible);
     helpPage->getMenuButton()->setChecked(sideMenuIsVisible);
