@@ -134,6 +134,9 @@ void MicroManage::setUpDefaultMenu() {
         openWelcome();
         showSideMenu();
         ui->statusBar->showMessage("You have successfully logged out.", 10000);
+        if (!login->getRememberMe()->isChecked()) {
+            login->clearInputs();
+        }
     });
 
     QVBoxLayout *label_layout = new QVBoxLayout();

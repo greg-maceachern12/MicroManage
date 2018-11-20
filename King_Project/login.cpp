@@ -16,6 +16,15 @@ Login::~Login() {
 }
 
 
+QCheckBox* Login::getRememberMe() {
+    return ui->rememberMe;
+}
+
+void Login::clearInputs() {
+    ui->txtUser->clear();
+    ui->txtPass->clear();
+}
+
 void Login::on_pushButton_clicked() {
     qDebug() << dbmodel::username;
     QString txt_username, txt_password;

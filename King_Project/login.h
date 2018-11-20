@@ -15,6 +15,8 @@ class Login : public QWidget {
 
     public:
         explicit Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main);
+        QCheckBox* getRememberMe();
+        void clearInputs();
         ~Login();
 
     signals:
