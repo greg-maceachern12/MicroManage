@@ -15,16 +15,18 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(createUser()));
     connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(cancelAction()));
 
-
 }
+
 
 QToolButton* SignUp::getMenuButton() {
     return ui->menuButton;
 }
 
+
 SignUp::~SignUp() {
     delete ui;
 }
+
 
 void SignUp::createUser() {
     QString username = ui->txtUid->text();
@@ -64,14 +66,20 @@ void SignUp::createUser() {
 
 }
 
+
 void SignUp::setLandlord() {
     ui->txtType->setText("Landlord");
 }
+
 
 void SignUp::setTenant() {
     ui->txtType->setText("Tenant");
 }
 
+
 void SignUp::cancelAction() {
+    if (ui->menuButton->isChecked()) {
+        ui->menuButton->click();
+    }
     stackedWidget->setCurrentIndex(0);
 }

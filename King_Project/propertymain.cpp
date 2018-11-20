@@ -9,9 +9,11 @@ PropertyMain::PropertyMain(QWidget *parent) : QWidget(parent), ui(new Ui::Proper
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 }
 
+
 QToolButton* PropertyMain::getMenuButton() {
     return ui->menuButton;
 }
+
 
 PropertyMain::~PropertyMain() {
     delete ui;

@@ -13,6 +13,7 @@ Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm) {
 
 }
 
+
 QToolButton* Notices::getMenuButton() {
     return ui->menuButton;
 }

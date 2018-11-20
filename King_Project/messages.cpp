@@ -48,9 +48,13 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->to->addItem("jinzao");
 
 }
+
+
 void Messages::pullMessages() {
 
 }
+
+
 void Messages::sendMessage(char message, int uid){
        QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
        db.setHostName("michaelbriggs03651.ipagemysql.com");
@@ -59,6 +63,7 @@ void Messages::sendMessage(char message, int uid){
        db.setPassword("password");
        bool ok = db.open();
 }
+
 
 void Messages::on_send_clicked(){
     qDebug() << QDateTime::currentDateTime();

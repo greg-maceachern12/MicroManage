@@ -12,13 +12,16 @@ Settings::Settings(QWidget *parent) : QWidget(parent), ui(new Ui::SettingsForm) 
     connect(ui->questionButton, SIGNAL(clicked()), this, SLOT(emailLink()));
 }
 
+
 QToolButton* Settings::getMenuButton() {
     return ui->menuButton;
 }
 
+
 void Settings::emailLink(){
     QDesktopServices::openUrl(QUrl("mailto:15xc16@queensu.ca"));
 }
+
 
 Settings::~Settings() {
     delete ui;

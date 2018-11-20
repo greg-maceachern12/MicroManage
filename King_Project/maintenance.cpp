@@ -20,9 +20,11 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
 
 }
 
+
 QToolButton* Maintenance::getMenuButton() {
     return ui->menuButton;
 }
+
 
 void Maintenance::refreshLogs() {
     QSqlQueryModel * modal = new QSqlQueryModel();
@@ -34,6 +36,7 @@ void Maintenance::refreshLogs() {
     ui->tableView->setModel(modal);
 
 }
+
 
 Maintenance::~Maintenance() {
     delete ui;

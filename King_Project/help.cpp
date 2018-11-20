@@ -9,9 +9,11 @@ Help::Help(QWidget *parent) : QWidget(parent), ui(new Ui::HelpForm) {
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 }
 
+
 QToolButton* Help::getMenuButton() {
     return ui->menuButton;
 }
+
 
 Help::~Help() {
     delete ui;
