@@ -7,7 +7,6 @@
 	background: white;
 }
 
-
 #statusBar, #Login, #sideMenu::title, #menuButtonWidget {
 	background-color: rgb(242, 101, 34);
 }
