@@ -7,13 +7,13 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     stackedWidget = stacked_widget;
     mainPage = main;
 
-
     ui->setupUi(this); // Sets up the .ui file GUI
     ui->menuButton->setCheckable(true);
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(createUser()));
+    connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(cancelAction()));
 
 
 }
@@ -62,4 +62,16 @@ void SignUp::createUser() {
         }
     }
 
+}
+
+void SignUp::setLandlord() {
+    ui->txtType->setText("Landlord");
+}
+
+void SignUp::setTenant() {
+    ui->txtType->setText("Tenant");
+}
+
+void SignUp::cancelAction() {
+    stackedWidget->setCurrentIndex(0);
 }

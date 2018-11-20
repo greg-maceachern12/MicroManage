@@ -26,7 +26,11 @@ class SignUp : public QWidget
     signals:
 
     public slots:
-    void createUser();
+        void createUser();
+        void setLandlord();
+        void setTenant();
+        void cancelAction();
+
 
     private:
         Ui::SignUpForm *ui;
