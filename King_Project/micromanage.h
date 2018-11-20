@@ -10,7 +10,6 @@
 #include "maintenance.h"
 #include "propertymain.h"
 #include "login.h"
-#include "logs.h"
 #include "help.h"
 #include "dbmodel.h"
 #include "help.h"
@@ -42,7 +41,6 @@ class MicroManage : public QMainWindow
         void openProfile();
         void openProperties();
         void openLogin();
-        //void openLogs();
         void openMaintenance();
         void openNotices();
         void openHelp();
@@ -61,7 +59,6 @@ class MicroManage : public QMainWindow
         Maintenance *maintenance;
         Notices *notices;
         Login *login;
-        Logs *logs;
         Profile *landlord;
         Help *helpPage;
         QList<QPushButton *> menuButtons;

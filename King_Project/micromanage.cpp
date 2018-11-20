@@ -54,9 +54,11 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
 
 }
 
+
 void MicroManage::setUserRole(int role) {
     userRole = role;
 }
+
 
 void MicroManage::setUpDefaultMenu() {
     QWidget* menu_button_widget = new QWidget();
@@ -143,6 +145,7 @@ void MicroManage::setUpDefaultMenu() {
     sideMenu->setWidget(menu_button_widget);
     menuButtons = menu_button_widget->findChildren<QPushButton *>();
 }
+
 
 void MicroManage::setUpCreateAccountMenu() {
     QWidget* menu_button_widget = new QWidget();

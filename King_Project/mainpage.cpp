@@ -102,6 +102,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 
 }
 
+
 QToolButton* MainPage::getMenuButton() {
     return ui->menuButton;
 }
@@ -110,6 +111,7 @@ QToolButton* MainPage::getMenuButton() {
 MainPage::~MainPage() {
     delete ui;
 }
+
 
 void MainPage::updateMain() {
     QSqlQuery query;

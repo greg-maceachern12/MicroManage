@@ -10,12 +10,13 @@ Login::Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Main
     connect(ui->signupButton, SIGNAL(clicked()), parent, SLOT(openWelcome()));
 }
 
+
 Login::~Login() {
     delete ui;
 }
 
-void Login::on_pushButton_clicked()
-{
+
+void Login::on_pushButton_clicked() {
     qDebug() << dbmodel::username;
     QString txt_username, txt_password;
     txt_username = ui->txtUser->text();

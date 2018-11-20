@@ -90,6 +90,7 @@ void Profile::updateProfile() {
 //    }
 //}
 
+
 void Profile::makeEditable()
  {
     if (ui->editButton->isChecked() ){
@@ -116,11 +117,11 @@ void Profile::makeEditable()
 
  }
 
+
 void Profile::refresh()
  {
     qDebug() << dbmodel::username;
  }
-
 
 
 Profile::~Profile()
