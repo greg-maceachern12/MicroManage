@@ -40,6 +40,10 @@
 	color: rgb(242, 101, 34);
 }
 
+#welcomeToLabel {
+	color: rgb(242, 101, 34);
+}
+
 
 #signupButton, #loginButton, #profileButton, #secondButton, #noticesButton, 
 #maintenanceButton, #messagesButton, #settingsButton {
