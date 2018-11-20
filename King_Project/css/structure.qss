@@ -11,11 +11,8 @@
 	background-color: rgb(242, 101, 34);
 }
 
-#statusBar {
-	color: white;
-}
 
-#getStartedLabel {
+#statusBar, #getStartedLabel {
 	color: white;
 }
 

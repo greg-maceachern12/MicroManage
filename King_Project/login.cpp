@@ -8,6 +8,9 @@ Login::Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Main
     profile = pro;
     mainPage = main;
     statusBar = status_bar;
+    ui->micromanageLabel->setPixmap(QPixmap(":images/icons/micromanage_name.png"));
+    ui->micromanageLabel->setScaledContents(true);
+
     connect(ui->signupButton, SIGNAL(clicked()), parent, SLOT(openWelcome()));
 }
 

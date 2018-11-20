@@ -35,29 +35,13 @@
      <height>51</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Welcome to </string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="micromanageLabel">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>100</y>
-     <width>241</width>
-     <height>41</height>
-    </rect>
-   </property>
    <property name="font">
     <font>
-     <pointsize>24</pointsize>
+     <pointsize>35</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>MICROMANAGE</string>
+    <string>Welcome to </string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -66,14 +50,22 @@
   <widget class="QLabel" name="chooseLabel">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>180</y>
-     <width>191</width>
-     <height>16</height>
+     <x>300</x>
+     <y>190</y>
+     <width>241</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Choose your position to begin</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="landlordButton">
@@ -133,14 +125,27 @@
     <bool>false</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="micromanageLabel">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>90</y>
+     <width>401</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>Welcome</zorder>
   <zorder>logoLabel</zorder>
   <zorder>welcomeToLabel</zorder>
-  <zorder>micromanageLabel</zorder>
   <zorder>chooseLabel</zorder>
   <zorder>landlordButton</zorder>
   <zorder>tenantButton</zorder>
   <zorder>loginButton</zorder>
+  <zorder>micromanageLabel</zorder>
  </widget>
  <resources/>
  <connections/>
