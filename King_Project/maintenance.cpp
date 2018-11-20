@@ -15,8 +15,10 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
     ui->menuButton->setCheckable(true);
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
+    ui->refresh->setIcon(QIcon(":images/icons/refresh_icon.png"));
+    ui->refresh->setIconSize(QSize(45, 45));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-       connect(ui->refresh, SIGNAL(clicked()), this, SLOT(refreshLogs()));
+    connect(ui->refresh, SIGNAL(clicked()), this, SLOT(refreshLogs()));
 
 }
 
