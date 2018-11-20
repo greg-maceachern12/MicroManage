@@ -19,7 +19,7 @@ class SignUp : public QWidget
         Q_OBJECT
 
     public:
-        explicit SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main);
+        explicit SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main, QStatusBar *status_bar);
         QToolButton* getMenuButton();
         ~SignUp();
 
@@ -37,4 +37,5 @@ class SignUp : public QWidget
         Profile *profile;
         MainPage *mainPage;
         QStackedWidget *stackedWidget;
+        QStatusBar *statusBar;
 };

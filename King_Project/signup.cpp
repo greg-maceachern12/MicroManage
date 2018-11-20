@@ -3,9 +3,10 @@
 #include "dbmodel.h"
 #include <string>
 
-SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main) : QWidget(parent), ui(new Ui::SignUpForm) {
+SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main, QStatusBar *status_bar) : QWidget(parent), ui(new Ui::SignUpForm) {
     stackedWidget = stacked_widget;
     mainPage = main;
+    statusBar = status_bar;
 
     ui->setupUi(this); // Sets up the .ui file GUI
     ui->menuButton->setCheckable(true);
@@ -52,7 +53,7 @@ void SignUp::createUser() {
                              qryWrite.bindValue(":phone", ui->txtPhone->text());
                              qryWrite.bindValue(":password", ui->txtPassword->text());
             if (qryWrite.exec()) {
-                ui->logMsg->setText("Success");
+                statusBar->showMessage("Success! Account created.");
                 dbmodel::username = username;
                 stackedWidget->setCurrentIndex(3);
                 if (ui->menuButton->isChecked()) {
@@ -62,7 +63,7 @@ void SignUp::createUser() {
                qDebug() << qryWrite.lastError();
             }
         } else {
-            ui->logMsg->setText("Error. User already exists");
+            statusBar->showMessage("ERROR: User already exists.");
         }
     }
 
@@ -83,5 +84,6 @@ void SignUp::cancelAction() {
     if (ui->menuButton->isChecked()) {
         ui->menuButton->click();
     }
+    statusBar->clearMessage();
     stackedWidget->setCurrentIndex(0);
 }
