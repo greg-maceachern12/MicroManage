@@ -130,6 +130,19 @@
     <bool>false</bool>
    </property>
   </widget>
+  <widget class="QCheckBox" name="rememberMe">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>350</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remember me</string>
+   </property>
+  </widget>
   <zorder>Login</zorder>
   <zorder>label_2</zorder>
   <zorder>label</zorder>
@@ -137,6 +150,7 @@
   <zorder>txtUser</zorder>
   <zorder>txtPass</zorder>
   <zorder>signupButton</zorder>
+  <zorder>rememberMe</zorder>
  </widget>
  <resources/>
  <connections/>
