@@ -12,6 +12,8 @@ INPUT(
 ./release\propertymain.o
 ./release\profile.o
 ./release\login.o
+./release\logs.o
+./release\qrc_resources.o
 ./release\moc_mainpage.o
 ./release\moc_micromanage.o
 ./release\moc_welcome.o
@@ -24,4 +26,5 @@ INPUT(
 ./release\moc_propertymain.o
 ./release\moc_profile.o
 ./release\moc_login.o
+./release\moc_logs.o
 );

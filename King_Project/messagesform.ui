@@ -67,7 +67,7 @@
      <x>170</x>
      <y>160</y>
      <width>501</width>
-     <height>251</height>
+     <height>496</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -146,7 +146,7 @@
      <x>170</x>
      <y>440</y>
      <width>501</width>
-     <height>91</height>
+     <height>111</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -236,6 +236,22 @@
     <string>Messages</string>
    </property>
   </widget>
+  <widget class="QWidget" name="Messages" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>Messages</zorder>
+  <zorder>menuButton</zorder>
+  <zorder>horizontalLayoutWidget</zorder>
+  <zorder>gridLayoutWidget</zorder>
+  <zorder>horizontalLayoutWidget_2</zorder>
+  <zorder>headerLabel</zorder>
  </widget>
  <resources/>
  <connections/>

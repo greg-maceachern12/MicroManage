@@ -4,6 +4,7 @@
 
 MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(parent), ui(new Ui::MainPageForm) {
     ui->setupUi(this); // Sets up the .ui file GUI
+
     dbmodel::myDb = QSqlDatabase::addDatabase("QSQLITE");
     dbmodel::myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/King_Project/micro.db");
 
@@ -24,6 +25,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 
     // Set up buttons with icons and texts in grid layout
     QToolButton *profile_button = new QToolButton();
+    profile_button->setObjectName("profileButton");
     profile_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     profile_button->setText("My Profile");
     profile_button->setIcon(QIcon(":images/icons/profile_icon.png"));
@@ -32,6 +34,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 
 
     QToolButton *second_button = new QToolButton();
+    second_button->setObjectName("secondButton");
     second_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     if (userRole == 0) {
         second_button->setText("My Properties");
@@ -47,6 +50,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     }
 
     QToolButton *notices_button = new QToolButton();
+    notices_button->setObjectName("noticesButton");
     notices_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     notices_button->setText("Notices");
     notices_button->setIcon(QIcon(":images/icons/notices_icon.png"));
@@ -54,6 +58,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     connect(notices_button, SIGNAL(clicked()), parent, SLOT(openNotices()));
 
     QToolButton *maintenance_button = new QToolButton();
+    maintenance_button->setObjectName("maintenanceButton");
     maintenance_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     maintenance_button->setText("Maintenance");
     maintenance_button->setIcon(QIcon(":images/icons/maintenance_icon.png"));
@@ -61,6 +66,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     connect(maintenance_button, SIGNAL(clicked()), parent, SLOT(openMaintenance()));
 
     QToolButton *messages_button = new QToolButton();
+    messages_button->setObjectName("messagesButton");
     messages_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     messages_button->setText("Messages");
     messages_button->setIcon(QIcon(":images/icons/messages_icon.png"));
@@ -68,6 +74,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     connect(messages_button, SIGNAL(clicked()), parent, SLOT(openMessages()));
 
     QToolButton *settings_button = new QToolButton();
+    settings_button->setObjectName("settingsButton");
     settings_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     settings_button->setText("Settings");
     settings_button->setIcon(QIcon(":images/icons/settings_icon.png"));

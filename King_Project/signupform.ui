@@ -347,6 +347,37 @@ font-size: 15px;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QWidget" name="SignUp" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>SignUp</zorder>
+  <zorder>textEdit_5</zorder>
+  <zorder>label_5</zorder>
+  <zorder>textEdit_3</zorder>
+  <zorder>textEdit_7</zorder>
+  <zorder>label_7</zorder>
+  <zorder>textEdit_6</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_4</zorder>
+  <zorder>textEdit_8</zorder>
+  <zorder>label_8</zorder>
+  <zorder>textEdit_4</zorder>
+  <zorder>textEdit_2</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>menuButton</zorder>
+  <zorder>nameLbl</zorder>
  </widget>
  <resources/>
  <connections/>

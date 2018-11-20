@@ -80,6 +80,21 @@
     <string>...</string>
    </property>
   </widget>
+  <widget class="QWidget" name="Notices" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>829</width>
+     <height>590</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>Notices</zorder>
+  <zorder>menuButton</zorder>
+  <zorder>headerLabel</zorder>
+  <zorder>scrollArea</zorder>
+  <zorder>addButton</zorder>
  </widget>
  <resources/>
  <connections/>

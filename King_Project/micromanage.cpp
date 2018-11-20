@@ -14,8 +14,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
 
     // IMPORTANT: This initializes your Qt attributes for this class
     sideMenu = new QDockWidget("", this);
-    QWidget* multiWidget = new QWidget();
-    QVBoxLayout* layout = new QVBoxLayout();
+    sideMenu->setObjectName("sideMenu");
     stackedWidget = new QStackedWidget;
     welcomePage = new Welcome(this);
     mainPage = new MainPage(this);
@@ -25,7 +24,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     profile = new Profile(this);
     properties = new PropertyMain(this);
     notices = new Notices(this);
-    //logs = new Logs(this);
+    logs = new Logs(this);
     maintenance = new Maintenance(this);
     login = new Login(this, stackedWidget, profile, mainPage);
     helpPage = new Help(this);
@@ -37,52 +36,8 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     sideMenu->setFixedWidth(150);
     sideMenu->toggleViewAction()->setVisible(false); // This hides the action so you don't see it when you RMB-click on the QDockWidget
 
-    QPushButton *signUpButton = new QPushButton;
-    signUpButton->setText("Sign Up");
-    signUpButton->setObjectName("signUpButton");
-    connect(signUpButton, SIGNAL(clicked()), this, SLOT(openSignUp()));
-
-    QPushButton *settingsButton = new QPushButton;
-    settingsButton->setText("Settings");
-    settingsButton->setObjectName("settingsButton");
-    connect(settingsButton, SIGNAL(clicked()), this, SLOT(openSettings()));
-
-    QPushButton *messagesButton = new QPushButton;
-    messagesButton->setText("Messages");
-    messagesButton->setObjectName("messagesButton");
-    connect(messagesButton, SIGNAL(clicked()), this, SLOT(openMessages()));
-
-    QPushButton *profileButton = new QPushButton;
-    profileButton->setText("Profile");
-    profileButton->setObjectName("profileButton");
-    connect(profileButton, SIGNAL(clicked()), this, SLOT(openProfile()));
-
-    QPushButton *propertiesButton = new QPushButton;
-    propertiesButton->setText("Properties");
-    propertiesButton->setObjectName("propertyButton");
-    connect(propertiesButton, SIGNAL(clicked()), this, SLOT(openProperties()));
-
-    QPushButton *loginButton = new QPushButton;
-    loginButton->setText("Login");
-    loginButton->setObjectName("loginButton");
-    connect(loginButton, SIGNAL(clicked()), this, SLOT(openLogin()));
-
-
-    QPushButton *helpButton = new QPushButton;
-    helpButton->setText("Help");
-    helpButton->setObjectName("helpButton");
-    connect(helpButton, SIGNAL(clicked()), this, SLOT(openHelp()));
-
-    layout->addWidget(profileButton);
-    layout->addWidget(settingsButton);
-    layout->addWidget(signUpButton);
-    layout->addWidget(messagesButton);
-    layout->addWidget(profileButton);
-    layout->addWidget(propertiesButton);
-    layout->addWidget(loginButton);
-    layout->addWidget(helpButton);
-    multiWidget->setLayout(layout);
-    sideMenu->setWidget(multiWidget);
+    setUserRole(0);
+    setUpDefaultMenu();
     addDockWidget(Qt::LeftDockWidgetArea, sideMenu);
 
     stackedWidget->addWidget(welcomePage);
@@ -96,12 +51,137 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(maintenance);
     stackedWidget->addWidget(messages);
     stackedWidget->addWidget(helpPage);
+    setCentralWidget(stackedWidget);
 
-    QLineEdit *line = new QLineEdit;
-    line->setText("Hello! You're on the second page, which shows the other widget. This would be your custom widget.");
-    setCentralWidget(stackedWidget); //
+}
 
-    //stackedWidget->setCurrentIndex(2);
+void MicroManage::setUserRole(int role) {
+    userRole = role;
+}
+
+void MicroManage::setUpDefaultMenu() {
+    QWidget* menu_button_widget = new QWidget();
+    menu_button_widget->setObjectName("menuButtonWidget");
+    QVBoxLayout *menu_layout = new QVBoxLayout();
+    menu_layout->setContentsMargins(0, 50, 0, 50);
+    QLabel *logo_label = new QLabel();
+    logo_label->setFixedSize(120, 120);
+    logo_label->setPixmap(QPixmap(":images/icons/micromanage_logo.png"));
+    logo_label->setScaledContents(true);
+
+    QPushButton *home_menu_button = new QPushButton("Home");
+    home_menu_button->setObjectName("homeMenuButton");
+    home_menu_button->setMinimumHeight(25);
+    home_menu_button->setCheckable(true);
+    home_menu_button->setChecked(true);
+    connect(home_menu_button, &QPushButton::clicked, this, [this] { openMainPage(); });
+    QPushButton *profile_menu_button = new QPushButton("My Profile");
+    profile_menu_button->setObjectName("profileMenuButton");
+    profile_menu_button->setMinimumHeight(25);
+    profile_menu_button->setCheckable(true);
+    connect(profile_menu_button, &QPushButton::clicked, this, [this] { openProfile(); });
+    QPushButton *second_menu_button = new QPushButton();
+    second_menu_button->setObjectName("secondMenuButton");
+    second_menu_button->setMinimumHeight(25);
+    second_menu_button->setCheckable(true);
+    if (userRole == 0) {
+        second_menu_button->setText("My Properties");
+        connect(second_menu_button, &QPushButton::clicked, this, [this] { openProperties(); });
+    }
+    if (userRole == 1) {
+        second_menu_button->setText("My Landlord");
+    }
+    QPushButton *notices_menu_button = new QPushButton("Notices");
+    notices_menu_button->setObjectName("noticesMenuButton");
+    notices_menu_button->setMinimumHeight(25);
+    notices_menu_button->setCheckable(true);
+    connect(notices_menu_button, &QPushButton::clicked, this, [this] { openNotices(); });
+    QPushButton *maintenance_menu_button = new QPushButton("Maintenance");
+    maintenance_menu_button->setObjectName("maintenanceMenuButton");
+    maintenance_menu_button->setMinimumHeight(25);
+    maintenance_menu_button->setCheckable(true);
+    connect(maintenance_menu_button, &QPushButton::clicked, this, [this] { openMaintenance(); });
+    QPushButton *messages_menu_button = new QPushButton("Messages");
+    messages_menu_button->setObjectName("messagesMenuButton");
+    messages_menu_button->setMinimumHeight(25);
+    messages_menu_button->setCheckable(true);
+    connect(messages_menu_button, &QPushButton::clicked, this, [this] { openMessages(); });
+    QPushButton *settings_menu_button = new QPushButton("Settings");
+    settings_menu_button->setObjectName("settingsMenuButton");
+    settings_menu_button->setMinimumHeight(25);
+    settings_menu_button->setCheckable(true);
+    connect(settings_menu_button, &QPushButton::clicked, this, [this] { openSettings(); });
+    QPushButton *help_menu_button = new QPushButton("Help");
+    help_menu_button->setObjectName("helpMenuButton");
+    help_menu_button->setMinimumHeight(25);
+    help_menu_button->setCheckable(true);
+    connect(help_menu_button, &QPushButton::clicked, this, [this] { openHelp(); });
+    QPushButton *logout_menu_button = new QPushButton("Logout");
+    logout_menu_button->setObjectName("logoutMenuButton");
+    logout_menu_button->setMinimumHeight(25);
+    connect(logout_menu_button, &QPushButton::clicked, this, [this] {
+        openWelcome();
+        showSideMenu();
+        ui->statusBar->showMessage("You have successfully logged out.", 10000);
+    });
+
+    QVBoxLayout *label_layout = new QVBoxLayout();
+    label_layout->setContentsMargins(0, 0, 0, 0);
+    label_layout->setAlignment(Qt::AlignHCenter);
+    label_layout->addWidget(logo_label);
+    menu_layout->addLayout(label_layout);
+    menu_layout->addWidget(home_menu_button);
+    menu_layout->addWidget(profile_menu_button);
+    menu_layout->addWidget(second_menu_button);
+    menu_layout->addWidget(notices_menu_button);
+    menu_layout->addWidget(maintenance_menu_button);
+    menu_layout->addWidget(messages_menu_button);
+    menu_layout->addWidget(settings_menu_button);
+    menu_layout->addWidget(help_menu_button);
+    menu_layout->addWidget(logout_menu_button);
+
+    menu_button_widget->setLayout(menu_layout);
+    sideMenu->setWidget(menu_button_widget);
+    menuButtons = menu_button_widget->findChildren<QPushButton *>();
+}
+
+void MicroManage::setUpCreateAccountMenu() {
+    QWidget* menu_button_widget = new QWidget();
+    menu_button_widget->setObjectName("menuButtonWidget");
+    QVBoxLayout *menu_layout = new QVBoxLayout();
+    menu_layout->setContentsMargins(0, 50, 0, 50);
+    QLabel *logo_label = new QLabel();
+    logo_label->setFixedSize(120, 120);
+    logo_label->setPixmap(QPixmap(":images/icons/micromanage_logo.png"));
+    logo_label->setScaledContents(true);
+    QLabel *get_started_label = new QLabel("Let's get started");
+    get_started_label->setObjectName("getStartedLabel");
+    get_started_label->setAlignment(Qt::AlignHCenter);
+    get_started_label->setFixedSize(150, 25);
+
+    QPushButton *create_profile_menu_button = new QPushButton("Create Profile");
+    create_profile_menu_button->setObjectName("createProfileMenuButton");
+    create_profile_menu_button->setMinimumHeight(25);
+    create_profile_menu_button->setCheckable(true);
+    connect(create_profile_menu_button, &QPushButton::clicked, this, [this] { openSignUp();});
+    QPushButton *settings_menu_button = new QPushButton("Settings");
+    settings_menu_button->setObjectName("settingsMenuButton");
+    settings_menu_button->setMinimumHeight(25);
+    settings_menu_button->setCheckable(true);
+    connect(settings_menu_button, &QPushButton::clicked, this, [this] { openSettings();});
+
+    QVBoxLayout *label_layout = new QVBoxLayout();
+    label_layout->setContentsMargins(0, 0, 0, 0);
+    label_layout->setAlignment(Qt::AlignHCenter);
+    label_layout->addWidget(logo_label);
+    menu_layout->addLayout(label_layout);
+    menu_layout->addWidget(get_started_label);
+    menu_layout->addWidget(create_profile_menu_button);
+    menu_layout->addWidget(settings_menu_button);
+
+    menu_button_widget->setLayout(menu_layout);
+    sideMenu->setWidget(menu_button_widget);
+    menuButtons = menu_button_widget->findChildren<QPushButton *>();
 }
 
 
@@ -124,63 +204,164 @@ void MicroManage::showSideMenu() {
     signUp->getMenuButton()->setChecked(sideMenuIsVisible);
     settings->getMenuButton()->setChecked(sideMenuIsVisible);
     messages->getMenuButton()->setChecked(sideMenuIsVisible);
+    notices->getMenuButton()->setChecked(sideMenuIsVisible);
+    maintenance->getMenuButton()->setChecked(sideMenuIsVisible);
     profile->getMenuButton()->setChecked(sideMenuIsVisible);
     properties->getMenuButton()->setChecked(sideMenuIsVisible);
+    helpPage->getMenuButton()->setChecked(sideMenuIsVisible);
     repaint(); // Forces the repaint so the menu opens and closes without glitch
 }
 
 
 void MicroManage::openWelcome() {
     stackedWidget->setCurrentIndex(0);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked()) {
+            (*button)->setChecked(false);
+        }
+    }
 }
 
 
 void MicroManage::openSignUp() {
+    setUpCreateAccountMenu();
     stackedWidget->setCurrentIndex(1);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Create Profile") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Create Profile") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 
 void MicroManage::openSettings() {
     stackedWidget->setCurrentIndex(2);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Settings") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Settings") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 
 void MicroManage::openLogin() {
     stackedWidget->setCurrentIndex(3);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Home") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Home") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 
 void MicroManage::openMainPage() {
     stackedWidget->setCurrentIndex(4);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Home") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Home") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 
 void MicroManage::openProfile() {
     stackedWidget->setCurrentIndex(5);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "My Profile") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "My Profile") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 
 void MicroManage::openProperties() {
     stackedWidget->setCurrentIndex(6);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "My Properties") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "My Properties") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 void MicroManage::openHelp() {
     stackedWidget->setCurrentIndex(10);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Help") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Help") {
+            (*button)->setChecked(true);
+        }
+    }
+
 }
 
 
 void MicroManage::openNotices() {
     stackedWidget->setCurrentIndex(7);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Notices") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Notices") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 
 void MicroManage::openMaintenance() {
     stackedWidget->setCurrentIndex(8);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Maintenance") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Maintenance") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 
 void MicroManage::openMessages() {
     stackedWidget->setCurrentIndex(9);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Messages") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Messages") {
+            (*button)->setChecked(true);
+        }
+    }
 }
 
 

@@ -1,0 +1,59 @@
+/* Master Style Sheet for MicroManage application */
+
+
+/* Background colours for pages */
+#Welcome, #SignUp, #MainPage, #Profile, #Properties, #Messages, #Maintenance, 
+#Notices, #Settings {
+	background: white;
+}
+
+
+#statusBar, #Login, #sideMenu::title, #menuButtonWidget {
+	background-color: rgb(242, 101, 34);
+}
+
+#statusBar {
+	color: white;
+}
+
+#getStartedLabel {
+	color: white;
+}
+
+#createProfileMenuButton, #homeMenuButton, #profileMenuButton, 
+#secondMenuButton, #noticesMenuButton, #maintenanceMenuButton, 
+#messagesMenuButton, #settingsMenuButton, #helpMenuButton, #logoutMenuButton {
+	color: white;
+	background: transparent;
+	border: none;
+
+}
+
+#createProfileMenuButton::checked, #homeMenuButton:checked, 
+#profileMenuButton::checked, #secondMenuButton::checked, 
+#noticesMenuButton::checked, #maintenanceMenuButton::checked, 
+#messagesMenuButton::checked, #settingsMenuButton::checked, 
+#helpMenuButton::checked, #logoutMenuButton::checked {
+	color: rgb(242, 101, 34);
+	background: white;
+	border: none;
+}
+
+#welcomeLabel, #headerLabel {
+	font: 30px;
+	color: rgb(242, 101, 34);
+}
+
+
+#signupButton, #loginButton, #profileButton, #secondButton, #noticesButton, 
+#maintenanceButton, #messagesButton, #settingsButton {
+	background: transparent;
+}
+
+#signupButton {
+	color: white;
+}
+
+#loginButton {
+	color: rgb(242, 101, 34);
+}
