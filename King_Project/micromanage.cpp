@@ -163,7 +163,7 @@ void MicroManage::setUpCreateAccountMenu() {
     create_profile_menu_button->setObjectName("createProfileMenuButton");
     create_profile_menu_button->setMinimumHeight(25);
     create_profile_menu_button->setCheckable(true);
-    connect(create_profile_menu_button, &QPushButton::clicked, this, [this] { openSignUp();});
+    connect(create_profile_menu_button, &QPushButton::clicked, this, [this] { openSignUpTenant();});
     QPushButton *settings_menu_button = new QPushButton("Settings");
     settings_menu_button->setObjectName("settingsMenuButton");
     settings_menu_button->setMinimumHeight(25);
@@ -224,8 +224,23 @@ void MicroManage::openWelcome() {
 }
 
 
-void MicroManage::openSignUp() {
+void MicroManage::openSignUpLandlord() {
     setUpCreateAccountMenu();
+    signUp->setLandlord();
+    stackedWidget->setCurrentIndex(1);
+    QList<QPushButton *>::iterator button;
+    for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
+        if ((*button)->isChecked() && (*button)->text() != "Create Profile") {
+            (*button)->setChecked(false);
+        }
+        if ((*button)->text() == "Create Profile") {
+            (*button)->setChecked(true);
+        }
+    }
+}
+void MicroManage::openSignUpTenant() {
+    setUpCreateAccountMenu();
+    signUp->setTenant();
     stackedWidget->setCurrentIndex(1);
     QList<QPushButton *>::iterator button;
     for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {

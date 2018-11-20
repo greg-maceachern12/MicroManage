@@ -36,7 +36,8 @@ class MicroManage : public QMainWindow
         void openWelcome();
         void openMainPage();
         void openSettings();
-        void openSignUp();
+        void openSignUpLandlord();
+        void openSignUpTenant();
         void openMessages();
         void openProfile();
         void openProperties();
@@ -44,7 +45,6 @@ class MicroManage : public QMainWindow
         //void openLogs();
         void openMaintenance();
         void openNotices();
-        //void openLandlord();
         void openHelp();
 
     private:

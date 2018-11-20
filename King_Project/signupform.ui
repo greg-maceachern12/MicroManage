@@ -246,16 +246,6 @@ font-size: 15px;</string>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtType">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>320</y>
-     <width>201</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="txtEmail">
    <property name="geometry">
     <rect>
@@ -347,6 +337,19 @@ font-size: 15px;</string>
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
+  <widget class="QLineEdit" name="txtType">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>320</y>
+     <width>201</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>SignUp</zorder>
   <zorder>btnCancel</zorder>
   <zorder>btnSubmit</zorder>
@@ -356,7 +359,6 @@ font-size: 15px;</string>
   <zorder>txtUid</zorder>
   <zorder>txtAge</zorder>
   <zorder>txtAddress</zorder>
-  <zorder>txtType</zorder>
   <zorder>txtEmail</zorder>
   <zorder>txtPassword</zorder>
   <zorder>txtPhone</zorder>
@@ -369,6 +371,7 @@ font-size: 15px;</string>
   <zorder>label_3</zorder>
   <zorder>menuButton</zorder>
   <zorder>label_user</zorder>
+  <zorder>txtType</zorder>
  </widget>
  <tabstops>
   <tabstop>txtUid</tabstop>
@@ -376,7 +379,6 @@ font-size: 15px;</string>
   <tabstop>txtEmail</tabstop>
   <tabstop>txtAge</tabstop>
   <tabstop>txtAddress</tabstop>
-  <tabstop>txtType</tabstop>
   <tabstop>txtPhone</tabstop>
   <tabstop>txtPassword</tabstop>
   <tabstop>btnCancel</tabstop>
