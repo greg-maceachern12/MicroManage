@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="questionButton">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -89,7 +89,7 @@ font-size: 15px;</string>
    </property>
   </widget>
   <zorder>Settings</zorder>
-  <zorder>pushButton_3</zorder>
+  <zorder>questionButton</zorder>
   <zorder>pushButton_4</zorder>
   <zorder>menuButton</zorder>
   <zorder>headerLabel</zorder>

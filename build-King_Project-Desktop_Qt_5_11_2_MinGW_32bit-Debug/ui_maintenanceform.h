@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +20,30 @@ QT_BEGIN_NAMESPACE
 class Ui_MaintenanceForm
 {
 public:
+    QToolButton *menuButton;
+    QLabel *headerLabel;
+    QWidget *Maintenance;
 
     void setupUi(QWidget *MaintenanceForm)
     {
         if (MaintenanceForm->objectName().isEmpty())
             MaintenanceForm->setObjectName(QStringLiteral("MaintenanceForm"));
-        MaintenanceForm->resize(694, 481);
+        MaintenanceForm->resize(829, 590);
+        menuButton = new QToolButton(MaintenanceForm);
+        menuButton->setObjectName(QStringLiteral("menuButton"));
+        menuButton->setGeometry(QRect(20, 20, 45, 45));
+        headerLabel = new QLabel(MaintenanceForm);
+        headerLabel->setObjectName(QStringLiteral("headerLabel"));
+        headerLabel->setGeometry(QRect(110, 20, 211, 51));
+        QFont font;
+        font.setPointSize(24);
+        headerLabel->setFont(font);
+        Maintenance = new QWidget(MaintenanceForm);
+        Maintenance->setObjectName(QStringLiteral("Maintenance"));
+        Maintenance->setGeometry(QRect(0, 0, 829, 590));
+        Maintenance->raise();
+        menuButton->raise();
+        headerLabel->raise();
 
         retranslateUi(MaintenanceForm);
 
@@ -33,6 +53,8 @@ public:
     void retranslateUi(QWidget *MaintenanceForm)
     {
         MaintenanceForm->setWindowTitle(QApplication::translate("MaintenanceForm", "Form", nullptr));
+        menuButton->setText(QApplication::translate("MaintenanceForm", "...", nullptr));
+        headerLabel->setText(QApplication::translate("MaintenanceForm", "Maintenance", nullptr));
     } // retranslateUi
 
 };
