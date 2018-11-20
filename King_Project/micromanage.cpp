@@ -77,7 +77,7 @@ void MicroManage::setUpDefaultMenu() {
     menu_layout->setContentsMargins(0, 50, 0, 50);
     QLabel *logo_label = new QLabel();
     logo_label->setFixedSize(120, 120);
-    logo_label->setPixmap(QPixmap(":images/icons/micromanage_logo.png"));
+    logo_label->setPixmap(QPixmap(":images/icons/micromanage_logo_overlay.png"));
     logo_label->setScaledContents(true);
 
     QPushButton *home_menu_button = new QPushButton("Home");
@@ -168,7 +168,7 @@ void MicroManage::setUpCreateAccountMenu() {
     menu_layout->setContentsMargins(0, 50, 0, 50);
     QLabel *logo_label = new QLabel();
     logo_label->setFixedSize(120, 120);
-    logo_label->setPixmap(QPixmap(":images/icons/micromanage_logo.png"));
+    logo_label->setPixmap(QPixmap(":images/icons/micromanage_logo_overlay.png"));
     logo_label->setScaledContents(true);
     QLabel *get_started_label = new QLabel("Let's get started");
     get_started_label->setObjectName("getStartedLabel");
