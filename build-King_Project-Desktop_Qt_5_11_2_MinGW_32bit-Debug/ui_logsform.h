@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'logsform.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.0
+** Created by: Qt User Interface Compiler version 5.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -29,17 +29,17 @@ public:
     void setupUi(QWidget *LogsForm)
     {
         if (LogsForm->objectName().isEmpty())
-            LogsForm->setObjectName(QString::fromUtf8("LogsForm"));
+            LogsForm->setObjectName(QStringLiteral("LogsForm"));
         LogsForm->resize(611, 457);
         label = new QLabel(LogsForm);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(160, 0, 281, 51));
         label->setAlignment(Qt::AlignCenter);
         refresh = new QPushButton(LogsForm);
-        refresh->setObjectName(QString::fromUtf8("refresh"));
+        refresh->setObjectName(QStringLiteral("refresh"));
         refresh->setGeometry(QRect(10, 10, 51, 32));
         tableView = new QTableView(LogsForm);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setObjectName(QStringLiteral("tableView"));
         tableView->setGeometry(QRect(80, 60, 491, 371));
 
         retranslateUi(LogsForm);

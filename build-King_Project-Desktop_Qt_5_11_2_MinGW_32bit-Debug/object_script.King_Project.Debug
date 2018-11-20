@@ -12,6 +12,8 @@ INPUT(
 ./debug\propertymain.o
 ./debug\profile.o
 ./debug\login.o
+./debug\logs.o
+./debug\qrc_resources.o
 ./debug\moc_mainpage.o
 ./debug\moc_micromanage.o
 ./debug\moc_welcome.o
@@ -24,4 +26,5 @@ INPUT(
 ./debug\moc_propertymain.o
 ./debug\moc_profile.o
 ./debug\moc_login.o
+./debug\moc_logs.o
 );

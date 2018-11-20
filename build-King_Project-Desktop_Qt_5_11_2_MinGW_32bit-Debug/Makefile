@@ -216,7 +216,6 @@ Makefile: ../King_Project/King_Project.pro D:/QT/5.11.2/mingw53_32/mkspecs/win32
 		D:/QT/5.11.2/mingw53_32/mkspecs/features/qt_config.prf \
 		D:/QT/5.11.2/mingw53_32/mkspecs/win32-g++/qmake.conf \
 		D:/QT/5.11.2/mingw53_32/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		D:/QT/5.11.2/mingw53_32/mkspecs/features/exclusive_builds.prf \
 		D:/QT/5.11.2/mingw53_32/mkspecs/features/toolchain.prf \
 		D:/QT/5.11.2/mingw53_32/mkspecs/features/default_pre.prf \
@@ -401,7 +400,6 @@ D:/QT/5.11.2/mingw53_32/mkspecs/features/qt_functions.prf:
 D:/QT/5.11.2/mingw53_32/mkspecs/features/qt_config.prf:
 D:/QT/5.11.2/mingw53_32/mkspecs/win32-g++/qmake.conf:
 D:/QT/5.11.2/mingw53_32/mkspecs/features/spec_post.prf:
-.qmake.stash:
 D:/QT/5.11.2/mingw53_32/mkspecs/features/exclusive_builds.prf:
 D:/QT/5.11.2/mingw53_32/mkspecs/features/toolchain.prf:
 D:/QT/5.11.2/mingw53_32/mkspecs/features/default_pre.prf:

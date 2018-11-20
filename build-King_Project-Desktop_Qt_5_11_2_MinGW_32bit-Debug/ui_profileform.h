@@ -12,7 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,12 +29,16 @@ public:
     QTextEdit *description;
     QTextEdit *txtEmail;
     QTextEdit *age;
+    QPushButton *refresh;
+    QToolButton *menuButton;
+    QToolButton *editButton;
+    QWidget *Profile;
 
     void setupUi(QWidget *ProfileForm)
     {
         if (ProfileForm->objectName().isEmpty())
             ProfileForm->setObjectName(QStringLiteral("ProfileForm"));
-        ProfileForm->resize(709, 562);
+        ProfileForm->resize(829, 590);
         landlord = new QLineEdit(ProfileForm);
         landlord->setObjectName(QStringLiteral("landlord"));
         landlord->setGeometry(QRect(600, 60, 101, 41));
@@ -57,6 +63,30 @@ public:
         age = new QTextEdit(ProfileForm);
         age->setObjectName(QStringLiteral("age"));
         age->setGeometry(QRect(400, 170, 181, 111));
+        refresh = new QPushButton(ProfileForm);
+        refresh->setObjectName(QStringLiteral("refresh"));
+        refresh->setGeometry(QRect(30, 40, 114, 32));
+        menuButton = new QToolButton(ProfileForm);
+        menuButton->setObjectName(QStringLiteral("menuButton"));
+        menuButton->setGeometry(QRect(20, 20, 45, 45));
+        editButton = new QToolButton(ProfileForm);
+        editButton->setObjectName(QStringLiteral("editButton"));
+        editButton->setGeometry(QRect(640, 500, 45, 45));
+        editButton->setCheckable(true);
+        Profile = new QWidget(ProfileForm);
+        Profile->setObjectName(QStringLiteral("Profile"));
+        Profile->setGeometry(QRect(0, 0, 829, 590));
+        Profile->raise();
+        landlord->raise();
+        contact->raise();
+        properties->raise();
+        name->raise();
+        description->raise();
+        txtEmail->raise();
+        age->raise();
+        refresh->raise();
+        menuButton->raise();
+        editButton->raise();
 
         retranslateUi(ProfileForm);
 
@@ -100,6 +130,9 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Age: 38</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">673 King St,</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Kingston, ON Canada</p></body></html>", nullptr));
+        refresh->setText(QApplication::translate("ProfileForm", "PushButton", nullptr));
+        menuButton->setText(QApplication::translate("ProfileForm", "...", nullptr));
+        editButton->setText(QApplication::translate("ProfileForm", "...", nullptr));
     } // retranslateUi
 
 };

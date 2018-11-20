@@ -13,6 +13,7 @@ class Settings : public QWidget {
         explicit Settings(QWidget *parent);
         QToolButton* getMenuButton();
         ~Settings();
+        void emailLink();
 
     signals:
 
