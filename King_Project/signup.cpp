@@ -54,12 +54,10 @@ void SignUp::createUser() {
             if (qryWrite.exec()) {
                 ui->logMsg->setText("Success");
                 dbmodel::username = username;
-                //stackedWidget->setCurrentIndex(3);
+                stackedWidget->setCurrentIndex(3);
                 if (ui->menuButton->isChecked()) {
                     ui->menuButton->click();
                 }
-                mainPage->updateMain();
-                stackedWidget->setCurrentIndex(4); // Go to main page
             } else {
                qDebug() << qryWrite.lastError();
             }
