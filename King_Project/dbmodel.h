@@ -10,9 +10,9 @@
 #include <QSqlQueryModel>
 #include <QFileInfo>
 #include <QDebug>
-
-static QSqlDatabase myDb;
-static QString username;
-
+namespace dbmodel {
+    static QSqlDatabase myDb;
+    extern QString username;
+}
 
 #endif

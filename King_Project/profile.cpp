@@ -25,8 +25,8 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     ui->landlord->setReadOnly(true);
 
         QSqlQuery query;
-        qDebug() << username;
-        query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
+        qDebug() << dbmodel::username;
+        query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+dbmodel::username+"'");
         while (query.next()) {
              ui->name->setText(query.value(0).toString());
              ui->age->setText(query.value(1).toString());
@@ -61,9 +61,10 @@ Ui::ProfileForm* Profile::getUi() {
     return ui;
 }
 
-void Profile::updateProfile(QSqlQuery query) {
-    qDebug() << "test" + username;
-    //query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
+void Profile::updateProfile() {
+    qDebug() << "test" + dbmodel::username;
+    QSqlQuery query;
+    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+dbmodel::username+"'");
     while (query.next()) {
          ui->name->setText(query.value(0).toString());
          ui->age->setText(query.value(1).toString());
@@ -117,7 +118,7 @@ void Profile::makeEditable()
 
 void Profile::refresh()
  {
-    qDebug() << username;
+    qDebug() << dbmodel::username;
  }
 
 

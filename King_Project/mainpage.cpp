@@ -4,22 +4,16 @@
 
 MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(parent), ui(new Ui::MainPageForm) {
     ui->setupUi(this); // Sets up the .ui file GUI
-    myDb = QSqlDatabase::addDatabase("QSQLITE");
-    myDb.setDatabaseName("C:/Users/CHENX/Desktop/kingrepo/King_Project/micro.db");
+
+    dbmodel::myDb = QSqlDatabase::addDatabase("QSQLITE");
+    dbmodel::myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/King_Project/micro.db");
 
     QSize icon_size(125, 125);
-    if (!myDb.open()) {
+    if (!dbmodel::myDb.open()) {
         qDebug() <<"error-";
     } else {
         qDebug() <<"success";
     }
-
-    QSqlQuery query;
-    query.exec("SELECT name FROM user");
-    while (query.next()) {
-         userName = query.value(0).toString();
-    }
-
     userRole = user_role;
 
     ui->menuButton->setCheckable(true);
@@ -28,7 +22,6 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
     // Set welcome message
-    ui->welcomeLabel->setText("Welcome back, " + userName + "!");
 
     // Set up buttons with icons and texts in grid layout
     QToolButton *profile_button = new QToolButton();
@@ -116,4 +109,14 @@ QToolButton* MainPage::getMenuButton() {
 
 MainPage::~MainPage() {
     delete ui;
+}
+
+void MainPage::updateMain() {
+    QSqlQuery query;
+    qDebug() <<"hello" + dbmodel::username;
+    query.exec("SELECT name FROM user WHERE username='"+dbmodel::username+"'");
+    while (query.next()) {
+         userName = query.value(0).toString();
+         ui->welcomeLabel->setText("Welcome back, " + userName + "!");
+    }
 }

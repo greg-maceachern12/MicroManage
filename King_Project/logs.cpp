@@ -10,7 +10,7 @@ Logs::~Logs() {
 }
 void Logs::refreshLogs() {
     QSqlQueryModel * modal = new QSqlQueryModel();
-    QSqlQuery* qry = new QSqlQuery(myDb);
+    QSqlQuery* qry = new QSqlQuery(dbmodel::myDb);
 
     qry->prepare("SELECT * FROM logs WHERE uid=\"gmac12greg\"");
     qry->exec();

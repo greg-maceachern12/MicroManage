@@ -18,15 +18,15 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget = new QStackedWidget;
     welcomePage = new Welcome(this);
     mainPage = new MainPage(this);
-    signUp = new SignUp(this);
+    signUp = new SignUp(this, stackedWidget, profile, mainPage);
     settings = new Settings(this);
     messages = new Messages(this);
     profile = new Profile(this);
     properties = new PropertyMain(this);
     notices = new Notices(this);
-    logs = new Logs(this);
+    //logs = new Logs(this);
     maintenance = new Maintenance(this);
-    login = new Login(this, stackedWidget, profile);
+    login = new Login(this, stackedWidget, profile, mainPage);
     helpPage = new Help(this);
 
 
@@ -367,7 +367,7 @@ void MicroManage::openMessages() {
 
 
 void MicroManage::closeEvent(QCloseEvent *event) {
-    myDb.close(); // FIX
+    dbmodel::myDb.close(); // FIX
     QWidget::closeEvent(event);
 }
 
