@@ -6,6 +6,8 @@ PropertyMain::PropertyMain(QWidget *parent) : QWidget(parent), ui(new Ui::Proper
     ui->menuButton->setCheckable(true);
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
+    ui->addButton->setIcon(QIcon(":images/icons/plus_icon.png"));
+    ui->addButton->setIconSize(QSize(45, 45));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 }
 
