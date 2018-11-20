@@ -53,10 +53,38 @@
      <height>590</height>
     </rect>
    </property>
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>80</y>
+     <width>681</width>
+     <height>401</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="refresh">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>490</y>
+     <width>45</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
   </widget>
   <zorder>Maintenance</zorder>
   <zorder>menuButton</zorder>
   <zorder>headerLabel</zorder>
+  <zorder>tableView</zorder>
+  <zorder>refresh</zorder>
  </widget>
  <resources/>
  <connections/>

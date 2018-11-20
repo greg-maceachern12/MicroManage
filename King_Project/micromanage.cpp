@@ -24,7 +24,6 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     profile = new Profile(this);
     properties = new PropertyMain(this);
     notices = new Notices(this);
-    //logs = new Logs(this);
     maintenance = new Maintenance(this);
     login = new Login(this, stackedWidget, profile, mainPage);
     helpPage = new Help(this);

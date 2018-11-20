@@ -14,6 +14,10 @@ class Maintenance : public QWidget {
         QToolButton* getMenuButton();
         ~Maintenance();
 
+    public slots:
+        void refreshLogs();
+
     private:
         Ui::MaintenanceForm *ui;
+
 };
