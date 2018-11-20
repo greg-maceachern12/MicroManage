@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,41 +22,60 @@ class Ui_WelcomeForm
 {
 public:
     QLabel *logoLabel;
-    QLabel *welcomeLabel;
+    QLabel *welcomeToLabel;
     QLabel *micromanageLabel;
     QLabel *chooseLabel;
     QPushButton *landlordButton;
     QPushButton *tenantButton;
-    QLabel *loginLabel;
+    QToolButton *loginButton;
+    QWidget *Welcome;
 
     void setupUi(QWidget *WelcomeForm)
     {
         if (WelcomeForm->objectName().isEmpty())
             WelcomeForm->setObjectName(QStringLiteral("WelcomeForm"));
-        WelcomeForm->resize(710, 526);
+        WelcomeForm->resize(829, 590);
         logoLabel = new QLabel(WelcomeForm);
         logoLabel->setObjectName(QStringLiteral("logoLabel"));
-        logoLabel->setGeometry(QRect(40, 20, 71, 71));
-        welcomeLabel = new QLabel(WelcomeForm);
-        welcomeLabel->setObjectName(QStringLiteral("welcomeLabel"));
-        welcomeLabel->setGeometry(QRect(220, 40, 281, 51));
-        welcomeLabel->setAlignment(Qt::AlignCenter);
+        logoLabel->setGeometry(QRect(40, 30, 100, 100));
+        welcomeToLabel = new QLabel(WelcomeForm);
+        welcomeToLabel->setObjectName(QStringLiteral("welcomeToLabel"));
+        welcomeToLabel->setGeometry(QRect(280, 40, 281, 51));
+        welcomeToLabel->setAlignment(Qt::AlignCenter);
         micromanageLabel = new QLabel(WelcomeForm);
         micromanageLabel->setObjectName(QStringLiteral("micromanageLabel"));
-        micromanageLabel->setGeometry(QRect(240, 90, 241, 41));
+        micromanageLabel->setGeometry(QRect(300, 100, 241, 41));
+        QFont font;
+        font.setPointSize(24);
+        micromanageLabel->setFont(font);
         micromanageLabel->setAlignment(Qt::AlignCenter);
         chooseLabel = new QLabel(WelcomeForm);
         chooseLabel->setObjectName(QStringLiteral("chooseLabel"));
-        chooseLabel->setGeometry(QRect(270, 140, 201, 16));
+        chooseLabel->setGeometry(QRect(330, 180, 191, 16));
         landlordButton = new QPushButton(WelcomeForm);
         landlordButton->setObjectName(QStringLiteral("landlordButton"));
-        landlordButton->setGeometry(QRect(170, 210, 371, 81));
+        landlordButton->setGeometry(QRect(240, 240, 361, 81));
         tenantButton = new QPushButton(WelcomeForm);
         tenantButton->setObjectName(QStringLiteral("tenantButton"));
-        tenantButton->setGeometry(QRect(170, 310, 371, 81));
-        loginLabel = new QLabel(WelcomeForm);
-        loginLabel->setObjectName(QStringLiteral("loginLabel"));
-        loginLabel->setGeometry(QRect(250, 430, 231, 16));
+        tenantButton->setGeometry(QRect(240, 340, 361, 81));
+        loginButton = new QToolButton(WelcomeForm);
+        loginButton->setObjectName(QStringLiteral("loginButton"));
+        loginButton->setGeometry(QRect(300, 460, 241, 21));
+        QFont font1;
+        font1.setPointSize(13);
+        loginButton->setFont(font1);
+        Welcome = new QWidget(WelcomeForm);
+        Welcome->setObjectName(QStringLiteral("Welcome"));
+        Welcome->setGeometry(QRect(0, 0, 829, 590));
+        Welcome->setAutoFillBackground(false);
+        Welcome->raise();
+        logoLabel->raise();
+        welcomeToLabel->raise();
+        micromanageLabel->raise();
+        chooseLabel->raise();
+        landlordButton->raise();
+        tenantButton->raise();
+        loginButton->raise();
 
         retranslateUi(WelcomeForm);
 
@@ -66,12 +86,12 @@ public:
     {
         WelcomeForm->setWindowTitle(QApplication::translate("WelcomeForm", "Form", nullptr));
         logoLabel->setText(QString());
-        welcomeLabel->setText(QApplication::translate("WelcomeForm", "Welcome to ", nullptr));
+        welcomeToLabel->setText(QApplication::translate("WelcomeForm", "Welcome to ", nullptr));
         micromanageLabel->setText(QApplication::translate("WelcomeForm", "MICROMANAGE", nullptr));
         chooseLabel->setText(QApplication::translate("WelcomeForm", "Choose your position to begin", nullptr));
         landlordButton->setText(QApplication::translate("WelcomeForm", "Landlord", nullptr));
         tenantButton->setText(QApplication::translate("WelcomeForm", "Tenant", nullptr));
-        loginLabel->setText(QApplication::translate("WelcomeForm", "Already have an account? Log in here", nullptr));
+        loginButton->setText(QApplication::translate("WelcomeForm", "Already have an account? Log in here", nullptr));
     } // retranslateUi
 
 };

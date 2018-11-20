@@ -17,6 +17,7 @@ class Settings : public QWidget {
     signals:
 
     public slots:
+        void emailLink();
 
     private:
         Ui::SettingsForm *ui;

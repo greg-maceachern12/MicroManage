@@ -25,24 +25,37 @@ public:
     QLabel *welcomeLabel;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
+    QWidget *MainPage;
 
     void setupUi(QWidget *MainPageForm)
     {
         if (MainPageForm->objectName().isEmpty())
             MainPageForm->setObjectName(QStringLiteral("MainPageForm"));
-        MainPageForm->resize(647, 487);
+        MainPageForm->resize(829, 590);
         menuButton = new QToolButton(MainPageForm);
         menuButton->setObjectName(QStringLiteral("menuButton"));
-        menuButton->setGeometry(QRect(10, 10, 41, 41));
+        menuButton->setGeometry(QRect(20, 20, 45, 45));
         welcomeLabel = new QLabel(MainPageForm);
         welcomeLabel->setObjectName(QStringLiteral("welcomeLabel"));
-        welcomeLabel->setGeometry(QRect(120, 40, 411, 61));
+        welcomeLabel->setGeometry(QRect(80, 40, 671, 61));
+        QFont font;
+        font.setPointSize(24);
+        welcomeLabel->setFont(font);
+        welcomeLabel->setAlignment(Qt::AlignCenter);
         gridLayoutWidget = new QWidget(MainPageForm);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(79, 89, 491, 331));
+        gridLayoutWidget->setGeometry(QRect(170, 150, 491, 331));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setSizeConstraint(QLayout::SetFixedSize);
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        MainPage = new QWidget(MainPageForm);
+        MainPage->setObjectName(QStringLiteral("MainPage"));
+        MainPage->setGeometry(QRect(0, 0, 829, 590));
+        MainPage->raise();
+        menuButton->raise();
+        welcomeLabel->raise();
+        gridLayoutWidget->raise();
 
         retranslateUi(MainPageForm);
 

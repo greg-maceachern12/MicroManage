@@ -21,7 +21,7 @@ class Profile : public QWidget {
 
     public:
         explicit Profile(QWidget *parent = nullptr);
-        void updateProfile(QSqlQuery query);
+        void updateProfile();
         Ui::ProfileForm* getUi();
         QToolButton* getMenuButton();
         ~Profile();

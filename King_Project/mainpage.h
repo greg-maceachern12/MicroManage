@@ -17,6 +17,7 @@ class MainPage : public QWidget {
         explicit MainPage(QWidget *parent, QString user_name="", int user_role=0);
         QToolButton* getMenuButton();
         ~MainPage();
+        void updateMain();
 
     signals:
 
