@@ -31,6 +31,7 @@ class MicroManage : public QMainWindow
     signals:
 
     public slots:
+        void checkPage(int);
         void showSideMenu();
         void openWelcome();
         void openMainPage();
@@ -64,6 +65,7 @@ class MicroManage : public QMainWindow
         QList<QPushButton *> menuButtons;
 
         int userRole;
+        bool hasDefaultMenu;
 
         void createInterface();
         void setUpDefaultMenu();

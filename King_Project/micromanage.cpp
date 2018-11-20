@@ -52,11 +52,21 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget->addWidget(helpPage);
     setCentralWidget(stackedWidget);
 
+    hasDefaultMenu = true;
+    connect(stackedWidget, SIGNAL(currentChanged(int)), this, SLOT(checkPage(int)));
+
 }
 
 
 void MicroManage::setUserRole(int role) {
     userRole = role;
+}
+
+
+void MicroManage::checkPage(int index) {
+    if (index == 4 && !hasDefaultMenu) {
+        setUpDefaultMenu();
+    }
 }
 
 
@@ -148,6 +158,7 @@ void MicroManage::setUpDefaultMenu() {
 
 
 void MicroManage::setUpCreateAccountMenu() {
+    hasDefaultMenu = false;
     QWidget* menu_button_widget = new QWidget();
     menu_button_widget->setObjectName("menuButtonWidget");
     QVBoxLayout *menu_layout = new QVBoxLayout();
@@ -285,6 +296,7 @@ void MicroManage::openLogin() {
 
 
 void MicroManage::openMainPage() {
+    setUpDefaultMenu();
     stackedWidget->setCurrentIndex(4);
     QList<QPushButton *>::iterator button;
     for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
