@@ -287,6 +287,9 @@ void MicroManage::openSettings() {
 void MicroManage::openLogin() {
     stackedWidget->setCurrentIndex(3);
     QList<QPushButton *>::iterator button;
+    if (!login->getRememberMe()->isChecked()) {
+        login->clearInputs();
+    }
     for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
         if ((*button)->isChecked() && (*button)->text() != "Home") {
             (*button)->setChecked(false);
