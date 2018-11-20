@@ -14,7 +14,7 @@ class Login : public QWidget {
         Q_OBJECT
 
     public:
-        explicit Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main);
+        explicit Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main, QStatusBar *status_bar);
         QCheckBox* getRememberMe();
         void clearInputs();
         ~Login();
@@ -32,5 +32,6 @@ private:
         Profile *profile;
         MainPage *mainPage;
         QStackedWidget *stackedWidget;
+        QStatusBar *statusBar;
 };
 

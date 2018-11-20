@@ -1,12 +1,13 @@
 #include "login.h"
 #include "micromanage.h"
 
-Login::Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main) : QWidget(parent), ui(new Ui::LoginForm) {
+Login::Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, MainPage *main, QStatusBar *status_bar) : QWidget(parent), ui(new Ui::LoginForm) {
     ui->setupUi(this);
 
     stackedWidget = stacked_widget;
     profile = pro;
     mainPage = main;
+    statusBar = status_bar;
     connect(ui->signupButton, SIGNAL(clicked()), parent, SLOT(openWelcome()));
 }
 
@@ -39,6 +40,7 @@ void Login::on_pushButton_clicked() {
         }
         if (count == 1) {
             qDebug() << "user and password correct";
+            statusBar->clearMessage();
             dbmodel::username = txt_username;
 
 //            qry2.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+dbmodel::username+"'");
@@ -47,10 +49,12 @@ void Login::on_pushButton_clicked() {
             stackedWidget->setCurrentIndex(4); // Go to main page
         }
         if (count > 1) {
-            qDebug() << "Duplicate user and password correct";
+            statusBar->showMessage("Duplicate user and password correct.", 10000);
+           // qDebug() << "Duplicate user and password correct";
         }
         if (count < 1) {
-            qDebug() << "user and password incorrect";
+            statusBar->showMessage("Username or password incorrect.", 10000);
+            //qDebug() << "user and password incorrect";
         }
     }
 

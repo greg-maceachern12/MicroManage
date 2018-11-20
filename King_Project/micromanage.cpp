@@ -18,14 +18,14 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     stackedWidget = new QStackedWidget;
     welcomePage = new Welcome(this);
     mainPage = new MainPage(this);
-    signUp = new SignUp(this, stackedWidget, profile, mainPage);
+    signUp = new SignUp(this, stackedWidget, profile, mainPage, ui->statusBar);
     settings = new Settings(this);
     messages = new Messages(this);
     profile = new Profile(this);
     properties = new PropertyMain(this);
     notices = new Notices(this);
     maintenance = new Maintenance(this);
-    login = new Login(this, stackedWidget, profile, mainPage);
+    login = new Login(this, stackedWidget, profile, mainPage, ui->statusBar);
     helpPage = new Help(this);
 
 
