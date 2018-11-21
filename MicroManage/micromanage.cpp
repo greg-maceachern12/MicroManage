@@ -173,7 +173,7 @@ void MicroManage::setUpCreateAccountMenu() {
     QLabel *get_started_label = new QLabel("Let's get started");
     get_started_label->setObjectName("getStartedLabel");
     get_started_label->setAlignment(Qt::AlignHCenter);
-    get_started_label->setFixedSize(150, 25);
+    get_started_label->setFixedSize(140, 25);
 
     QPushButton *create_profile_menu_button = new QPushButton("Create Profile");
     create_profile_menu_button->setObjectName("createProfileMenuButton");
