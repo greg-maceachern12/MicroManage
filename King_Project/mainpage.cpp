@@ -6,7 +6,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     ui->setupUi(this); // Sets up the .ui file GUI
 
     dbmodel::myDb = QSqlDatabase::addDatabase("QSQLITE");
-    dbmodel::myDb.setDatabaseName("/Users/laurenbhagwandat/Desktop/Computing/C++/CISC-320/kingrepo/King_Project/micro.db");
+    dbmodel::myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/King_Project/micro.db");
 
     QSize icon_size(125, 125);
     if (!dbmodel::myDb.open()) {
