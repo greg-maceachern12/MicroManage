@@ -1,6 +1,7 @@
 #include "profile.h"
 #include "dbmodel.h"
 #include <QFileDialog>
+#include <QtGui>
 
 Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
@@ -139,7 +140,11 @@ void Profile::on_importButton_clicked()
        qDebug() << "selected file path : " << imagename.toUtf8();
     }
 
-    //QWidget *frame = new QWidget(this);
-    //frame->setGeometry(x, y, width, height);
-    ui->image->setStyleSheet("background-image: url(imagename)");
+    //QPixmap pixmap(":/images/tux.png");
+    //ui->image->setPixmap();
+    //ui->image.show();
+    QPixmap pixmap("/Users/trevormclellan/Pictures/download.jpeg");
+    ui->image->setPixmap(pixmap);
+    ui->image->setMask(pixmap.mask());
+    ui->image->show();
 }

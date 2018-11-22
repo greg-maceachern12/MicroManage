@@ -3506,7 +3506,22 @@ notices.o: ../MicroManage/notices.cpp ../MicroManage/notices.h \
 		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwidgetaction.h \
 		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qwizard.h \
-		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsversion.h
+		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
+		../MicroManage/dbmodel.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QSqlDriver \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QSqlError \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QSqlQuery \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QSqlQueryModel \
+		/Applications/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/QFileInfo \
+		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/QDebug \
+		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o notices.o ../MicroManage/notices.cpp
 
 maintenance.o: ../MicroManage/maintenance.cpp ../MicroManage/maintenance.h \
@@ -4393,7 +4408,8 @@ profile.o: ../MicroManage/profile.cpp ../MicroManage/profile.h \
 		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
 		../MicroManage/dbmodel.h \
 		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/QDebug \
-		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h
+		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QFileDialog
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o profile.o ../MicroManage/profile.cpp
 
 login.o: ../MicroManage/login.cpp ../MicroManage/login.h \

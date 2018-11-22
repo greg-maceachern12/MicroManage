@@ -263,14 +263,17 @@ p, li { white-space: pre-wrap; }
      <string>Import Photo</string>
     </property>
    </widget>
-   <widget class="QWidget" name="image" native="true">
+   <widget class="QLabel" name="image">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>60</y>
+      <x>150</x>
+      <y>70</y>
       <width>161</width>
       <height>121</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Image</string>
     </property>
    </widget>
    <zorder>landlord</zorder>
