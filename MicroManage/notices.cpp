@@ -37,7 +37,7 @@ void Notices::getNotices() {
     QSqlQueryModel * modal = new QSqlQueryModel();
     QSqlQuery* qry = new QSqlQuery(dbmodel::myDb);
 
-    qry->prepare("SELECT * FROM notices WHERE uid='"+dbmodel::username+"'");
+    qry->prepare("SELECT date notices FROM notices WHERE uid='"+dbmodel::username+"'");
     qry->exec();
     modal->setQuery(*qry);
     ui->tableView->setModel(modal);

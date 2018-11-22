@@ -1,8 +1,19 @@
 #include "micromanage.h"
 #include <QApplication>
+#include <QSplashScreen>
+#include <QTimer>
+#include <QPixmap>
+#include <qthread.h>
+
+
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
+    //QPixmap pixmap(":/images/splash.jpg");
+    QSplashScreen *splash = new QSplashScreen;
+    //QPixmap pixmap("AbourUsBG.png");
+    splash->setPixmap(QPixmap(":images/icons/micromanage_logo.png"));
+    splash->show();
     a.setAttribute(Qt::AA_UseHighDpiPixmaps);
     QFontDatabase::addApplicationFont(":css/fonts/AvenirNextLTPro-Regular.otf");
     QFontDatabase::addApplicationFont(":css/fonts/AvenirNextLTPro-MediumCn.otf");
@@ -20,7 +31,9 @@ int main(int argc, char *argv[]) {
     QString styleSheet = QLatin1String(styleFile.readAll());
     a.setStyleSheet(styleSheet);
     MicroManage w;
-    w.show();
-
+    QTimer::singleShot(2500, splash, SLOT(close()));
+    QTimer::singleShot(2500, &w, SLOT(show()));
+    //w.show();
+    //splash.finish(&w);
     return a.exec();
 }
