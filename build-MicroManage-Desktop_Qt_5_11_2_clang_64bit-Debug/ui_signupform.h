@@ -187,7 +187,7 @@ public:
         label_3->setText(QApplication::translate("SignUpForm", "Age", nullptr));
         btnSubmit->setText(QApplication::translate("SignUpForm", "Submit", nullptr));
         label_11->setText(QApplication::translate("SignUpForm", "Username*", nullptr));
-        txtUid->setText(QApplication::translate("SignUpForm", "Test", nullptr));
+        txtUid->setText(QString());
         txtPassword->setText(QString());
         label_9->setText(QApplication::translate("SignUpForm", "Password", nullptr));
         txtPhone->setText(QString());
