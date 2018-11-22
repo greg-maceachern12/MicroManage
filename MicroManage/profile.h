@@ -33,7 +33,10 @@ class Profile : public QWidget {
 
 
 
-    private:
+private slots:
+        void on_importButton_clicked();
+
+private:
         Ui::ProfileForm *ui;
 
 };

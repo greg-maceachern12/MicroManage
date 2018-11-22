@@ -7,7 +7,10 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 
     dbmodel::myDb = QSqlDatabase::addDatabase("QSQLITE");
 
-    dbmodel::myDb.setDatabaseName("/Users/gregmaceachern/Documents/3rd/kingrepo/MicroManage/micro.db");
+
+    dbmodel::myDb.setDatabaseName("/Users/trevormclellan/Desktop/Documents/Cisc_320/Group_Project/kingrepo/MicroManage/micro.db");
+
+
 
 
     QSize icon_size(125, 125);

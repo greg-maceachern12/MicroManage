@@ -1,5 +1,7 @@
 #include "profile.h"
 #include "dbmodel.h"
+#include <QFileDialog>
+#include <QtGui>
 
 Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
@@ -37,6 +39,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 
         }
 
+    //make qpushbutton and call it refresh to enable this again
 
     /*QSqlQuery query;
     qDebug() << username;
@@ -127,4 +130,19 @@ void Profile::refresh()
 Profile::~Profile()
 {
     delete ui;
+}
+
+void Profile::on_importButton_clicked()
+{
+    QString imagename = QFileDialog::getOpenFileName(this, tr("Open Image"), "/Users/trevormclellan/Desktop/Documents", tr("Image Files (*.png *.jpg *.bmp *.jpeg)"));
+    //"All files(*.*)"
+    if( !imagename.isNull() )
+    {
+       qDebug() << "selected file path : " << imagename;
+    }
+
+    QPixmap p;
+    p.load(imagename, nullptr, Qt::AutoColor);
+    ui->image->setPixmap(p);
+
 }
