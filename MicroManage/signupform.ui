@@ -207,7 +207,7 @@ font-size: 15px;</string>
     </rect>
    </property>
    <property name="text">
-    <string>Test</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLineEdit" name="txtAge">

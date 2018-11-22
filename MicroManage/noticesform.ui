@@ -29,7 +29,7 @@
   <widget class="QLabel" name="headerLabel">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>150</x>
      <y>20</y>
      <width>211</width>
      <height>51</height>
@@ -56,9 +56,9 @@
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>105</x>
-      <y>81</y>
-      <width>611</width>
+      <x>145</x>
+      <y>111</y>
+      <width>541</width>
       <height>331</height>
      </rect>
     </property>
@@ -66,50 +66,50 @@
    <widget class="QToolButton" name="btnRefresh">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>30</y>
+      <x>690</x>
+      <y>70</y>
       <width>45</width>
       <height>45</height>
      </rect>
     </property>
     <property name="text">
-     <string>...</string>
+     <string>R</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnCreate">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>500</y>
-      <width>131</width>
+      <x>600</x>
+      <y>480</y>
+      <width>91</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Submit</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>495</y>
+      <x>190</x>
+      <y>460</y>
       <width>59</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Notice</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>535</y>
+      <x>190</x>
+      <y>510</y>
       <width>59</width>
       <height>31</height>
      </rect>
@@ -118,14 +118,14 @@
      <string>Date</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="txtNotice">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>490</y>
+      <x>270</x>
+      <y>460</y>
       <width>301</width>
       <height>31</height>
      </rect>
@@ -134,8 +134,8 @@
    <widget class="QLineEdit" name="txtDate">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>540</y>
+      <x>270</x>
+      <y>510</y>
       <width>301</width>
       <height>31</height>
      </rect>
