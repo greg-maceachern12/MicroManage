@@ -264,6 +264,7 @@ DIST          = /Applications/Qt/5.11.2/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/qt_config.prf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/spec_post.prf \
+		../MicroManage/.qmake.stash \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/mac/sdk.prf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/toolchain.prf \
@@ -498,6 +499,7 @@ Makefile: ../MicroManage/MicroManage.pro /Applications/Qt/5.11.2/clang_64/mkspec
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/qt_config.prf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/mac/sdk.prf \
 		/Applications/Qt/5.11.2/clang_64/mkspecs/features/toolchain.prf \
@@ -693,6 +695,7 @@ Makefile: ../MicroManage/MicroManage.pro /Applications/Qt/5.11.2/clang_64/mkspec
 /Applications/Qt/5.11.2/clang_64/mkspecs/features/qt_config.prf:
 /Applications/Qt/5.11.2/clang_64/mkspecs/macx-clang/qmake.conf:
 /Applications/Qt/5.11.2/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Applications/Qt/5.11.2/clang_64/mkspecs/features/exclusive_builds.prf:
 /Applications/Qt/5.11.2/clang_64/mkspecs/features/mac/sdk.prf:
 /Applications/Qt/5.11.2/clang_64/mkspecs/features/toolchain.prf:
@@ -769,6 +772,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r MicroManage.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -4409,7 +4413,111 @@ profile.o: ../MicroManage/profile.cpp ../MicroManage/profile.h \
 		../MicroManage/dbmodel.h \
 		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/QDebug \
 		/Applications/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QFileDialog
+		/Applications/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/QtGui \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtguiglobal.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qaccessible.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qbackingstore.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qbitmap.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qbrush.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qclipboard.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qcolor.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qcursor.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qdesktopservices.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qdrag.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qfont.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qfontinfo.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qfontmetrics.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qgenericplugin.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qglyphrun.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qguiapplication.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qicon.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qiconengine.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qimageiohandler.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qimagereader.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qimagewriter.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qinputmethod.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qkeysequence.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qmatrix.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qmovie.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopengl.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglbuffer.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglcontext.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopengldebug.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglframebufferobject.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglpaintdevice.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglpixeltransferoptions.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglshaderprogram.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopengltexture.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopengltextureblitter.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopengltimerquery.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglversionfunctions.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglvertexarrayobject.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qopenglwindow.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpagelayout.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpagesize.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpaintdevice.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpaintengine.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpainter.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpainterpath.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpalette.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpdfwriter.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpen.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpicture.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpictureformatplugin.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpixelformat.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpixmapcache.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpolygon.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qquaternion.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qrasterwindow.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qrawfont.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qregion.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qrgb.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qrgba64.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qscreen.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qsessionmanager.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qstatictext.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qstylehints.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qsurface.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextcursor.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextdocument.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextformat.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextlayout.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextlist.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextobject.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtextoption.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtexttable.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtouchdevice.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtransform.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qvalidator.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qvector2d.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qvector3d.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qvector4d.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qwindow.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qwindowdefs.h \
+		/Applications/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qtguiversion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o profile.o ../MicroManage/profile.cpp
 
 login.o: ../MicroManage/login.cpp ../MicroManage/login.h \
