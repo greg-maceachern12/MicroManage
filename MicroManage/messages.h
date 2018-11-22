@@ -14,6 +14,7 @@ class Messages : public QWidget {
         void pullMessages();
         void sendMessage(char message, int uid);
 
+
         ~Messages();
 
     signals:
