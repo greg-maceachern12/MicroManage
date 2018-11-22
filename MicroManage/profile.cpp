@@ -39,6 +39,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 
         }
 
+    //make qpushbutton and call it refresh to enable this again
 
     /*QSqlQuery query;
     qDebug() << username;
@@ -137,14 +138,11 @@ void Profile::on_importButton_clicked()
     //"All files(*.*)"
     if( !imagename.isNull() )
     {
-       qDebug() << "selected file path : " << imagename.toUtf8();
+       qDebug() << "selected file path : " << imagename;
     }
 
-    //QPixmap pixmap(":/images/tux.png");
-    //ui->image->setPixmap();
-    //ui->image.show();
-    QPixmap pixmap("/Users/trevormclellan/Pictures/download.jpeg");
-    ui->image->setPixmap(pixmap);
-    ui->image->setMask(pixmap.mask());
-    ui->image->show();
+    QPixmap p;
+    p.load(imagename, nullptr, Qt::AutoColor);
+    ui->image->setPixmap(p);
+
 }

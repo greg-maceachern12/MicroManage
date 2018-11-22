@@ -29,7 +29,6 @@ public:
     QTextEdit *name;
     QTextEdit *age;
     QTextEdit *txtEmail;
-    QPushButton *refresh;
     QToolButton *editButton;
     QTextEdit *description;
     QTextEdit *properties;
@@ -69,9 +68,6 @@ public:
         txtEmail = new QTextEdit(Profile);
         txtEmail->setObjectName(QStringLiteral("txtEmail"));
         txtEmail->setGeometry(QRect(460, 470, 201, 31));
-        refresh = new QPushButton(Profile);
-        refresh->setObjectName(QStringLiteral("refresh"));
-        refresh->setGeometry(QRect(680, 210, 114, 32));
         editButton = new QToolButton(Profile);
         editButton->setObjectName(QStringLiteral("editButton"));
         editButton->setGeometry(QRect(750, 520, 45, 45));
@@ -109,7 +105,6 @@ public:
         landlord->raise();
         name->raise();
         age->raise();
-        refresh->raise();
         editButton->raise();
         description->raise();
         properties->raise();
@@ -151,7 +146,6 @@ public:
 "</style></head><body style=\" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">15jgjf2@queensu.ca</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        refresh->setText(QApplication::translate("ProfileForm", "PushButton", nullptr));
         editButton->setText(QApplication::translate("ProfileForm", "...", nullptr));
         description->setHtml(QApplication::translate("ProfileForm", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
