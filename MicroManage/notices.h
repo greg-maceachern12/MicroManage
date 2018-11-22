@@ -13,6 +13,9 @@ class Notices : public QWidget {
         explicit Notices(QWidget *parent = nullptr);
         QToolButton* getMenuButton();
         ~Notices();
+    public slots:
+        void getNotices();
+        void createNotice();
 
     private:
         Ui::NoticesForm *ui;
