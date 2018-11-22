@@ -3,7 +3,7 @@
 #include <QSplashScreen>
 #include <QTimer>
 #include <QPixmap>
-#include <qthread.h>
+#include <QThread>
 
 
 
@@ -12,9 +12,10 @@ int main(int argc, char *argv[]) {
     //QPixmap pixmap(":/images/splash.jpg");
     QSplashScreen *splash = new QSplashScreen;
     //QPixmap pixmap("AbourUsBG.png");
-    splash->setPixmap(QPixmap(":images/icons/micromanage_logo.png"));
+    splash->setPixmap(QPixmap(":images/icons/splash.png"));
     splash->show();
     a.setAttribute(Qt::AA_UseHighDpiPixmaps);
+    //a.thread()->sleep(15);
     QFontDatabase::addApplicationFont(":css/fonts/AvenirNextLTPro-Regular.otf");
     QFontDatabase::addApplicationFont(":css/fonts/AvenirNextLTPro-MediumCn.otf");
     QFontDatabase::addApplicationFont(":css/fonts/AvenirNextLTPro-MediumCnIt.otf");
