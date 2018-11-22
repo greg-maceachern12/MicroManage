@@ -388,6 +388,7 @@ void MicroManage::openMaintenance() {
 
 void MicroManage::openMessages() {
     stackedWidget->setCurrentIndex(9);
+
     QList<QPushButton *>::iterator button;
     for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
         if ((*button)->isChecked() && (*button)->text() != "Messages") {
