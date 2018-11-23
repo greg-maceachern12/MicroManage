@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+
 <!-- Written by QtCreator 4.7.1, 2018-11-22T18:08:03. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{c3e0954a-cc7a-4d2e-a167-0a187bf05fa8}</value>
+
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -71,7 +73,11 @@
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/trevormclellan/Desktop/Documents/Cisc_320/Group_Project/kingrepo/build-MicroManage-Desktop_Qt_5_11_2_clang_64bit-Debug</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Michael Briggs/Pictures/kingrepo/build-MicroManage-Desktop_Qt_5_11_2_MinGW_32bit-Debug</value>
+>>>>>>> 42f12011ce874f8cc26ba067788a473a3db30878
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -125,7 +131,11 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/trevormclellan/Desktop/Documents/Cisc_320/Group_Project/kingrepo/build-MicroManage-Desktop_Qt_5_11_2_clang_64bit-Release</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Michael Briggs/Pictures/kingrepo/build-MicroManage-Desktop_Qt_5_11_2_MinGW_32bit-Release</value>
+>>>>>>> 42f12011ce874f8cc26ba067788a473a3db30878
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -179,7 +189,11 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/trevormclellan/Desktop/Documents/Cisc_320/Group_Project/kingrepo/build-MicroManage-Desktop_Qt_5_11_2_clang_64bit-Profile</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Michael Briggs/Pictures/kingrepo/build-MicroManage-Desktop_Qt_5_11_2_MinGW_32bit-Profile</value>
+>>>>>>> 42f12011ce874f8cc26ba067788a473a3db30878
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
