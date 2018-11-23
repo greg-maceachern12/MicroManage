@@ -101,7 +101,7 @@ public:
         importButton->setGeometry(QRect(190, 210, 114, 32));
         image = new QLabel(Profile);
         image->setObjectName(QStringLiteral("image"));
-        image->setGeometry(QRect(150, 70, 161, 121));
+        image->setGeometry(QRect(150, 40, 161, 161));
         landlord->raise();
         name->raise();
         age->raise();
@@ -171,7 +171,7 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       Age:</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Address:</p></body></html>", nullptr));
         importButton->setText(QApplication::translate("ProfileForm", "Import Photo", nullptr));
-        image->setText(QApplication::translate("ProfileForm", "Image", nullptr));
+        image->setText(QString());
     } // retranslateUi
 
 };
