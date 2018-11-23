@@ -35,27 +35,6 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>10</y>
-     <width>201</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;
-font-size: 20px;
-background-color: white;</string>
-   </property>
-   <property name="text">
-    <string>Your Image</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
@@ -314,6 +293,9 @@ font-size: 15px;</string>
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+   </property>
    <property name="text">
     <string>Type of User*</string>
    </property>
@@ -347,7 +329,6 @@ font-size: 15px;</string>
   <zorder>txtPhone</zorder>
   <zorder>label_5</zorder>
   <zorder>label_9</zorder>
-  <zorder>label_10</zorder>
   <zorder>label_4</zorder>
   <zorder>label_8</zorder>
   <zorder>label_2</zorder>
