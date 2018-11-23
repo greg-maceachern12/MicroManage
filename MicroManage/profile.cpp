@@ -134,15 +134,13 @@ Profile::~Profile()
 
 void Profile::on_importButton_clicked()
 {
-    QString imagename = QFileDialog::getOpenFileName(this, tr("Open Image"), "/Users/trevormclellan/Desktop/Documents", tr("Image Files (*.png *.jpg *.bmp *.jpeg)"));
-    //"All files(*.*)"
-    if( !imagename.isNull() )
-    {
-       qDebug() << "selected file path : " << imagename;
-    }
+    QString imagename = QFileDialog::getOpenFileName(this, "Open Image", "Image Files (*.png *.jpg *.bmp *.jpeg)");
 
-    QPixmap p;
-    p.load(imagename, nullptr, Qt::AutoColor);
-    ui->image->setPixmap(p);
+    if (imagename != "") {
+        QPixmap p;
+        p.load(imagename, nullptr, Qt::AutoColor);
+        ui->image->setScaledContents(true);
+        ui->image->setPixmap(p);
+    }
 
 }
