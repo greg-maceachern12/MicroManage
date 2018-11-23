@@ -22,6 +22,8 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->message2->setReadOnly(true);
     ui->message3->setReadOnly(true);
 
+    ui->subject->setPlaceholderText("Subject");
+    ui->message->setPlaceholderText("Message");
 
     QPalette *palette = new QPalette();
     palette->setColor(QPalette::Base, Qt::white);
@@ -35,12 +37,12 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->label3->setText("");
 
 
-    ui->to->addItem("greg");
-    ui->to->addItem("mike");
-    ui->to->addItem("lauren");
-    ui->to->addItem("trevor");
-    ui->to->addItem("xinbo");
-    ui->to->addItem("jinzao");
+    ui->to->addItem("To Greg");
+    ui->to->addItem("To Mike");
+    ui->to->addItem("To Lauren");
+    ui->to->addItem("To Trevor");
+    ui->to->addItem("To Xinbo");
+    ui->to->addItem("To Jinzao");
 
     pullMessages();
 
@@ -62,6 +64,7 @@ void Messages::on_send_clicked(){
     QString message = ui->message->toPlainText();
     QString subject = ui->subject->text();
     QString rid = ui->to->currentText();
+    rid.remove(0, 3);
     qDebug() << rid;
     QString user = dbmodel::username;
 

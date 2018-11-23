@@ -22,5 +22,7 @@
     <file>images/icons/micromanage_logo_overlay.png</file>  
     <file>images/icons/micromanage_name.png</file>
     <file>images/icons/micromanage_house.png</file>
+    <file>images/icons/splash.png</file>
 </qresource>
 </RCC>
+
