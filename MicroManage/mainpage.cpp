@@ -12,6 +12,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 
 
 
+
     QSize icon_size(125, 125);
     if (!dbmodel::myDb.open()) {
         qDebug() <<"error-";
