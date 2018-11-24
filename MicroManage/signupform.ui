@@ -54,25 +54,6 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="phoneNumberLabel">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>410</y>
-     <width>111</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>Phone Number</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btnCancel">
    <property name="geometry">
     <rect>
@@ -351,6 +332,22 @@
     <string>Change photo</string>
    </property>
   </widget>
+  <widget class="QLabel" name="phoneNumberLabel">
+   <property name="geometry">
+    <rect>
+     <x>229</x>
+     <y>420</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Phone Number</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
   <zorder>SignUp</zorder>
   <zorder>btnCancel</zorder>
   <zorder>btnSubmit</zorder>
@@ -365,7 +362,6 @@
   <zorder>emailLabel</zorder>
   <zorder>passwordLabel</zorder>
   <zorder>addressLabel</zorder>
-  <zorder>phoneNumberLabel</zorder>
   <zorder>fullNameLabel</zorder>
   <zorder>ageLabel</zorder>
   <zorder>menuButton</zorder>
@@ -374,6 +370,7 @@
   <zorder>requiredFieldsLabel</zorder>
   <zorder>photoLabel</zorder>
   <zorder>changePhotoButton</zorder>
+  <zorder>phoneNumberLabel</zorder>
  </widget>
  <tabstops>
   <tabstop>txtUid</tabstop>
