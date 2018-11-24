@@ -12,14 +12,14 @@
 Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm) {
     ui->setupUi(this);
 
-    ui->menu_button->setCheckable(true);
-    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menu_button->setIconSize(QSize(25, 25));
+    ui->menuButton->setCheckable(true);
+    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->createButton, SIGNAL(clicked()), this, SLOT(createNotice()));
     connect(ui->refreshButton, SIGNAL(clicked()), this, SLOT(getNotices()));
 
-    ui->noticeText->setPlaceholderText("Notice");
+    ui->noticeTxt->setPlaceholderText("Notice");
 
 }
 
@@ -45,7 +45,7 @@ void Notices::getNotices() {
 
 void Notices::createNotice() {
    
-    QString notice = ui->noticeText->text();
+    QString notice = ui->noticeTxt->text();
     
 
     QSqlQuery qry;
@@ -58,7 +58,7 @@ void Notices::createNotice() {
     qryWrite.bindValue(":date", QDateTime::currentDateTime());
 
     if (qryWrite.exec()) {
-        ui->noticeText->setText("");
+        ui->noticeTxt->setText("");
         
         getNotices();
     } else {

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="logo_label">
+  <widget class="QLabel" name="logoLabel">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -139,7 +139,7 @@
    </property>
   </widget>
   <zorder>Welcome</zorder>
-  <zorder>logo_label</zorder>
+  <zorder>logoLabel</zorder>
   <zorder>welcomeToLabel</zorder>
   <zorder>chooseLabel</zorder>
   <zorder>landlordButton</zorder>
