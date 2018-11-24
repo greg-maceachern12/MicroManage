@@ -15,17 +15,17 @@ Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm) {
     ui->menu_button->setCheckable(true);
     ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menu_button->setIconSize(QSize(25, 25));
-    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-    connect(ui->create_button, SIGNAL(clicked()), this, SLOT(createNotice()));
-    connect(ui->refresh_button, SIGNAL(clicked()), this, SLOT(getNotices()));
+    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    connect(ui->createButton, SIGNAL(clicked()), this, SLOT(createNotice()));
+    connect(ui->refreshButton, SIGNAL(clicked()), this, SLOT(getNotices()));
 
-    ui->notice_text->setPlaceholderText("Notice");
+    ui->noticeText->setPlaceholderText("Notice");
 
 }
 
 
 QToolButton* Notices::getMenuButton() {
-    return ui->menu_button;
+    return ui->menuButton;
 }
 
 
@@ -45,7 +45,7 @@ void Notices::getNotices() {
 
 void Notices::createNotice() {
    
-    QString notice = ui->notice_text->text();
+    QString notice = ui->noticeText->text();
     
 
     QSqlQuery qry;
@@ -58,7 +58,7 @@ void Notices::createNotice() {
     qryWrite.bindValue(":date", QDateTime::currentDateTime());
 
     if (qryWrite.exec()) {
-        ui->notice_text->setText("");
+        ui->noticeText->setText("");
         
         getNotices();
     } else {

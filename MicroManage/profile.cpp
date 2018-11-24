@@ -7,10 +7,10 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
     ui->setupUi(this);
 
-    ui->menu_button->setCheckable(true);
-    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menu_button->setIconSize(QSize(25, 25));
-    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    ui->menuButton->setCheckable(true);
+    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menuButton->setIconSize(QSize(25, 25));
+    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
     ui->editButton->setIcon(QIcon(":images/icons/edit_icon.png"));
     ui->editButton->setIconSize(QSize(45, 45));
@@ -42,7 +42,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 }
 
 QToolButton* Profile::getMenuButton() {
-    return ui->menu_button;
+    return ui->menuButton;
 }
 
 Ui::ProfileForm* Profile::getUi() {

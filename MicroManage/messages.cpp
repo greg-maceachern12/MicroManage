@@ -10,14 +10,14 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->setupUi(this);
     ui->category->addItem("Sent");
     ui->category->addItem("Received");
-    ui->menu_button->setCheckable(true);
-    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menu_button->setIconSize(QSize(25, 25));
-    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    ui->menuButton->setCheckable(true);
+    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menuButton->setIconSize(QSize(25, 25));
+    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
     
     connect(ui->refresh, SIGNAL(clicked()), this, SLOT(on_refresh_clicked()));
-    connect(ui->send_message, SIGNAL(clicked()), this, SLOT(on_send_clicked()));
+    connect(ui->sendMessage, SIGNAL(clicked()), this, SLOT(on_send_clicked()));
     ui->message1->setReadOnly(true);
     ui->message2->setReadOnly(true);
     ui->message3->setReadOnly(true);
@@ -32,17 +32,17 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->message2->setPalette(*palette);
     ui->message3->setPalette(*palette);
 
-    ui->message_info1->setText("");
-    ui->message_info2->setText("");
-    ui->message_info3->setText("");
+    ui->messageInfo1->setText("");
+    ui->messageInfo2->setText("");
+    ui->messageInfo3->setText("");
 
 
-    ui->send_to->addItem("To Greg");
-    ui->send_to->addItem("To Mike");
-    ui->send_to->addItem("To Lauren");
-    ui->send_to->addItem("To Trevor");
-    ui->send_to->addItem("To Xinbo");
-    ui->send_to->addItem("To Jinzao");
+    ui->sendTo->addItem("To Greg");
+    ui->sendTo->addItem("To Mike");
+    ui->sendTo->addItem("To Lauren");
+    ui->sendTo->addItem("To Trevor");
+    ui->sendTo->addItem("To Xinbo");
+    ui->sendTo->addItem("To Jinzao");
 
     pullMessages();
 
@@ -92,7 +92,7 @@ void Messages::on_send_clicked(){
 
 
 QToolButton* Messages::getMenuButton() {
-    return ui->menu_button;
+    return ui->menuButton;
 }
 void Messages::pullMessages(){
     qDebug() << "messagesssssß";
@@ -108,9 +108,9 @@ void Messages::pullMessages(){
     ui->message2->clear();
     ui->message3->clear();
 
-    ui->message_info1->clear();
-    ui->message_info2->clear();
-    ui->message_info3->clear();
+    ui->messageInfo1->clear();
+    ui->messageInfo2->clear();
+    ui->messageInfo3->clear();
 
     int count = 0;
     if(ui->category->currentText() == "Received"){
@@ -148,16 +148,16 @@ void Messages::pullMessages(){
     }
         if(s.at(0)!=""){
             ui->message1->clear();
-            ui->message_info1->setText(s2.at(0));
+            ui->messageInfo1->setText(s2.at(0));
             qDebug() << s.at(0);
             ui->message1->setPlainText(s.at(0));
         }
         if(s.at(1)!=""){
-            ui->message_info2->setText(s2.at(1));
+            ui->messageInfo2->setText(s2.at(1));
             ui->message2->setPlainText(s.at(1));
         }
         if(s.at(2)!=""){
-            ui->message_info3->setText(s2.at(2));
+            ui->messageInfo3->setText(s2.at(2));
 
             ui->message3->setPlainText(s.at(2));
         }
