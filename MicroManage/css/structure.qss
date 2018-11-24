@@ -10,12 +10,12 @@
 	background-color: rgb(242, 101, 34);
 }
 
-#menuButton {
+#menu_button {
 	background: transparent;
 	border: none;
 }
 
-#menuButton::checked {
+#menu_button::checked {
 	background-color: rgb(209, 211, 212);
 	border: none;
 }
@@ -66,9 +66,9 @@ QLineEdit {
 	font-size: 14px;
 }
 
-/* This has to come after QLineEdit (above) so that txtUser and txtPass keep their
+/* This has to come after QLineEdit (above) so that txt_user and txt_pass keep their
 proper font styling*/
-#logInToAccountLabel, #txtUser, #txtPass, #logInPushButton {
+#logInToAccountLabel, #txt_user, #txt_pass, #logInPushButton {
 	font-size: 20px;
 	font-family: "Avenir Next LT Pro Demi";
 
@@ -81,7 +81,7 @@ proper font styling*/
 	background: rgba(198, 132, 78, 0.5);
 }
 
-#btnCancel {
+#cancel_button {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -90,7 +90,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#btnSubmit {
+#submit_button {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -100,7 +100,7 @@ proper font styling*/
 	color: white;
 }
 
-#questionButton {
+#question_button {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -147,7 +147,7 @@ proper font styling*/
 	border: none;
 }
 
-#welcomeLabel, #headerLabel {
+#welcome_label, #headerLabel {
 	font-family: "Avenir Next LT Pro Demi";
 	font: 30px;
 	color: rgb(242, 101, 34);
@@ -168,17 +168,17 @@ proper font styling*/
 }
 
 
-#signupButton, #loginButton, #changePhotoButton, #requiredFieldsLabel {
+#signup_button, #loginButton, #changephoto_button, #requiredFieldsLabel {
 	background: transparent;
 	font-family: "Avenir Next Medium";
 	font-size: 13px;
 }
 
-#signupButton {
+#signup_button {
 	color: white;
 }
 
-#loginButton, #changePhotoButton {
+#loginButton, #changephoto_button {
 	color: rgb(242, 101, 34);
 }
 

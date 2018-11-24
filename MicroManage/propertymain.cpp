@@ -3,17 +3,17 @@
 PropertyMain::PropertyMain(QWidget *parent) : QWidget(parent), ui(new Ui::PropertyMainForm) {
     ui->setupUi(this);
 
-    ui->menuButton->setCheckable(true);
-    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menuButton->setIconSize(QSize(25, 25));
-    ui->addButton->setIcon(QIcon(":images/icons/plus_icon.png"));
-    ui->addButton->setIconSize(QSize(45, 45));
-    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    ui->menu_button->setCheckable(true);
+    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menu_button->setIconSize(QSize(25, 25));
+    ui->add_button->setIcon(QIcon(":images/icons/plus_icon.png"));
+    ui->add_button->setIconSize(QSize(45, 45));
+    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 }
 
 
 QToolButton* PropertyMain::getMenuButton() {
-    return ui->menuButton;
+    return ui->menu_button;
 }
 
 

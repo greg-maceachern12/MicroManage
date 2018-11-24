@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="questionButton">
+  <widget class="QPushButton" name="question_button">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -47,7 +47,7 @@ font-size: 15px;</string>
     <string>Forgot Password</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -89,9 +89,9 @@ font-size: 15px;</string>
    </property>
   </widget>
   <zorder>Settings</zorder>
-  <zorder>questionButton</zorder>
+  <zorder>question_button</zorder>
   <zorder>forgotPwButton</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>headerLabel</zorder>
  </widget>
  <resources/>

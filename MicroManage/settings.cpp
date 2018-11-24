@@ -5,16 +5,16 @@
 
 Settings::Settings(QWidget *parent) : QWidget(parent), ui(new Ui::SettingsForm) {
     ui->setupUi(this); // Sets up the .ui file GUI
-    ui->menuButton->setCheckable(true);
-    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menuButton->setIconSize(QSize(25, 25));
-    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-    connect(ui->questionButton, SIGNAL(clicked()), this, SLOT(emailLink()));
+    ui->menu_button->setCheckable(true);
+    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menu_button->setIconSize(QSize(25, 25));
+    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    connect(ui->question_button, SIGNAL(clicked()), this, SLOT(emailLink()));
 }
 
 
 QToolButton* Settings::getMenuButton() {
-    return ui->menuButton;
+    return ui->menu_button;
 }
 
 

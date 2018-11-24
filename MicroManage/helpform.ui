@@ -26,7 +26,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -280,7 +280,7 @@
   </widget>
   <zorder>Help</zorder>
   <zorder>helpDocEdit</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>quoteLabel</zorder>
   <zorder>headerLabel</zorder>
   <zorder>quoteLabel_2</zorder>
