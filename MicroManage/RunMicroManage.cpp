@@ -23,6 +23,7 @@ int main(int argc, char *argv[]) {
     QFontDatabase::addApplicationFont(":css/fonts/AvenirNextLTPro-Bold.otf");
     QFile styleFile(":css/structure.qss");
 
+    // Keep this for testing purposes
     /*QFontDatabase db;
     for(int i=0; i<db.families().size(); i++)
     {

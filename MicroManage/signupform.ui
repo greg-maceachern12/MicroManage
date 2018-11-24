@@ -16,17 +16,17 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="emailLabel">
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>190</y>
+     <y>250</y>
      <width>71</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Email*</string>
@@ -35,17 +35,17 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="addressLabel">
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>280</y>
+     <y>340</y>
      <width>91</width>
      <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Address*</string>
@@ -54,17 +54,17 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="phoneNumberLabel">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>350</y>
-     <width>101</width>
+     <x>230</x>
+     <y>410</y>
+     <width>111</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Phone Number</string>
@@ -76,32 +76,30 @@
   <widget class="QPushButton" name="btnCancel">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>470</y>
+     <x>310</x>
+     <y>510</y>
      <width>111</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;
-background-color: transparent;
-font-size: 15px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Cancel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="fullNameLabel">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>150</y>
-     <width>71</width>
+     <x>260</x>
+     <y>210</y>
+     <width>81</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Full Name*</string>
@@ -110,17 +108,17 @@ font-size: 15px;</string>
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="ageLabel">
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>240</y>
+     <y>300</y>
      <width>81</width>
      <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Age</string>
@@ -132,16 +130,14 @@ font-size: 15px;</string>
   <widget class="QPushButton" name="btnSubmit">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>470</y>
+     <x>430</x>
+     <y>510</y>
      <width>131</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;
-background-color: orange;
-font-size: 15px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Submit</string>
@@ -151,23 +147,23 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>160</y>
+     <y>220</y>
      <width>201</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_11">
+  <widget class="QLabel" name="usernameLabel">
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>110</y>
+     <y>170</y>
      <width>101</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Username*</string>
@@ -180,7 +176,7 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>120</y>
+     <y>180</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -193,7 +189,7 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>240</y>
+     <y>300</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -203,7 +199,7 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>280</y>
+     <y>340</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -213,7 +209,7 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>200</y>
+     <y>260</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -233,7 +229,7 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>400</y>
+     <y>460</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -242,17 +238,17 @@ font-size: 15px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_9">
+  <widget class="QLabel" name="passwordLabel">
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>390</y>
+     <y>450</y>
      <width>101</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Password</string>
@@ -265,7 +261,7 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>360</y>
+     <y>420</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -284,17 +280,17 @@ font-size: 15px;</string>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_user">
+  <widget class="QLabel" name="typeOfUserLabel">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>320</y>
+     <y>380</y>
      <width>111</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-family: &quot;Avenir Next&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Type of User*</string>
@@ -307,7 +303,7 @@ font-size: 15px;</string>
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>320</y>
+     <y>380</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -316,26 +312,68 @@ font-size: 15px;</string>
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="requiredFieldsLabel">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>490</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>* Required Fields</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="photoLabel">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>20</y>
+     <width>121</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="changePhotoButton">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>150</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Change photo</string>
+   </property>
+  </widget>
   <zorder>SignUp</zorder>
   <zorder>btnCancel</zorder>
   <zorder>btnSubmit</zorder>
   <zorder>txtName</zorder>
-  <zorder>label_11</zorder>
+  <zorder>usernameLabel</zorder>
   <zorder>txtUid</zorder>
   <zorder>txtAge</zorder>
   <zorder>txtAddress</zorder>
   <zorder>txtEmail</zorder>
   <zorder>txtPassword</zorder>
   <zorder>txtPhone</zorder>
-  <zorder>label_5</zorder>
-  <zorder>label_9</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_8</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
+  <zorder>emailLabel</zorder>
+  <zorder>passwordLabel</zorder>
+  <zorder>addressLabel</zorder>
+  <zorder>phoneNumberLabel</zorder>
+  <zorder>fullNameLabel</zorder>
+  <zorder>ageLabel</zorder>
   <zorder>menuButton</zorder>
-  <zorder>label_user</zorder>
+  <zorder>typeOfUserLabel</zorder>
   <zorder>txtType</zorder>
+  <zorder>requiredFieldsLabel</zorder>
+  <zorder>photoLabel</zorder>
+  <zorder>changePhotoButton</zorder>
  </widget>
  <tabstops>
   <tabstop>txtUid</tabstop>

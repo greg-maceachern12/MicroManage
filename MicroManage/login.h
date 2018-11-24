@@ -24,7 +24,7 @@ class Login : public QWidget {
     public slots:
 
 private slots:
-    void on_pushButton_clicked();
+    void on_logInPushButton_clicked();
 
 private:
         Ui::LoginForm *ui;
