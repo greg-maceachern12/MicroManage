@@ -19,7 +19,6 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     //set page size to 689 height to 547 width
 
     //setting text boxes tp read only
-    ui->name->setReadOnly(true);
     ui->contact->setReadOnly(true);
     ui->description->setReadOnly(true);
     ui->properties->setReadOnly(true);
@@ -68,14 +67,12 @@ void Profile::updateProfile() {
 void Profile::makeEditable()
  {
     if (ui->editButton->isChecked() ){
-        ui->name->setReadOnly(false);
         ui->description->setReadOnly(false);
         ui->contact->setReadOnly(false);
         ui->properties->setReadOnly(false);
         ui->age->setReadOnly(false);
     }
    else{
-        ui->name->setReadOnly(true);
         ui->description->setReadOnly(true);
         ui->contact->setReadOnly(true);
         ui->properties->setReadOnly(true);
