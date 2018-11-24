@@ -33,6 +33,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
              ui->name->setText(query.value(0).toString());
              ui->age->setText(query.value(1).toString());
              ui->landlord->setText(query.value(2).toString());
+             ui->address->setText(query.value(3).toString());
              ui->properties->setText(query.value(3).toString());
              ui->txtEmail->setText(query.value(4).toString());
              ui->contact->setText(query.value(5).toString());
@@ -72,6 +73,7 @@ void Profile::updateProfile() {
          ui->name->setText(query.value(0).toString());
          ui->age->setText(query.value(1).toString());
          ui->landlord->setText(query.value(2).toString());
+         ui->address->setText(query.value(3).toString());
          ui->properties->setText(query.value(3).toString());
          ui->txtEmail->setText(query.value(4).toString());
          ui->contact->setText(query.value(5).toString());
