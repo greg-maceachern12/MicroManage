@@ -10,7 +10,7 @@
 	background-color: rgb(242, 101, 34);
 }
 
-#menu_button {
+#menuButton, #refresh {
 	background: transparent;
 	border: none;
 }
@@ -109,7 +109,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#forgotPwButton {
+#forgotPwButton, #newRow {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -135,6 +135,29 @@ proper font styling*/
 #rememberMe {
 	font-family: "Avenir Next";
 	font-size: 14px;
+}
+
+#maintenanceTable {
+	font-family: "Avenir Next";
+	font-size: 14px;
+	alternate-background-color: rgb(241, 242, 242);
+	selection-background-color: rgb(242, 101, 34);
+	selection-color: white;
+
+}
+
+#maintenanceTable QHeaderView::section, #maintenanceTable QTableCornerButton::section {
+	background: rgb(198, 132, 78);
+	color: white;
+}
+
+#maintenanceTable QScrollBar {
+	background: rgb(188, 190, 192);
+}
+
+#maintenanceTable QScrollBar::handle {
+	background: rgb(242, 101, 34);
+	border-radius: 7px;
 }
 
 #createProfileMenuButton::checked, #homeMenuButton:checked, 
@@ -183,7 +206,9 @@ proper font styling*/
 }
 
 #usernameLabel, #fullNameLabel, #emailLabel, #ageLabel, #addressLabel, 
-#typeOfUserLabel, #phoneNumberLabel, #passwordLabel {
+#typeOfUserLabel, #phoneNumberLabel, #passwordLabel, 
+#maintenanceDateLabel, #maintenanceAddressLabel, #maintenanceOwnerLabel, 
+#maintenanceRequestLabel, #maintenanceStatusLabel {
 	font-family: "Avenir Next LT Pro";
 	font-weight: bold;
 	font-size: 14px;

@@ -59,33 +59,36 @@
    <widget class="QPushButton" name="newRow">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>350</x>
       <y>490</y>
       <width>151</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Submit Request</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="maintenanceDateLabel">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>130</x>
       <y>420</y>
-      <width>59</width>
+      <width>41</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Date</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="maintenanceAddressLabel">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>260</x>
       <y>420</y>
       <width>59</width>
       <height>16</height>
@@ -94,11 +97,14 @@
     <property name="text">
      <string>Address</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="maintenanceOwnerLabel">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>390</x>
       <y>420</y>
       <width>59</width>
       <height>16</height>
@@ -107,11 +113,14 @@
     <property name="text">
      <string>Owner</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="maintenanceRequestLabel">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>520</x>
       <y>420</y>
       <width>59</width>
       <height>16</height>
@@ -120,11 +129,14 @@
     <property name="text">
      <string>Request</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="maintenanceStatusLabel">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>650</x>
       <y>420</y>
       <width>59</width>
       <height>16</height>
@@ -133,11 +145,14 @@
     <property name="text">
      <string>Status</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QLineEdit" name="date_txt">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>100</x>
       <y>440</y>
       <width>113</width>
       <height>21</height>
@@ -147,7 +162,7 @@
    <widget class="QLineEdit" name="address_txt">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>230</x>
       <y>440</y>
       <width>113</width>
       <height>21</height>
@@ -157,7 +172,7 @@
    <widget class="QLineEdit" name="owner_txt">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>360</x>
       <y>440</y>
       <width>113</width>
       <height>21</height>
@@ -167,9 +182,9 @@
    <widget class="QLineEdit" name="request_txt">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>490</x>
       <y>440</y>
-      <width>113</width>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
@@ -177,7 +192,7 @@
    <widget class="QLineEdit" name="status_txt">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>630</x>
       <y>440</y>
       <width>113</width>
       <height>21</height>
@@ -185,12 +200,12 @@
     </property>
    </widget>
   </widget>
-  <widget class="QTableView" name="maintenance_table">
+  <widget class="QTableView" name="maintenanceTable">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>100</x>
      <y>80</y>
-     <width>681</width>
+     <width>641</width>
      <height>291</height>
     </rect>
    </property>
@@ -211,7 +226,7 @@
   <zorder>Maintenance</zorder>
   <zorder>menu_button</zorder>
   <zorder>headerLabel</zorder>
-  <zorder>maintenance_table</zorder>
+  <zorder>maintenanceTable</zorder>
   <zorder>refresh</zorder>
  </widget>
  <resources/>
