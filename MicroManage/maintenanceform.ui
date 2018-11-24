@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -224,7 +224,7 @@
    </property>
   </widget>
   <zorder>Maintenance</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>headerLabel</zorder>
   <zorder>maintenanceTable</zorder>
   <zorder>refresh</zorder>

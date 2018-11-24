@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -59,12 +59,12 @@
       <x>110</x>
       <y>130</y>
       <width>601</width>
-      <height>307</height>
+      <height>316</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label1">
+      <widget class="QLabel" name="message_info1">
        <property name="text">
         <string>TextLabel</string>
        </property>
@@ -74,7 +74,7 @@
       <widget class="QPlainTextEdit" name="message1"/>
      </item>
      <item>
-      <widget class="QLabel" name="label2">
+      <widget class="QLabel" name="message_info2">
        <property name="text">
         <string>TextLabel</string>
        </property>
@@ -84,7 +84,7 @@
       <widget class="QPlainTextEdit" name="message2"/>
      </item>
      <item>
-      <widget class="QLabel" name="label3">
+      <widget class="QLabel" name="message_info3">
        <property name="text">
         <string>TextLabel</string>
        </property>
@@ -101,7 +101,7 @@
       <x>110</x>
       <y>440</y>
       <width>601</width>
-      <height>108</height>
+      <height>109</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -125,7 +125,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QComboBox" name="to"/>
+        <widget class="QComboBox" name="send_to"/>
        </item>
        <item>
         <widget class="QPushButton" name="send_message">
@@ -162,7 +162,7 @@
    </widget>
   </widget>
   <zorder>Messages</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>headerLabel</zorder>
  </widget>
  <resources/>

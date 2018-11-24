@@ -9,12 +9,12 @@ Login::Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Main
     mainPage = main;
     statusBar = status_bar;
 
-    ui->txtUser->setPlaceholderText("Username");
-    ui->txtPass->setPlaceholderText("Password");
-    ui->micromanageLabel->setPixmap(QPixmap(":images/icons/micromanage_name.png"));
-    ui->micromanageLabel->setScaledContents(true);
+    ui->txt_user->setPlaceholderText("Username");
+    ui->txt_pass->setPlaceholderText("Password");
+    ui->micromanage_label->setPixmap(QPixmap(":images/icons/micromanage_name.png"));
+    ui->micromanage_label->setScaledContents(true);
 
-    connect(ui->signupButton, SIGNAL(clicked()), parent, SLOT(openWelcome()));
+    connect(ui->signup_button, SIGNAL(clicked()), parent, SLOT(openWelcome()));
 }
 
 
@@ -28,17 +28,17 @@ QCheckBox* Login::getRememberMe() {
 }
 
 void Login::clearInputs() {
-    ui->txtUser->clear();
-    ui->txtPass->clear();
+    ui->txt_user->clear();
+    ui->txt_pass->clear();
 }
 
 void Login::on_logInPushButton_clicked() {
     qDebug() << dbmodel::username;
-    QString txt_username, txt_password;
-    txt_username = ui->txtUser->text();
-    txt_password = ui->txtPass->text();
+    QString username, password;
+    username = ui->txt_user->text();
+    password = ui->txt_pass->text();
     QSqlQuery qry;
-    if (qry.exec("SELECT username FROM user WHERE username='"+txt_username+"'and password='"+ txt_password+"'" )) {
+    if (qry.exec("SELECT username FROM user WHERE username='"+username+"'and password='"+ password+"'" )) {
         int count = 0;
         while (qry.next()) {
             qDebug() << qry.value(0).toString();
@@ -47,7 +47,7 @@ void Login::on_logInPushButton_clicked() {
         if (count == 1) {
             qDebug() << "user and password correct";
             statusBar->clearMessage();
-            dbmodel::username = txt_username;
+            dbmodel::username = username;
 
 //            qry2.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+dbmodel::username+"'");
             profile->updateProfile();

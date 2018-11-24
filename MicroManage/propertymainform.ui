@@ -25,7 +25,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -138,7 +138,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun'; font-size:14pt; color:#ffaa00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="addButton">
+  <widget class="QToolButton" name="add_button">
    <property name="geometry">
     <rect>
      <x>720</x>
@@ -152,12 +152,12 @@ p, li { white-space: pre-wrap; }
    </property>
   </widget>
   <zorder>Properties</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>address</zorder>
   <zorder>graphicsView</zorder>
   <zorder>headerLabel</zorder>
   <zorder>tenant</zorder>
-  <zorder>addButton</zorder>
+  <zorder>add_button</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -9,19 +9,19 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     statusBar = status_bar;
 
     ui->setupUi(this); // Sets up the .ui file GUI
-    ui->menuButton->setCheckable(true);
-    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menuButton->setIconSize(QSize(25, 25));
+    ui->menu_button->setCheckable(true);
+    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menu_button->setIconSize(QSize(25, 25));
 
-    QRegion circle(ui->photoLabel->rect(), QRegion::Ellipse);
-    ui->photoLabel->setMask(circle);
-    ui->photoLabel->setScaledContents(true);
-    ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
+    QRegion circle(ui->photo_label->rect(), QRegion::Ellipse);
+    ui->photo_label->setMask(circle);
+    ui->photo_label->setScaledContents(true);
+    ui->photo_label->setPixmap(QPixmap(":images/photo_temp.png"));
 
-    connect(ui->changePhotoButton, SIGNAL(clicked()), this, SLOT(choosePhoto()));
-    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-    connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(createUser()));
-    connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(cancelAction()));
+    connect(ui->changephoto_button, SIGNAL(clicked()), this, SLOT(choosePhoto()));
+    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    connect(ui->submit_button, SIGNAL(clicked()), this, SLOT(createUser()));
+    connect(ui->cancel_button, SIGNAL(clicked()), this, SLOT(cancelAction()));
 
 }
 
@@ -31,13 +31,13 @@ bool SignUp::choosePhoto() {
     if (imagename != "") {
         QPixmap p;
         p.load(imagename, nullptr, Qt::AutoColor);
-        ui->photoLabel->setPixmap(p);
+        ui->photo_label->setPixmap(p);
     }
 }
 
 
 QToolButton* SignUp::getMenuButton() {
-    return ui->menuButton;
+    return ui->menu_button;
 }
 
 
@@ -64,7 +64,7 @@ void SignUp::createUser() {
                              qryWrite.bindValue(":username", username);
                              qryWrite.bindValue(":name", ui->txtName->text());
                              qryWrite.bindValue(":age", ui->txtAge->text());
-                             qryWrite.bindValue(":type", ui->txtType->text());
+                             qryWrite.bindValue(":type", ui->type_text->text());
                              qryWrite.bindValue(":address", ui->txtAddress->text());
                              qryWrite.bindValue(":email", ui->txtEmail->text());
                              qryWrite.bindValue(":phone", ui->txtPhone->text());
@@ -73,8 +73,8 @@ void SignUp::createUser() {
                 statusBar->showMessage("Success! Account created.");
                 dbmodel::username = username;
                 stackedWidget->setCurrentIndex(3);
-                if (ui->menuButton->isChecked()) {
-                    ui->menuButton->click();
+                if (ui->menu_button->isChecked()) {
+                    ui->menu_button->click();
                 }
             } else {
                qDebug() << qryWrite.lastError();
@@ -88,20 +88,20 @@ void SignUp::createUser() {
 
 
 void SignUp::setLandlord() {
-    ui->txtType->setText("Landlord");
+    ui->type_text->setText("Landlord");
 }
 
 
 void SignUp::setTenant() {
-    ui->txtType->setText("Tenant");
+    ui->type_text->setText("Tenant");
 }
 
 
 void SignUp::cancelAction() {
-    if (ui->menuButton->isChecked()) {
-        ui->menuButton->click();
+    if (ui->menu_button->isChecked()) {
+        ui->menu_button->click();
     }
-    ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
+    ui->photo_label->setPixmap(QPixmap(":images/photo_temp.png"));
     statusBar->clearMessage();
     stackedWidget->setCurrentIndex(0);
 }

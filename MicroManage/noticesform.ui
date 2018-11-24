@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -63,7 +63,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QToolButton" name="btnRefresh">
+   <widget class="QToolButton" name="refresh_button">
     <property name="geometry">
      <rect>
       <x>690</x>
@@ -76,74 +76,31 @@
      <string>R</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCreate">
+   <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>480</y>
-      <width>91</width>
-      <height>51</height>
+      <x>150</x>
+      <y>470</y>
+      <width>531</width>
+      <height>80</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Submit</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>460</y>
-      <width>59</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Notice</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>510</y>
-      <width>59</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Date</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtNotice">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>460</y>
-      <width>301</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtDate">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>510</y>
-      <width>301</width>
-      <height>31</height>
-     </rect>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="notice_text"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="create_button">
+       <property name="text">
+        <string>Submit</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <zorder>Notices</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>headerLabel</zorder>
  </widget>
  <resources/>
