@@ -13,8 +13,11 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
 
-    //QRegion circle(ui->photoLabel->rect(), QRegion::Ellipse);
-    //ui->photoLabel->setMask(circle);
+    QRegion circle(ui->photoLabel->rect(), QRegion::Ellipse);
+    ui->photoLabel->setMask(circle);
+    ui->photoLabel->setScaledContents(true);
+    ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
+
     connect(ui->changePhotoButton, SIGNAL(clicked()), this, SLOT(choosePhoto()));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(createUser()));
@@ -28,7 +31,6 @@ bool SignUp::choosePhoto() {
     if (imagename != "") {
         QPixmap p;
         p.load(imagename, nullptr, Qt::AutoColor);
-        ui->photoLabel->setScaledContents(true);
         ui->photoLabel->setPixmap(p);
     }
 }
@@ -99,6 +101,7 @@ void SignUp::cancelAction() {
     if (ui->menuButton->isChecked()) {
         ui->menuButton->click();
     }
+    ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
     statusBar->clearMessage();
     stackedWidget->setCurrentIndex(0);
 }
