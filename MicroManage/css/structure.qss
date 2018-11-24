@@ -68,7 +68,7 @@ QLineEdit {
 
 /* This has to come after QLineEdit (above) so that txt_user and txt_pass keep their
 proper font styling*/
-#logInToAccountLabel, #txt_user, #txt_pass, #logInPushButton {
+#logInToAccountLabel, #txtUser, #txtPass, #logInPushButton {
 	font-size: 20px;
 	font-family: "Avenir Next LT Pro Demi";
 
@@ -81,7 +81,7 @@ proper font styling*/
 	background: rgba(198, 132, 78, 0.5);
 }
 
-#cancel_button {
+#cancelButton {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -90,7 +90,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#submit_button {
+#submitButton {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -100,7 +100,7 @@ proper font styling*/
 	color: white;
 }
 
-#question_button {
+#questionButton {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;

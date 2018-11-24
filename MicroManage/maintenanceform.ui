@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menu_button">
+  <widget class="QToolButton" name="menuButton">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>...</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="headerLabel">
@@ -149,7 +149,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="date_txt">
+   <widget class="QLineEdit" name="dateTxt">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -159,7 +159,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="address_txt">
+   <widget class="QLineEdit" name="addressTxt">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -169,7 +169,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="owner_txt">
+   <widget class="QLineEdit" name="ownerTxt">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -179,7 +179,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="request_txt">
+   <widget class="QLineEdit" name="requestTxt">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -189,7 +189,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="status_txt">
+   <widget class="QLineEdit" name="statusTxt">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -224,7 +224,7 @@
    </property>
   </widget>
   <zorder>Maintenance</zorder>
-  <zorder>menu_button</zorder>
+  <zorder>menuButton</zorder>
   <zorder>headerLabel</zorder>
   <zorder>maintenanceTable</zorder>
   <zorder>refresh</zorder>

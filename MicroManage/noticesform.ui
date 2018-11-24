@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menu_button">
+  <widget class="QToolButton" name="menuButton">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>...</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="headerLabel">
@@ -87,10 +87,10 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QLineEdit" name="notice_text"/>
+      <widget class="QLineEdit" name="noticeTxt"/>
      </item>
      <item>
-      <widget class="QPushButton" name="create_button">
+      <widget class="QPushButton" name="createButton">
        <property name="text">
         <string>Submit</string>
        </property>
@@ -100,7 +100,7 @@
    </widget>
   </widget>
   <zorder>Notices</zorder>
-  <zorder>menu_button</zorder>
+  <zorder>menuButton</zorder>
   <zorder>headerLabel</zorder>
  </widget>
  <resources/>
