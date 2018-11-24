@@ -72,6 +72,7 @@
 }
 
 #welcomeLabel, #headerLabel {
+	font-family: "Avenir Next LT Pro Demi";
 	font: 30px;
 	color: rgb(242, 101, 34);
 }
