@@ -31,6 +31,9 @@ class SignUp : public QWidget
         void setTenant();
         void cancelAction();
 
+   private slots:
+        bool choosePhoto();
+
 
     private:
         Ui::SignUpForm *ui;

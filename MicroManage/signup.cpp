@@ -12,10 +12,25 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     ui->menuButton->setCheckable(true);
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
+
+    //QRegion circle(ui->photoLabel->rect(), QRegion::Ellipse);
+    //ui->photoLabel->setMask(circle);
+    connect(ui->changePhotoButton, SIGNAL(clicked()), this, SLOT(choosePhoto()));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(createUser()));
     connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(cancelAction()));
 
+}
+
+bool SignUp::choosePhoto() {
+    QString imagename = QFileDialog::getOpenFileName(this, "Open Image", "Image Files (*.png *.jpg *.bmp *.jpeg)");
+
+    if (imagename != "") {
+        QPixmap p;
+        p.load(imagename, nullptr, Qt::AutoColor);
+        ui->photoLabel->setScaledContents(true);
+        ui->photoLabel->setPixmap(p);
+    }
 }
 
 
