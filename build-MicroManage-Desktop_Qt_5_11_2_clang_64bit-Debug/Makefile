@@ -799,6 +799,7 @@ qrc_resources.cpp: ../MicroManage/resources.qrc \
 		../MicroManage/images/icons/notices_icon.png \
 		../MicroManage/images/icons/edit_icon.png \
 		../MicroManage/images/icons/micromanage_logo.png \
+		../MicroManage/images/icons/splash.png \
 		../MicroManage/images/icons/settings_icon.png \
 		../MicroManage/images/icons/micromanage_house.png \
 		../MicroManage/images/icons/properties_icon.png \
@@ -3118,6 +3119,7 @@ RunMicroManage.o: ../MicroManage/RunMicroManage.cpp ../MicroManage/micromanage.h
 		/Users/laurenbhagwandat/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qtimer.h \
 		/Users/laurenbhagwandat/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		/Users/laurenbhagwandat/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/laurenbhagwandat/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/QThread \
 		/Users/laurenbhagwandat/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qthread.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RunMicroManage.o ../MicroManage/RunMicroManage.cpp
 

@@ -1,6 +1,5 @@
 /* Master Style Sheet for MicroManage application */
 
-
 /* Background colours for pages */
 #Welcome, #SignUp, #MainPage, #Profile, #Properties, #Messages, #Maintenance, 
 #Notices, #Settings {
@@ -11,9 +10,40 @@
 	background-color: rgb(242, 101, 34);
 }
 
+#menuButton {
+	background: transparent;
+	border: none;
+}
+
+#menuButton::checked {
+	background-color: rgb(209, 211, 212);
+	border: none;
+}
+
 
 #statusBar, #getStartedLabel {
 	color: white;
+}
+
+#landlordButton {
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 10px;
+	background: rgb(242, 101, 34);
+	font-family: "Avenir Next LT Pro";
+	font-size: 50px;
+	font-weight: bold;
+	color: white;
+}
+
+#tenantButton {
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 10px;
+	background: white;
+	font-family: "Avenir Next LT Pro";
+	font-size: 50px;
+	font-weight: bold;
+	color: rgb(242, 101, 34);
+
 }
 
 #createProfileMenuButton, #homeMenuButton, #profileMenuButton, 
@@ -22,6 +52,12 @@
 	color: white;
 	background: transparent;
 	border: none;
+
+}
+
+#logInToAccountLabel {
+	font-size: 20px;
+	font-family: "Avenir Next LT Pro Demi";
 
 }
 
