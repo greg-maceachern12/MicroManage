@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     //QPixmap pixmap(":/images/splash.jpg");
     QSplashScreen *splash = new QSplashScreen;
     //QPixmap pixmap("AbourUsBG.png");
-    splash->setPixmap(QPixmap(":images/icons/splash.png"));
+    splash->setPixmap(QPixmap(":images/splash.png"));
     splash->show();
     a.setAttribute(Qt::AA_UseHighDpiPixmaps);
     //a.thread()->sleep(15);
@@ -23,6 +23,7 @@ int main(int argc, char *argv[]) {
     QFontDatabase::addApplicationFont(":css/fonts/AvenirNextLTPro-Bold.otf");
     QFile styleFile(":css/structure.qss");
 
+    // Keep this for testing purposes
     /*QFontDatabase db;
     for(int i=0; i<db.families().size(); i++)
     {

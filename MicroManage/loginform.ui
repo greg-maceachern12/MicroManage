@@ -19,41 +19,13 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QLabel" name="label_2">
+  <widget class="QPushButton" name="logInPushButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>190</y>
-     <width>211</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Avenir Next</family>
-     <pointsize>22</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 22pt &quot;Avenir Next&quot;;</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Log In to Your Account&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
+     <x>340</x>
      <y>380</y>
-     <width>114</width>
-     <height>32</height>
+     <width>151</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -146,14 +118,37 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="logInToAccountLabel">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>200</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Log In to Your Account</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <zorder>Login</zorder>
-  <zorder>label_2</zorder>
-  <zorder>pushButton</zorder>
+  <zorder>logInPushButton</zorder>
   <zorder>txtUser</zorder>
   <zorder>txtPass</zorder>
   <zorder>signupButton</zorder>
   <zorder>rememberMe</zorder>
   <zorder>micromanageLabel</zorder>
+  <zorder>logInToAccountLabel</zorder>
  </widget>
  <resources/>
  <connections/>

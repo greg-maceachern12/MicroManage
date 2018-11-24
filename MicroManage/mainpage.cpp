@@ -25,8 +25,6 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
-    // Set welcome message
-
     // Set up buttons with icons and texts in grid layout
     QToolButton *profile_button = new QToolButton();
     profile_button->setObjectName("profileButton");
@@ -92,17 +90,6 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     ui->gridLayout->addWidget(maintenance_button, 1, 0);
     ui->gridLayout->addWidget(messages_button, 1, 1);
     ui->gridLayout->addWidget(settings_button, 1, 2);
-
-
-    //ui->gridLayout->setAlignment(Qt::AlignHCenter);
-    /*QWidget *navigation = new QWidget(this);
-    navigation->setLayout(ui->gridLayout);
-    //navigation->move(this->rect().center() - navigation->rect().center());
-    QRect r = navigation->geometry();
-    r.moveCenter(parent->geometry().center() - this->geometry().center());
-    navigation->setGeometry(r);
-    //navigation->geometry().moveCenter(parent->geometry().center());
-    //parent->setStyleSheet("color: solid 1px red;");*/
 
 }
 

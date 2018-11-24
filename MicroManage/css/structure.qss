@@ -1,9 +1,8 @@
 /* Master Style Sheet for MicroManage application */
 
-
 /* Background colours for pages */
 #Welcome, #SignUp, #MainPage, #Profile, #Properties, #Messages, #Maintenance, 
-#Notices, #Settings {
+#Notices, #Settings, #Help {
 	background: white;
 }
 
@@ -11,18 +10,76 @@
 	background-color: rgb(242, 101, 34);
 }
 
+#menuButton {
+	background: transparent;
+	border: none;
+}
+
+#menuButton::checked {
+	background-color: rgb(209, 211, 212);
+	border: none;
+}
+
 
 #statusBar, #getStartedLabel {
 	color: white;
 }
 
+#landlordButton {
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 10px;
+	background: rgb(242, 101, 34);
+	font-family: "Avenir Next LT Pro";
+	font-size: 50px;
+	font-weight: bold;
+	color: white;
+}
+
+#tenantButton {
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 10px;
+	background: white;
+	font-family: "Avenir Next LT Pro";
+	font-size: 50px;
+	font-weight: bold;
+	color: rgb(242, 101, 34);
+
+}
+
+
 #createProfileMenuButton, #homeMenuButton, #profileMenuButton, 
 #secondMenuButton, #noticesMenuButton, #maintenanceMenuButton, 
 #messagesMenuButton, #settingsMenuButton, #helpMenuButton, #logoutMenuButton {
+	font-family: "Avenir Next LT Pro Demi";
+	font-size: 14px;
 	color: white;
 	background: transparent;
 	border: none;
 
+}
+
+#logInToAccountLabel, #txtUser, #txtPass, #logInPushButton {
+	font-size: 20px;
+	font-family: "Avenir Next LT Pro Demi";
+
+}
+
+#logInPushButton {
+	background: white;
+	border-radius: 5px;
+	color: rgb(242, 101, 34);
+	font-family: "Avenir Next Medium";
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#chooseLabel {
+	font-family: "Avenir Next Medium";
+}
+
+#rememberMe {
+	font-family: "Avenir Next";
+	font-size: 14px;
 }
 
 #createProfileMenuButton::checked, #homeMenuButton:checked, 
@@ -36,6 +93,7 @@
 }
 
 #welcomeLabel, #headerLabel {
+	font-family: "Avenir Next LT Pro Demi";
 	font: 30px;
 	color: rgb(242, 101, 34);
 }
@@ -45,15 +103,39 @@
 }
 
 
-#signupButton, #loginButton, #profileButton, #secondButton, #noticesButton, 
+#profileButton, #secondButton, #noticesButton, 
 #maintenanceButton, #messagesButton, #settingsButton {
 	background: transparent;
+	color: rgb(242, 101, 34);
+	font-family: "Avenir Next LT Pro";
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#photoLabel {
+	background: rgb(242, 101, 34);
+}
+
+#signupButton, #loginButton, #changePhotoButton, #requiredFieldsLabel {
+	background: transparent;
+	font-family: "Avenir Next Medium";
+	font-size: 13px;
 }
 
 #signupButton {
 	color: white;
 }
 
-#loginButton {
+#loginButton, #changePhotoButton {
 	color: rgb(242, 101, 34);
 }
+
+#usernameLabel, #fullNameLabel, #emailLabel, #ageLabel, #addressLabel, 
+#typeOfUserLabel, #phoneNumberLabel, #passwordLabel {
+	font-family: "Avenir Next LT Pro";
+	font-weight: bold;
+	font-size: 14px;
+}
+
+
+

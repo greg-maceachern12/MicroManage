@@ -32,7 +32,7 @@ void Login::clearInputs() {
     ui->txtPass->clear();
 }
 
-void Login::on_pushButton_clicked() {
+void Login::on_logInPushButton_clicked() {
     qDebug() << dbmodel::username;
     QString txt_username, txt_password;
     txt_username = ui->txtUser->text();
