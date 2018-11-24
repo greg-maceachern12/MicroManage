@@ -125,7 +125,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="micromanage_label">
+  <widget class="QLabel" name="micromanageLabel">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -145,7 +145,7 @@
   <zorder>landlordButton</zorder>
   <zorder>tenantButton</zorder>
   <zorder>loginButton</zorder>
-  <zorder>micromanage_label</zorder>
+  <zorder>micromanageLabel</zorder>
  </widget>
  <resources/>
  <connections/>
