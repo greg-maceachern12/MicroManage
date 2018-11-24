@@ -8,6 +8,7 @@
 #include <QSqlQueryModel>
 #include <QFileInfo>
 
+
 Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm) {
     ui->setupUi(this);
 
@@ -45,7 +46,7 @@ void Notices::getNotices() {
 
 void Notices::createNotice() {
     QString notice = ui->txtNotice->text();
-    QString date = ui->txtDate->text();
+    //QString date = ui->txtDate->text();
 
     QSqlQuery qry;
     QSqlQuery qryWrite;
@@ -54,11 +55,11 @@ void Notices::createNotice() {
                      "VALUES (:username, :notice, :date)");
     qryWrite.bindValue(":username", dbmodel::username);
     qryWrite.bindValue(":notice", notice);
-    qryWrite.bindValue(":date", date);
+    qryWrite.bindValue(":date", QDateTime::currentDateTime());
 
     if (qryWrite.exec()) {
         ui->txtNotice->setText("");
-        ui->txtDate->setText("");
+       // ui->txtDate->setText("");
         getNotices();
     } else {
         qDebug() << qryWrite.lastError();
