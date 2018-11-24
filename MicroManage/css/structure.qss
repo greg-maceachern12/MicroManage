@@ -58,11 +58,66 @@
 
 }
 
+QLineEdit {
+	border-radius: 3px;
+	background: rgb(241, 242, 242);
+	border: 0.5px solid black;
+	font-family: "Avenir Next";
+	font-size: 14px;
+}
+
+/* This has to come after QLineEdit (above) so that txtUser and txtPass keep their
+proper font styling*/
 #logInToAccountLabel, #txtUser, #txtPass, #logInPushButton {
 	font-size: 20px;
 	font-family: "Avenir Next LT Pro Demi";
 
 }
+
+#helpDocEdit {
+	font-family: "Avenir Next";
+	font-size: 14px;
+	border-radius: 3px;
+	background: rgba(198, 132, 78, 0.5);
+}
+
+#btnCancel {
+	background: white;
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 5px;
+	font-family: "Avenir Next LT Pro Demi";
+	font-size: 16px;
+	color: rgb(242, 101, 34);
+}
+
+#btnSubmit {
+	background: rgb(242, 101, 34);
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 5px;
+	font-family: "Avenir Next LT Pro";
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+}
+
+#questionButton {
+	background: white;
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 5px;
+	font-family: "Avenir Next LT Pro Demi";
+	font-size: 18px;
+	color: rgb(242, 101, 34);
+}
+
+#forgotPwButton {
+	background: rgb(242, 101, 34);
+	border: 5px solid rgb(242, 101, 34);
+	border-radius: 5px;
+	font-family: "Avenir Next LT Pro Demi";
+	font-size: 18px;
+	color: white;
+}
+
 
 #logInPushButton {
 	background: white;
@@ -112,9 +167,6 @@
 	font-size: 16px;
 }
 
-#photoLabel {
-	background: rgb(242, 101, 34);
-}
 
 #signupButton, #loginButton, #changePhotoButton, #requiredFieldsLabel {
 	background: transparent;
