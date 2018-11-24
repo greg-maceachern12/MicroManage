@@ -37,7 +37,8 @@ void Maintenance::refreshLogs() {
     //qry->prepare("select * from logs");
     qry->exec();
     modal->setQuery(*qry);
-    ui->tableView->setModel(modal);
+    ui->maintenanceTable->setModel(modal);
+    ui->maintenanceTable->repaint();
 
 }
 
@@ -63,5 +64,5 @@ void Maintenance::on_newRow_clicked()
     else{
         qDebug()<<"error didnt save";
     }
-
+    refreshLogs();
 }

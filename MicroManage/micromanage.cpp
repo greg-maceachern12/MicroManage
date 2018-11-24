@@ -373,6 +373,7 @@ void MicroManage::openNotices() {
 
 
 void MicroManage::openMaintenance() {
+    maintenance->refreshLogs();
     stackedWidget->setCurrentIndex(8);
     QList<QPushButton *>::iterator button;
     for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {
