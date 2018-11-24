@@ -17,7 +17,10 @@ class Maintenance : public QWidget {
     public slots:
         void refreshLogs();
 
-    private:
+private slots:
+        void on_newRow_clicked();
+
+private:
         Ui::MaintenanceForm *ui;
 
 };

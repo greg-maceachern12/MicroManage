@@ -20,6 +20,7 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->refresh, SIGNAL(clicked()), this, SLOT(refreshLogs()));
 
+
 }
 
 
@@ -33,6 +34,7 @@ void Maintenance::refreshLogs() {
     QSqlQuery* qry = new QSqlQuery(dbmodel::myDb);
 
     qry->prepare("SELECT * FROM logs WHERE uid='"+dbmodel::username+"'");
+    //qry->prepare("select * from logs");
     qry->exec();
     modal->setQuery(*qry);
     ui->tableView->setModel(modal);
@@ -42,4 +44,24 @@ void Maintenance::refreshLogs() {
 
 Maintenance::~Maintenance() {
     delete ui;
+}
+
+void Maintenance::on_newRow_clicked()
+{
+    QString uid, date, address, request, owner, status;
+    uid = dbmodel::username;
+    date = ui->date_txt->text();
+    address = ui->address_txt->text();
+    request = ui->request_txt->text();
+    owner = ui->owner_txt->text();
+    status = ui->status_txt->text();
+    QSqlQuery qry1;
+    qry1.prepare("insert into logs (uid,date,address,request,owner,status) values ('"+uid+"','"+date+"','"+address+"','"+request+"','"+owner+"','"+status+"')");
+    if(qry1.exec()){
+        qDebug()<<"saved";
+    }
+    else{
+        qDebug()<<"error didnt save";
+    }
+
 }
