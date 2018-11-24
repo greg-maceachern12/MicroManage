@@ -26,7 +26,7 @@
     <string>...</string>
    </property>
   </widget>
-  <widget class="QLabel" name="welcome_label">
+  <widget class="QLabel" name="welcomeLabel">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -74,7 +74,7 @@
   </widget>
   <zorder>MainPage</zorder>
   <zorder>menu_button</zorder>
-  <zorder>welcome_label</zorder>
+  <zorder>welcomeLabel</zorder>
   <zorder>gridLayoutWidget</zorder>
  </widget>
  <resources/>

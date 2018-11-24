@@ -170,7 +170,7 @@ proper font styling*/
 	border: none;
 }
 
-#welcome_label, #headerLabel {
+#welcomeLabel, #headerLabel {
 	font-family: "Avenir Next LT Pro Demi";
 	font: 30px;
 	color: rgb(242, 101, 34);
@@ -191,17 +191,17 @@ proper font styling*/
 }
 
 
-#signup_button, #loginButton, #changephoto_button, #requiredFieldsLabel {
+#signupButton, #loginButton, #changephotoButton, #requiredFieldsLabel {
 	background: transparent;
 	font-family: "Avenir Next Medium";
 	font-size: 13px;
 }
 
-#signup_button {
+#signupButton {
 	color: white;
 }
 
-#loginButton, #changephoto_button {
+#loginButton, #changephotoButton {
 	color: rgb(242, 101, 34);
 }
 
