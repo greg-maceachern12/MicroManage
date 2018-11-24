@@ -9,12 +9,12 @@ Login::Login(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Main
     mainPage = main;
     statusBar = status_bar;
 
-    ui->txt_user->setPlaceholderText("Username");
-    ui->txt_pass->setPlaceholderText("Password");
-    ui->micromanage_label->setPixmap(QPixmap(":images/icons/micromanage_name.png"));
-    ui->micromanage_label->setScaledContents(true);
+    ui->txtUser->setPlaceholderText("Username");
+    ui->txtPass->setPlaceholderText("Password");
+    ui->micromanageLabel->setPixmap(QPixmap(":images/icons/micromanage_name.png"));
+    ui->micromanageLabel->setScaledContents(true);
 
-    connect(ui->signup_button, SIGNAL(clicked()), parent, SLOT(openWelcome()));
+    connect(ui->signupButton, SIGNAL(clicked()), parent, SLOT(openWelcome()));
 }
 
 
@@ -28,15 +28,15 @@ QCheckBox* Login::getRememberMe() {
 }
 
 void Login::clearInputs() {
-    ui->txt_user->clear();
-    ui->txt_pass->clear();
+    ui->txtUser->clear();
+    ui->txtPass->clear();
 }
 
 void Login::on_logInPushButton_clicked() {
     qDebug() << dbmodel::username;
     QString username, password;
-    username = ui->txt_user->text();
-    password = ui->txt_pass->text();
+    username = ui->txtUser->text();
+    password = ui->txtPass->text();
     QSqlQuery qry;
     if (qry.exec("SELECT username FROM user WHERE username='"+username+"'and password='"+ password+"'" )) {
         int count = 0;

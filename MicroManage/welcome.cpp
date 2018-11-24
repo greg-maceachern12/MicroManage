@@ -3,11 +3,11 @@
 Welcome::Welcome(QWidget *parent) : QWidget(parent), ui(new Ui::WelcomeForm) {
     ui->setupUi(this);
 
-    ui->logo_label->setPixmap(QPixmap(":images/icons/micromanage_house.png"));
-    ui->logo_label->setScaledContents(true);
+    ui->logoLabel->setPixmap(QPixmap(":images/icons/micromanage_house.png"));
+    ui->logoLabel->setScaledContents(true);
 
-    ui->micromanage_label->setPixmap(QPixmap(":images/icons/micromanage_name.png"));
-    ui->micromanage_label->setScaledContents(true);
+    ui->micromanageLabel->setPixmap(QPixmap(":images/icons/micromanage_name.png"));
+    ui->micromanageLabel->setScaledContents(true);
 
     connect(ui->loginButton, SIGNAL(clicked()), parent, SLOT(openLogin()));
     connect(ui->landlordButton, SIGNAL(clicked()), parent, SLOT(openSignUpLandlord()));

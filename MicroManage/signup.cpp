@@ -9,14 +9,14 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     statusBar = status_bar;
 
     ui->setupUi(this); // Sets up the .ui file GUI
-    ui->menu_button->setCheckable(true);
-    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menu_button->setIconSize(QSize(25, 25));
+    ui->menuButton->setCheckable(true);
+    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menuButton->setIconSize(QSize(25, 25));
 
-    QRegion circle(ui->photo_label->rect(), QRegion::Ellipse);
-    ui->photo_label->setMask(circle);
-    ui->photo_label->setScaledContents(true);
-    ui->photo_label->setPixmap(QPixmap(":images/photo_temp.png"));
+    QRegion circle(ui->photoLabel->rect(), QRegion::Ellipse);
+    ui->photoLabel->setMask(circle);
+    ui->photoLabel->setScaledContents(true);
+    ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
 
     connect(ui->changephotoButton, SIGNAL(clicked()), this, SLOT(choosePhoto()));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
@@ -31,13 +31,13 @@ bool SignUp::choosePhoto() {
     if (imagename != "") {
         QPixmap p;
         p.load(imagename, nullptr, Qt::AutoColor);
-        ui->photo_label->setPixmap(p);
+        ui->photoLabel->setPixmap(p);
     }
 }
 
 
 QToolButton* SignUp::getMenuButton() {
-    return ui->menu_button;
+    return ui->menuButton;
 }
 
 
@@ -73,8 +73,8 @@ void SignUp::createUser() {
                 statusBar->showMessage("Success! Account created.");
                 dbmodel::username = username;
                 stackedWidget->setCurrentIndex(3);
-                if (ui->menu_button->isChecked()) {
-                    ui->menu_button->click();
+                if (ui->menuButton->isChecked()) {
+                    ui->menuButton->click();
                 }
             } else {
                qDebug() << qryWrite.lastError();
@@ -88,20 +88,20 @@ void SignUp::createUser() {
 
 
 void SignUp::setLandlord() {
-    ui->type_text->setText("Landlord");
+    ui->typeText->setText("Landlord");
 }
 
 
 void SignUp::setTenant() {
-    ui->type_text->setText("Tenant");
+    ui->typeText->setText("Tenant");
 }
 
 
 void SignUp::cancelAction() {
-    if (ui->menu_button->isChecked()) {
-        ui->menu_button->click();
+    if (ui->menuButton->isChecked()) {
+        ui->menuButton->click();
     }
-    ui->photo_label->setPixmap(QPixmap(":images/photo_temp.png"));
+    ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
     statusBar->clearMessage();
     stackedWidget->setCurrentIndex(0);
 }

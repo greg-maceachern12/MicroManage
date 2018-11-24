@@ -12,12 +12,12 @@
 Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::MaintenanceForm) {
     ui->setupUi(this);
 
-    ui->menu_button->setCheckable(true);
-    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menu_button->setIconSize(QSize(25, 25));
+    ui->menuButton->setCheckable(true);
+    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menuButton->setIconSize(QSize(25, 25));
     ui->refresh->setIcon(QIcon(":images/icons/refresh_icon.png"));
     ui->refresh->setIconSize(QSize(45, 45));
-    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->refresh, SIGNAL(clicked()), this, SLOT(refreshLogs()));
 
 
@@ -25,7 +25,7 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
 
 
 QToolButton* Maintenance::getMenuButton() {
-    return ui->menu_button;
+    return ui->menuButton;
 }
 
 
@@ -52,11 +52,11 @@ void Maintenance::on_newRow_clicked()
 {
     QString uid, date, address, request, owner, status;
     uid = dbmodel::username;
-    date = ui->date_txt->text();
-    address = ui->address_txt->text();
-    request = ui->request_txt->text();
-    owner = ui->owner_txt->text();
-    status = ui->status_txt->text();
+    date = ui->dateTxt->text();
+    address = ui->addressTxt->text();
+    request = ui->requestTxt->text();
+    owner = ui->ownerTxt->text();
+    status = ui->statusTxt->text();
     QSqlQuery qry1;
     qry1.prepare("insert into logs (uid,date,address,request,owner,status) values ('"+uid+"','"+date+"','"+address+"','"+request+"','"+owner+"','"+status+"')");
     if(qry1.exec()){
