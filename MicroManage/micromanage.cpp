@@ -54,7 +54,6 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
 
     hasDefaultMenu = true;
     connect(stackedWidget, SIGNAL(currentChanged(int)), this, SLOT(checkPage(int)));
-
 }
 
 

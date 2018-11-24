@@ -37,6 +37,7 @@ void Maintenance::refreshLogs() {
     //qry->prepare("select * from logs");
     qry->exec();
     modal->setQuery(*qry);
+    ui->maintenanceTable->setAlternatingRowColors(true);
     ui->maintenanceTable->setModel(modal);
     ui->maintenanceTable->repaint();
 
