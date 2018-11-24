@@ -12,12 +12,12 @@
 Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::MaintenanceForm) {
     ui->setupUi(this);
 
-    ui->menuButton->setCheckable(true);
-    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menuButton->setIconSize(QSize(25, 25));
+    ui->menu_button->setCheckable(true);
+    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menu_button->setIconSize(QSize(25, 25));
     ui->refresh->setIcon(QIcon(":images/icons/refresh_icon.png"));
     ui->refresh->setIconSize(QSize(45, 45));
-    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->refresh, SIGNAL(clicked()), this, SLOT(refreshLogs()));
 
 
@@ -25,7 +25,7 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
 
 
 QToolButton* Maintenance::getMenuButton() {
-    return ui->menuButton;
+    return ui->menu_button;
 }
 
 
@@ -37,8 +37,8 @@ void Maintenance::refreshLogs() {
     //qry->prepare("select * from logs");
     qry->exec();
     modal->setQuery(*qry);
-    ui->maintenanceTable->setModel(modal);
-    ui->maintenanceTable->repaint();
+    ui->maintenance_table->setModel(modal);
+    ui->maintenance_table->repaint();
 
 }
 

@@ -54,7 +54,7 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnCancel">
+  <widget class="QPushButton" name="cancel_button">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -108,7 +108,7 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnSubmit">
+  <widget class="QPushButton" name="submit_button">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -196,7 +196,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -280,7 +280,7 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtType">
+  <widget class="QLineEdit" name="type_text">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -306,7 +306,7 @@
     <string>* Required Fields</string>
    </property>
   </widget>
-  <widget class="QLabel" name="photoLabel">
+  <widget class="QLabel" name="photo_label">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -319,7 +319,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QToolButton" name="changePhotoButton">
+  <widget class="QToolButton" name="changephoto_button">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -349,8 +349,8 @@
    </property>
   </widget>
   <zorder>SignUp</zorder>
-  <zorder>btnCancel</zorder>
-  <zorder>btnSubmit</zorder>
+  <zorder>cancel_button</zorder>
+  <zorder>submit_button</zorder>
   <zorder>txtName</zorder>
   <zorder>usernameLabel</zorder>
   <zorder>txtUid</zorder>
@@ -364,12 +364,12 @@
   <zorder>addressLabel</zorder>
   <zorder>fullNameLabel</zorder>
   <zorder>ageLabel</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>typeOfUserLabel</zorder>
-  <zorder>txtType</zorder>
+  <zorder>type_text</zorder>
   <zorder>requiredFieldsLabel</zorder>
-  <zorder>photoLabel</zorder>
-  <zorder>changePhotoButton</zorder>
+  <zorder>photo_label</zorder>
+  <zorder>changephoto_button</zorder>
   <zorder>phoneNumberLabel</zorder>
  </widget>
  <tabstops>
@@ -380,9 +380,9 @@
   <tabstop>txtAddress</tabstop>
   <tabstop>txtPhone</tabstop>
   <tabstop>txtPassword</tabstop>
-  <tabstop>btnCancel</tabstop>
-  <tabstop>btnSubmit</tabstop>
-  <tabstop>menuButton</tabstop>
+  <tabstop>cancel_button</tabstop>
+  <tabstop>submit_button</tabstop>
+  <tabstop>menu_button</tabstop>
  </tabstops>
  <resources/>
  <connections/>

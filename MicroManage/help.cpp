@@ -3,15 +3,15 @@
 Help::Help(QWidget *parent) : QWidget(parent), ui(new Ui::HelpForm) {
     ui->setupUi(this);
 
-    ui->menuButton->setCheckable(true);
-    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menuButton->setIconSize(QSize(25, 25));
-    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    ui->menu_button->setCheckable(true);
+    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menu_button->setIconSize(QSize(25, 25));
+    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 }
 
 
 QToolButton* Help::getMenuButton() {
-    return ui->menuButton;
+    return ui->menu_button;
 }
 
 

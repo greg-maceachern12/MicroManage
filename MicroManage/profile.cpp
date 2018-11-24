@@ -7,10 +7,10 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
     ui->setupUi(this);
 
-    ui->menuButton->setCheckable(true);
-    ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
-    ui->menuButton->setIconSize(QSize(25, 25));
-    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    ui->menu_button->setCheckable(true);
+    ui->menu_button->setIcon(QIcon(":images/icons/menu_icon.png"));
+    ui->menu_button->setIconSize(QSize(25, 25));
+    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
     ui->editButton->setIcon(QIcon(":images/icons/edit_icon.png"));
     ui->editButton->setIconSize(QSize(45, 45));
@@ -39,25 +39,10 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 
         }
 
-    //make qpushbutton and call it refresh to enable this again
-
-    /*QSqlQuery query;
-    qDebug() << username;
-    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+username+"'");
-    while (query.next()) {
-         ui->name->setText(query.value(0).toString());
-         ui->age->setText(query.value(1).toString());
-         ui->landlord->setText(query.value(2).toString());
-         ui->properties->setText(query.value(3).toString());
-         ui->txtEmail->setText(query.value(4).toString());
-         ui->contact->setText(query.value(5).toString());
-
-    }*/
-
 }
 
 QToolButton* Profile::getMenuButton() {
-    return ui->menuButton;
+    return ui->menu_button;
 }
 
 Ui::ProfileForm* Profile::getUi() {
@@ -78,22 +63,6 @@ void Profile::updateProfile() {
     }
 }
 
-//void Profile::update(QString* name) {
-//    QSqlQuery query;
-//    qDebug() << name;
-//    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+*name+"'");
-//    while (query.next()) {
-//         ui->name->setText(query.value(0).toString());
-//         ui->age->setText(query.value(1).toString());
-//         ui->landlord->setText(query.value(2).toString());
-//         ui->properties->setText(query.value(3).toString());
-//         ui->txtEmail->setText(query.value(4).toString());
-//         ui->contact->setText(query.value(5).toString());
-
-//    }
-//}
-
-
 void Profile::makeEditable()
  {
     if (ui->editButton->isChecked() ){
@@ -102,11 +71,6 @@ void Profile::makeEditable()
         ui->contact->setReadOnly(false);
         ui->properties->setReadOnly(false);
         ui->age->setReadOnly(false);
-
-
-        // change the text
-        //editButton->setText("Save");
-
     }
    else{
         ui->name->setReadOnly(true);
@@ -114,8 +78,6 @@ void Profile::makeEditable()
         ui->contact->setReadOnly(true);
         ui->properties->setReadOnly(true);
         ui->age->setReadOnly(true);
-
-        //editButton->setText("Edit");
     }
 
  }

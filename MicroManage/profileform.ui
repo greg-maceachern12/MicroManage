@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -278,7 +278,7 @@ p, li { white-space: pre-wrap; }
    <zorder>image</zorder>
   </widget>
   <zorder>Profile</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
  </widget>
  <resources/>
  <connections/>

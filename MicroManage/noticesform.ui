@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -63,7 +63,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QToolButton" name="btnRefresh">
+   <widget class="QToolButton" name="refresh_button">
     <property name="geometry">
      <rect>
       <x>690</x>
@@ -76,7 +76,7 @@
      <string>R</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCreate">
+   <widget class="QPushButton" name="create_button">
     <property name="geometry">
      <rect>
       <x>600</x>
@@ -121,7 +121,7 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtNotice">
+   <widget class="QLineEdit" name="notice_text">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -131,7 +131,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtDate">
+   <widget class="QLineEdit" name="date_text">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -143,7 +143,7 @@
    </widget>
   </widget>
   <zorder>Notices</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>headerLabel</zorder>
  </widget>
  <resources/>
