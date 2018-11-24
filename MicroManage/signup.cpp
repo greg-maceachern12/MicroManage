@@ -18,10 +18,10 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     ui->photo_label->setScaledContents(true);
     ui->photo_label->setPixmap(QPixmap(":images/photo_temp.png"));
 
-    connect(ui->changephoto_button, SIGNAL(clicked()), this, SLOT(choosePhoto()));
-    connect(ui->menu_button, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-    connect(ui->submit_button, SIGNAL(clicked()), this, SLOT(createUser()));
-    connect(ui->cancel_button, SIGNAL(clicked()), this, SLOT(cancelAction()));
+    connect(ui->changephotoButton, SIGNAL(clicked()), this, SLOT(choosePhoto()));
+    connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    connect(ui->submitButton, SIGNAL(clicked()), this, SLOT(createUser()));
+    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(cancelAction()));
 
 }
 
