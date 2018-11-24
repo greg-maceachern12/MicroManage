@@ -2,7 +2,7 @@
 
 /* Background colours for pages */
 #Welcome, #SignUp, #MainPage, #Profile, #Properties, #Messages, #Maintenance, 
-#Notices, #Settings {
+#Notices, #Settings, #Help {
 	background: white;
 }
 
