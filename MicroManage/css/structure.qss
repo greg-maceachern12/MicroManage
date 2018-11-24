@@ -49,6 +49,8 @@
 #createProfileMenuButton, #homeMenuButton, #profileMenuButton, 
 #secondMenuButton, #noticesMenuButton, #maintenanceMenuButton, 
 #messagesMenuButton, #settingsMenuButton, #helpMenuButton, #logoutMenuButton {
+	font-family: "Avenir Next LT Pro Demi";
+	font-size: 14px;
 	color: white;
 	background: transparent;
 	border: none;
@@ -82,9 +84,19 @@
 }
 
 
-#signupButton, #loginButton, #profileButton, #secondButton, #noticesButton, 
+#profileButton, #secondButton, #noticesButton, 
 #maintenanceButton, #messagesButton, #settingsButton {
 	background: transparent;
+	color: rgb(242, 101, 34);
+	font-family: "Avenir Next LT Pro";
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#signupButton, #loginButton {
+	background: transparent;
+	font-family: "Avenir Next Medium";
+	font-size: 13px;
 }
 
 #signupButton {
