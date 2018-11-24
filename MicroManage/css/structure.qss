@@ -74,6 +74,13 @@ proper font styling*/
 
 }
 
+#helpDocEdit {
+	font-family: "Avenir Next";
+	font-size: 14px;
+	border-radius: 3px;
+	background: rgba(198, 132, 78, 0.5);
+}
+
 #btnCancel {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
