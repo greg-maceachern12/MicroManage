@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="logo_label">
+  <widget class="QLabel" name="logoLabel">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -125,7 +125,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="micromanage_label">
+  <widget class="QLabel" name="micromanageLabel">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -139,13 +139,13 @@
    </property>
   </widget>
   <zorder>Welcome</zorder>
-  <zorder>logo_label</zorder>
+  <zorder>logoLabel</zorder>
   <zorder>welcomeToLabel</zorder>
   <zorder>chooseLabel</zorder>
   <zorder>landlordButton</zorder>
   <zorder>tenantButton</zorder>
   <zorder>loginButton</zorder>
-  <zorder>micromanage_label</zorder>
+  <zorder>micromanageLabel</zorder>
  </widget>
  <resources/>
  <connections/>

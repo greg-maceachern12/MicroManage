@@ -63,7 +63,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QToolButton" name="refresh_button">
+   <widget class="QToolButton" name="refreshButton">
     <property name="geometry">
      <rect>
       <x>690</x>
