@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QToolButton" name="menuButton">
+  <widget class="QToolButton" name="menu_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -63,7 +63,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QToolButton" name="btnRefresh">
+   <widget class="QToolButton" name="refresh_button">
     <property name="geometry">
      <rect>
       <x>690</x>
@@ -80,27 +80,17 @@
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>450</y>
-      <width>541</width>
+      <y>470</y>
+      <width>531</width>
       <height>80</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Notice</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
+      <widget class="QLineEdit" name="notice_text"/>
      </item>
      <item>
-      <widget class="QLineEdit" name="txtNotice"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnCreate">
+      <widget class="QPushButton" name="create_button">
        <property name="text">
         <string>Submit</string>
        </property>
@@ -110,7 +100,7 @@
    </widget>
   </widget>
   <zorder>Notices</zorder>
-  <zorder>menuButton</zorder>
+  <zorder>menu_button</zorder>
   <zorder>headerLabel</zorder>
  </widget>
  <resources/>
