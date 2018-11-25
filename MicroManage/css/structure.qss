@@ -10,14 +10,25 @@
 	background-color: rgb(242, 101, 34);
 }
 
-#menuButton, #refreshButton {
+#profileButton, #secondButton, #noticesButton, 
+#maintenanceButton, #messagesButton, #settingsButton {
+	background: transparent;
+	color: rgb(242, 101, 34);
+	font-family: "Avenir Next LT Pro";
+	font-weight: bold;
+	font-size: 16px;
+	border: none;
+}
+
+#menuButton, #refreshButton, #editButton, #addButton {
 	background: transparent;
 	border: none;
 }
 
-#menuButton::checked, #refreshButton::pressed {
+#profileButton::pressed, #secondButton::pressed, #noticesButton::pressed, 
+#maintenanceButton::pressed, #messagesButton::pressed, #settingsButton::pressed,
+#menuButton::checked, #refreshButton::pressed, #editButton::pressed, #addButton::pressed {
 	background-color: rgb(209, 211, 212);
-	border: none;
 }
 
 
@@ -25,7 +36,7 @@
 	color: white;
 }
 
-#landlordButton {
+#landlordButton, #tenantButton::pressed {
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 10px;
 	background: rgb(242, 101, 34);
@@ -35,7 +46,7 @@
 	color: white;
 }
 
-#tenantButton {
+#tenantButton, #landlordButton::pressed {
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 10px;
 	background: white;
@@ -81,7 +92,7 @@ proper font styling*/
 	background: rgba(198, 132, 78, 0.5);
 }
 
-#cancelButton {
+#cancelButton, #submitButton::pressed {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -90,7 +101,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#submitButton {
+#submitButton, #cancelButton::pressed {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -100,7 +111,7 @@ proper font styling*/
 	color: white;
 }
 
-#questionButton {
+#questionButton, #forgotPwButton::pressed, #newRow::pressed {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -109,7 +120,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#forgotPwButton, #newRow {
+#forgotPwButton, #questionButton::pressed, #newRow {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -126,6 +137,12 @@ proper font styling*/
 	font-family: "Avenir Next Medium";
 	font-weight: bold;
 	font-size: 20px;
+}
+
+#logInPushButton::pressed {
+	background: rgb(242, 101, 34);
+	border: 3px solid white;
+	color: white;
 }
 
 #chooseLabel {
@@ -164,7 +181,7 @@ proper font styling*/
 #profileMenuButton::checked, #secondMenuButton::checked, 
 #noticesMenuButton::checked, #maintenanceMenuButton::checked, 
 #messagesMenuButton::checked, #settingsMenuButton::checked, 
-#helpMenuButton::checked, #logoutMenuButton::checked {
+#helpMenuButton::checked, #logoutMenuButton::pressed {
 	color: rgb(242, 101, 34);
 	background: white;
 	border: none;
@@ -180,15 +197,6 @@ proper font styling*/
 	color: rgb(198, 132, 78);
 }
 
-
-#profileButton, #secondButton, #noticesButton, 
-#maintenanceButton, #messagesButton, #settingsButton {
-	background: transparent;
-	color: rgb(242, 101, 34);
-	font-family: "Avenir Next LT Pro";
-	font-weight: bold;
-	font-size: 16px;
-}
 
 
 #signupButton, #loginButton, #changephotoButton, #requiredFieldsLabel {

@@ -10,6 +10,7 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
 
     ui->setupUi(this); // Sets up the .ui file GUI
     ui->menuButton->setCheckable(true);
+    ui->menuButton->setShortcut(QKeySequence("M"));
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
 
