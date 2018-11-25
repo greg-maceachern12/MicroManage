@@ -22,6 +22,10 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->refreshButton, SIGNAL(clicked()), this, SLOT(refreshLogs()));
 
+    int width(ui->maintenanceTable->width()/6);
+    ui->maintenanceTable->horizontalHeader()->setDefaultSectionSize(width - 3);
+    ui->maintenanceTable->horizontalHeader()->setMinimumSectionSize(width - 3);
+
 
 }
 
