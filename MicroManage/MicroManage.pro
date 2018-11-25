@@ -39,7 +39,9 @@ SOURCES += \
     propertymain.cpp \
     profile.cpp \
     login.cpp \
-    dbmodel.cpp
+    propdialog.cpp \
+    dbmodel.cpp \
+    propertybutton.cpp
 
 HEADERS += \
     mainpage.h \
@@ -54,7 +56,9 @@ HEADERS += \
     propertymain.h \
     profile.h \
     login.h \
-    dbmodel.h
+    propdialog.h \
+    dbmodel.h \
+    propertybutton.h
 
 FORMS += \
     micromanageform.ui \
@@ -68,6 +72,7 @@ FORMS += \
     loginform.ui \
     settingsform.ui \
     signupform.ui \
+    propdialogform.ui \
     propertymainform.ui
 
 # Default rules for deployment.
