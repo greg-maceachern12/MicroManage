@@ -9,7 +9,7 @@ class Messages : public QWidget {
         Q_OBJECT
 
     public:
-        explicit Messages(QWidget *parent);
+        explicit Messages(QWidget *parent, QStatusBar *status_bar);
         QToolButton* getMenuButton();
         void pullMessages();
         void sendMessage(char message, int uid);
@@ -25,5 +25,6 @@ class Messages : public QWidget {
 
     private:
         Ui::MessagesForm *ui;
+        QStatusBar *statusBar;
 };
 
