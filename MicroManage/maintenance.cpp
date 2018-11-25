@@ -16,7 +16,7 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
     ui->refreshButton->setIcon(QIcon(":images/icons/refresh_icon.png"));
-    ui->refreshButton->setIconSize(QSize(45, 45));
+    ui->refreshButton->setIconSize(QSize(35, 35));
     ui->maintenanceTable->horizontalHeader()->setFixedWidth(ui->maintenanceTable->width());
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
     connect(ui->refreshButton, SIGNAL(clicked()), this, SLOT(refreshLogs()));

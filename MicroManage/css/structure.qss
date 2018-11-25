@@ -15,7 +15,7 @@
 	border: none;
 }
 
-#menuButton::checked {
+#menuButton::checked, #refreshButton::pressed {
 	background-color: rgb(209, 211, 212);
 	border: none;
 }
