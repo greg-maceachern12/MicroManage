@@ -20,7 +20,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     mainPage = new MainPage(this);
     signUp = new SignUp(this, stackedWidget, profile, mainPage, ui->statusBar);
     settings = new Settings(this);
-    messages = new Messages(this);
+    messages = new Messages(this, ui->statusBar);
     profile = new Profile(this);
     properties = new PropertyMain(this);
     notices = new Notices(this);

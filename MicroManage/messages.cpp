@@ -5,9 +5,10 @@
 #include "dbmodel.h"
 
 
-Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) {
+Messages::Messages(QWidget *parent, QStatusBar *status_bar) : QWidget(parent), ui(new Ui::MessagesForm) {
 
     ui->setupUi(this);
+    statusBar = status_bar;
     ui->category->addItem("Sent");
     ui->category->addItem("Received");
     ui->menuButton->setCheckable(true);
@@ -71,15 +72,16 @@ void Messages::on_send_clicked(){
 
     if(ui->message->toPlainText()!="" && ui->subject->text() != ""){
 
-    QSqlQuery query;
-       query.prepare("INSERT INTO messages (rid, content, subject, sid, date) "
-                  "VALUES (:rid, :content, :subject, :sid, :date)");
-       query.bindValue(":rid", rid);
-           query.bindValue(":content", message);
-           query.bindValue(":subject", subject);
-           query.bindValue(":sid", user);
-           query.bindValue(":date", QDateTime::currentDateTime());
-    query.exec();
+        QSqlQuery query;
+        query.prepare("INSERT INTO messages (rid, content, subject, sid, date) "
+                        "VALUES (:rid, :content, :subject, :sid, :date)");
+        query.bindValue(":rid", rid);
+        query.bindValue(":content", message);
+        query.bindValue(":subject", subject);
+        query.bindValue(":sid", user);
+        query.bindValue(":date", QDateTime::currentDateTime());
+        query.exec();
+        statusBar->showMessage("Message sent to " + rid, 10000);
 
     }
 
