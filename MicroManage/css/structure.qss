@@ -10,7 +10,7 @@
 	background-color: rgb(242, 101, 34);
 }
 
-#menuButton, #refresh {
+#menuButton, #refreshButton {
 	background: transparent;
 	border: none;
 }
