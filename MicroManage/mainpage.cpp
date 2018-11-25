@@ -22,6 +22,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     userRole = user_role;
 
     ui->menuButton->setCheckable(true);
+    ui->menuButton->setShortcut(QKeySequence("M"));
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
