@@ -40,9 +40,8 @@
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 10px;
 	background: rgb(242, 101, 34);
-	font-family: "Avenir Next LT Pro";
+	font-family: "Avenir Next Medium";
 	font-size: 50px;
-	font-weight: bold;
 	color: white;
 }
 
@@ -50,9 +49,8 @@
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 10px;
 	background: white;
-	font-family: "Avenir Next LT Pro";
+	font-family: "Avenir Next Medium";
 	font-size: 50px;
-	font-weight: bold;
 	color: rgb(242, 101, 34);
 
 }
@@ -92,7 +90,7 @@ proper font styling*/
 	background: rgba(198, 132, 78, 0.5);
 }
 
-#cancelButton, #submitButton::pressed {
+#cancelButton, #submitButton::pressed, #removePropertyButton {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -101,7 +99,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#submitButton, #cancelButton::pressed {
+#submitButton, #cancelButton::pressed, #removePropertyButton::pressed {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -152,6 +150,16 @@ proper font styling*/
 #rememberMe {
 	font-family: "Avenir Next";
 	font-size: 14px;
+}
+
+#propertiesAddress, #propertiesTenantCount {
+	font-family: "Avenir Next";
+	font-size: 14px;
+	border: none;
+}
+
+#propertiesTenantCount {
+	color: rgb(242, 101, 34);
 }
 
 QTableView {
