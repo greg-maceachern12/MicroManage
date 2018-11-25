@@ -63,7 +63,7 @@ void Messages::on_send_clicked(){
     qDebug() << QDateTime::currentDateTime();
     QString message = ui->message->toPlainText();
     QString subject = ui->subject->text();
-    QString rid = ui->send_to->currentText();
+    QString rid = ui->sendTo->currentText();
     rid.remove(0, 3);
     qDebug() << rid;
     QString user = dbmodel::username;

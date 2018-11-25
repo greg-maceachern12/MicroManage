@@ -280,7 +280,7 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="type_text">
+  <widget class="QLineEdit" name="typeText">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -306,7 +306,7 @@
     <string>* Required Fields</string>
    </property>
   </widget>
-  <widget class="QLabel" name="photo_label">
+  <widget class="QLabel" name="photoLabel">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -366,9 +366,9 @@
   <zorder>ageLabel</zorder>
   <zorder>menuButton</zorder>
   <zorder>typeOfUserLabel</zorder>
-  <zorder>type_text</zorder>
+  <zorder>typeText</zorder>
   <zorder>requiredFieldsLabel</zorder>
-  <zorder>photo_label</zorder>
+  <zorder>photoLabel</zorder>
   <zorder>changephotoButton</zorder>
   <zorder>phoneNumberLabel</zorder>
  </widget>

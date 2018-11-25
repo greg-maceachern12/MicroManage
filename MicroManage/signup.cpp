@@ -64,7 +64,7 @@ void SignUp::createUser() {
                              qryWrite.bindValue(":username", username);
                              qryWrite.bindValue(":name", ui->txtName->text());
                              qryWrite.bindValue(":age", ui->txtAge->text());
-                             qryWrite.bindValue(":type", ui->type_text->text());
+                             qryWrite.bindValue(":type", ui->typeText->text());
                              qryWrite.bindValue(":address", ui->txtAddress->text());
                              qryWrite.bindValue(":email", ui->txtEmail->text());
                              qryWrite.bindValue(":phone", ui->txtPhone->text());
