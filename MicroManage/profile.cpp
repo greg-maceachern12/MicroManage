@@ -53,7 +53,7 @@ Ui::ProfileForm* Profile::getUi() {
 void Profile::updateProfile() {
     qDebug() << "test" + dbmodel::username;
     QSqlQuery query;
-    query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+dbmodel::username+"'");
+    query.exec("SELECT name, age, type, address, email, phone, description FROM user WHERE username='"+dbmodel::username+"'");
     while (query.next()) {
          ui->name->setText(query.value(0).toString());
          ui->age->setText(query.value(1).toString());
@@ -62,6 +62,7 @@ void Profile::updateProfile() {
          ui->properties->setText(query.value(3).toString());
          ui->txtEmail->setText(query.value(4).toString());
          ui->contact->setText(query.value(5).toString());
+         ui->description->setText(query.value(6).toString());
     }
 }
 
@@ -78,6 +79,26 @@ void Profile::makeEditable()
         ui->contact->setReadOnly(true);
         ui->properties->setReadOnly(true);
         ui->age->setReadOnly(true);
+
+        //saving edited info in database
+        QString name1, age, address, email, phone, description;
+        name1 = ui->name->text();
+        age = ui->age->text();
+        address = ui->properties->text();
+        email = ui->txtEmail->text();
+        phone = ui->contact->text();
+        description = ui->description->toPlainText();
+
+        QSqlQuery qry1;
+        qry1.prepare("update user set name='"+name1+"',age='"+age+"',address='"+address+"',email='"+email+"',phone='"+phone+"',description='"+description+"' where username='"+dbmodel::username+"'");
+        if(qry1.exec()){
+            qDebug()<<"saved";
+        }
+        else{
+            qDebug()<<"error didnt save";
+        }
+
+
     }
 
  }
