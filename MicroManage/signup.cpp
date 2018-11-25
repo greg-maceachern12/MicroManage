@@ -10,6 +10,7 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
 
     ui->setupUi(this); // Sets up the .ui file GUI
     ui->menuButton->setCheckable(true);
+    ui->menuButton->setShortcut(QKeySequence("M"));
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
 
@@ -18,10 +19,10 @@ SignUp::SignUp(QWidget *parent, QStackedWidget *stacked_widget, Profile *pro, Ma
     ui->photoLabel->setScaledContents(true);
     ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
 
-    connect(ui->changePhotoButton, SIGNAL(clicked()), this, SLOT(choosePhoto()));
+    connect(ui->changephotoButton, SIGNAL(clicked()), this, SLOT(choosePhoto()));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-    connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(createUser()));
-    connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(cancelAction()));
+    connect(ui->submitButton, SIGNAL(clicked()), this, SLOT(createUser()));
+    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(cancelAction()));
 
 }
 
@@ -64,7 +65,7 @@ void SignUp::createUser() {
                              qryWrite.bindValue(":username", username);
                              qryWrite.bindValue(":name", ui->txtName->text());
                              qryWrite.bindValue(":age", ui->txtAge->text());
-                             qryWrite.bindValue(":type", ui->txtType->text());
+                             qryWrite.bindValue(":type", ui->typeText->text());
                              qryWrite.bindValue(":address", ui->txtAddress->text());
                              qryWrite.bindValue(":email", ui->txtEmail->text());
                              qryWrite.bindValue(":phone", ui->txtPhone->text());
@@ -88,12 +89,12 @@ void SignUp::createUser() {
 
 
 void SignUp::setLandlord() {
-    ui->txtType->setText("Landlord");
+    ui->typeText->setText("Landlord");
 }
 
 
 void SignUp::setTenant() {
-    ui->txtType->setText("Tenant");
+    ui->typeText->setText("Tenant");
 }
 
 

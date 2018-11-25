@@ -34,11 +34,11 @@ void Login::clearInputs() {
 
 void Login::on_logInPushButton_clicked() {
     qDebug() << dbmodel::username;
-    QString txt_username, txt_password;
-    txt_username = ui->txtUser->text();
-    txt_password = ui->txtPass->text();
+    QString username, password;
+    username = ui->txtUser->text();
+    password = ui->txtPass->text();
     QSqlQuery qry;
-    if (qry.exec("SELECT username FROM user WHERE username='"+txt_username+"'and password='"+ txt_password+"'" )) {
+    if (qry.exec("SELECT username FROM user WHERE username='"+username+"'and password='"+ password+"'" )) {
         int count = 0;
         while (qry.next()) {
             qDebug() << qry.value(0).toString();
@@ -47,7 +47,7 @@ void Login::on_logInPushButton_clicked() {
         if (count == 1) {
             qDebug() << "user and password correct";
             statusBar->clearMessage();
-            dbmodel::username = txt_username;
+            dbmodel::username = username;
 
 //            qry2.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+dbmodel::username+"'");
             profile->updateProfile();

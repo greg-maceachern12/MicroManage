@@ -10,14 +10,25 @@
 	background-color: rgb(242, 101, 34);
 }
 
-#menuButton {
+#profileButton, #secondButton, #noticesButton, 
+#maintenanceButton, #messagesButton, #settingsButton {
+	background: transparent;
+	color: rgb(242, 101, 34);
+	font-family: "Avenir Next LT Pro";
+	font-weight: bold;
+	font-size: 16px;
+	border: none;
+}
+
+#menuButton, #refreshButton, #editButton, #addButton {
 	background: transparent;
 	border: none;
 }
 
-#menuButton::checked {
+#profileButton::pressed, #secondButton::pressed, #noticesButton::pressed, 
+#maintenanceButton::pressed, #messagesButton::pressed, #settingsButton::pressed,
+#menuButton::checked, #refreshButton::pressed, #editButton::pressed, #addButton::pressed {
 	background-color: rgb(209, 211, 212);
-	border: none;
 }
 
 
@@ -25,7 +36,7 @@
 	color: white;
 }
 
-#landlordButton {
+#landlordButton, #tenantButton::pressed {
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 10px;
 	background: rgb(242, 101, 34);
@@ -35,7 +46,7 @@
 	color: white;
 }
 
-#tenantButton {
+#tenantButton, #landlordButton::pressed {
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 10px;
 	background: white;
@@ -66,7 +77,7 @@ QLineEdit {
 	font-size: 14px;
 }
 
-/* This has to come after QLineEdit (above) so that txtUser and txtPass keep their
+/* This has to come after QLineEdit (above) so that txt_user and txt_pass keep their
 proper font styling*/
 #logInToAccountLabel, #txtUser, #txtPass, #logInPushButton {
 	font-size: 20px;
@@ -81,7 +92,7 @@ proper font styling*/
 	background: rgba(198, 132, 78, 0.5);
 }
 
-#btnCancel {
+#cancelButton, #submitButton::pressed {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -90,7 +101,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#btnSubmit {
+#submitButton, #cancelButton::pressed {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -100,7 +111,7 @@ proper font styling*/
 	color: white;
 }
 
-#questionButton {
+#questionButton, #forgotPwButton::pressed, #newRow::pressed, #createNoticeButton::pressed {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -109,7 +120,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#forgotPwButton {
+#forgotPwButton, #questionButton::pressed, #newRow, #createNoticeButton {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -128,6 +139,12 @@ proper font styling*/
 	font-size: 20px;
 }
 
+#logInPushButton::pressed {
+	background: rgb(242, 101, 34);
+	border: 3px solid white;
+	color: white;
+}
+
 #chooseLabel {
 	font-family: "Avenir Next Medium";
 }
@@ -137,11 +154,34 @@ proper font styling*/
 	font-size: 14px;
 }
 
+QTableView {
+	font-family: "Avenir Next";
+	font-size: 14px;
+	alternate-background-color: rgb(241, 242, 242);
+	selection-background-color: rgb(242, 101, 34);
+	selection-color: white;
+
+}
+
+QTableView QHeaderView::section, QTableView QTableCornerButton::section {
+	background: rgb(198, 132, 78);
+	color: white;
+}
+
+QScrollBar {
+	background: rgb(188, 190, 192);
+}
+
+QScrollBar::handle {
+	background: rgb(242, 101, 34);
+	border-radius: 7px;
+}
+
 #createProfileMenuButton::checked, #homeMenuButton:checked, 
 #profileMenuButton::checked, #secondMenuButton::checked, 
 #noticesMenuButton::checked, #maintenanceMenuButton::checked, 
 #messagesMenuButton::checked, #settingsMenuButton::checked, 
-#helpMenuButton::checked, #logoutMenuButton::checked {
+#helpMenuButton::checked, #logoutMenuButton::pressed {
 	color: rgb(242, 101, 34);
 	background: white;
 	border: none;
@@ -158,17 +198,8 @@ proper font styling*/
 }
 
 
-#profileButton, #secondButton, #noticesButton, 
-#maintenanceButton, #messagesButton, #settingsButton {
-	background: transparent;
-	color: rgb(242, 101, 34);
-	font-family: "Avenir Next LT Pro";
-	font-weight: bold;
-	font-size: 16px;
-}
 
-
-#signupButton, #loginButton, #changePhotoButton, #requiredFieldsLabel {
+#signupButton, #loginButton, #changephotoButton, #requiredFieldsLabel {
 	background: transparent;
 	font-family: "Avenir Next Medium";
 	font-size: 13px;
@@ -178,12 +209,14 @@ proper font styling*/
 	color: white;
 }
 
-#loginButton, #changePhotoButton {
+#loginButton, #changephotoButton {
 	color: rgb(242, 101, 34);
 }
 
 #usernameLabel, #fullNameLabel, #emailLabel, #ageLabel, #addressLabel, 
-#typeOfUserLabel, #phoneNumberLabel, #passwordLabel {
+#typeOfUserLabel, #phoneNumberLabel, #passwordLabel, 
+#maintenanceDateLabel, #maintenanceAddressLabel, #maintenanceOwnerLabel, 
+#maintenanceRequestLabel, #maintenanceStatusLabel {
 	font-family: "Avenir Next LT Pro";
 	font-weight: bold;
 	font-size: 14px;

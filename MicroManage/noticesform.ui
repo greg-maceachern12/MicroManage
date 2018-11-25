@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>...</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="headerLabel">
@@ -53,93 +53,37 @@
      <height>590</height>
     </rect>
    </property>
-   <widget class="QTableView" name="tableView">
+   <widget class="QTableView" name="noticesTable">
     <property name="geometry">
      <rect>
-      <x>145</x>
-      <y>111</y>
-      <width>541</width>
-      <height>331</height>
+      <x>75</x>
+      <y>80</y>
+      <width>681</width>
+      <height>361</height>
      </rect>
     </property>
    </widget>
-   <widget class="QToolButton" name="btnRefresh">
+   <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>70</y>
-      <width>45</width>
-      <height>45</height>
+      <x>80</x>
+      <y>470</y>
+      <width>671</width>
+      <height>80</height>
      </rect>
     </property>
-    <property name="text">
-     <string>R</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnCreate">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>480</y>
-      <width>91</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Submit</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>460</y>
-      <width>59</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Notice</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>510</y>
-      <width>59</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Date</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtNotice">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>460</y>
-      <width>301</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtDate">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>510</y>
-      <width>301</width>
-      <height>31</height>
-     </rect>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="noticeTxt"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="createNoticeButton">
+       <property name="text">
+        <string>Submit</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <zorder>Notices</zorder>

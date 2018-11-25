@@ -35,7 +35,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>...</string>
+    <string/>
    </property>
   </widget>
   <widget class="QWidget" name="Properties" native="true">
@@ -148,7 +148,7 @@ p, li { white-space: pre-wrap; }
     </rect>
    </property>
    <property name="text">
-    <string>...</string>
+    <string/>
    </property>
   </widget>
   <zorder>Properties</zorder>

@@ -20,7 +20,7 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
     mainPage = new MainPage(this);
     signUp = new SignUp(this, stackedWidget, profile, mainPage, ui->statusBar);
     settings = new Settings(this);
-    messages = new Messages(this);
+    messages = new Messages(this, ui->statusBar);
     profile = new Profile(this);
     properties = new PropertyMain(this);
     notices = new Notices(this);
@@ -54,7 +54,6 @@ MicroManage::MicroManage(QWidget *parent) : QMainWindow(parent), ui(new Ui::Micr
 
     hasDefaultMenu = true;
     connect(stackedWidget, SIGNAL(currentChanged(int)), this, SLOT(checkPage(int)));
-
 }
 
 
@@ -359,6 +358,7 @@ void MicroManage::openHelp() {
 
 
 void MicroManage::openNotices() {
+    notices->refreshNotices();
     stackedWidget->setCurrentIndex(7);
     QList<QPushButton *>::iterator button;
     for (button = menuButtons.begin(); button != menuButtons.end(); ++button) {

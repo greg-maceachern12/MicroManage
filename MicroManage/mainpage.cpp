@@ -8,7 +8,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     dbmodel::myDb = QSqlDatabase::addDatabase("QSQLITE");
 
 
-    dbmodel::myDb.setDatabaseName("/Users/trevormclellan/Desktop/Documents/Cisc_320/Group_Project/kingrepo/MicroManage/micro.db");
+    dbmodel::myDb.setDatabaseName("/Users/laurenbhagwandat/Desktop/Computing/C++/CISC-320/kingrepo/MicroManage/micro.db");
 
 
 
@@ -22,6 +22,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     userRole = user_role;
 
     ui->menuButton->setCheckable(true);
+    ui->menuButton->setShortcut(QKeySequence("M"));
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
@@ -36,20 +37,20 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     connect(profile_button, SIGNAL(clicked()), parent, SLOT(openProfile()));
 
 
-    QToolButton *second_button = new QToolButton();
-    second_button->setObjectName("secondButton");
-    second_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+    QToolButton *properties_button = new QToolButton();
+    properties_button->setObjectName("secondButton");
+    properties_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     if (userRole == 0) {
-        second_button->setText("My Properties");
-        second_button->setIcon(QIcon(":images/icons/properties_icon.png"));
-        second_button->setIconSize(icon_size);
-        connect(second_button, SIGNAL(clicked()), parent, SLOT(openProperties()));
+        properties_button->setText("My Properties");
+        properties_button->setIcon(QIcon(":images/icons/properties_icon.png"));
+        properties_button->setIconSize(icon_size);
+        connect(properties_button, SIGNAL(clicked()), parent, SLOT(openProperties()));
     }
     else if (userRole == 1) {
-        second_button->setText("My Landlord");
-        second_button->setIcon(QIcon(":images/icons/landlord_icon.png"));
-        second_button->setIconSize(icon_size);
-        connect(second_button, SIGNAL(clicked()), parent, SLOT(openLandlord()));
+        properties_button->setText("My Landlord");
+        properties_button->setIcon(QIcon(":images/icons/landlord_icon.png"));
+        properties_button->setIconSize(icon_size);
+        connect(properties_button, SIGNAL(clicked()), parent, SLOT(openLandlord()));
     }
 
     QToolButton *notices_button = new QToolButton();
@@ -86,7 +87,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
 
     ui->gridLayout->setSpacing(50);
     ui->gridLayout->addWidget(profile_button, 0, 0);
-    ui->gridLayout->addWidget(second_button, 0, 1);
+    ui->gridLayout->addWidget(properties_button, 0, 1);
     ui->gridLayout->addWidget(notices_button, 0, 2);
     ui->gridLayout->addWidget(maintenance_button, 1, 0);
     ui->gridLayout->addWidget(messages_button, 1, 1);

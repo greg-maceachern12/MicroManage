@@ -13,12 +13,18 @@ Maintenance::Maintenance(QWidget *parent) : QWidget(parent), ui(new Ui::Maintena
     ui->setupUi(this);
 
     ui->menuButton->setCheckable(true);
+    ui->menuButton->setShortcut(QKeySequence("M"));
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
-    ui->refresh->setIcon(QIcon(":images/icons/refresh_icon.png"));
-    ui->refresh->setIconSize(QSize(45, 45));
+    ui->refreshButton->setIcon(QIcon(":images/icons/refresh_icon.png"));
+    ui->refreshButton->setIconSize(QSize(35, 35));
+    ui->maintenanceTable->horizontalHeader()->setFixedWidth(ui->maintenanceTable->width());
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-    connect(ui->refresh, SIGNAL(clicked()), this, SLOT(refreshLogs()));
+    connect(ui->refreshButton, SIGNAL(clicked()), this, SLOT(refreshLogs()));
+
+    int width(ui->maintenanceTable->width()/6);
+    ui->maintenanceTable->horizontalHeader()->setDefaultSectionSize(width - 3);
+    ui->maintenanceTable->horizontalHeader()->setMinimumSectionSize(width - 3);
 
 
 }
@@ -37,6 +43,7 @@ void Maintenance::refreshLogs() {
     //qry->prepare("select * from logs");
     qry->exec();
     modal->setQuery(*qry);
+    ui->maintenanceTable->setAlternatingRowColors(true);
     ui->maintenanceTable->setModel(modal);
     ui->maintenanceTable->repaint();
 
@@ -51,11 +58,11 @@ void Maintenance::on_newRow_clicked()
 {
     QString uid, date, address, request, owner, status;
     uid = dbmodel::username;
-    date = ui->date_txt->text();
-    address = ui->address_txt->text();
-    request = ui->request_txt->text();
-    owner = ui->owner_txt->text();
-    status = ui->status_txt->text();
+    date = ui->dateTxt->text();
+    address = ui->addressTxt->text();
+    request = ui->requestTxt->text();
+    owner = ui->ownerTxt->text();
+    status = ui->statusTxt->text();
     QSqlQuery qry1;
     qry1.prepare("insert into logs (uid,date,address,request,owner,status) values ('"+uid+"','"+date+"','"+address+"','"+request+"','"+owner+"','"+status+"')");
     if(qry1.exec()){

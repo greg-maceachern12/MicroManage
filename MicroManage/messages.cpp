@@ -5,19 +5,21 @@
 #include "dbmodel.h"
 
 
-Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) {
+Messages::Messages(QWidget *parent, QStatusBar *status_bar) : QWidget(parent), ui(new Ui::MessagesForm) {
 
     ui->setupUi(this);
+    statusBar = status_bar;
     ui->category->addItem("Sent");
     ui->category->addItem("Received");
     ui->menuButton->setCheckable(true);
+    ui->menuButton->setShortcut(QKeySequence("M"));
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
     
     connect(ui->refresh, SIGNAL(clicked()), this, SLOT(on_refresh_clicked()));
-    connect(ui->send_message, SIGNAL(clicked()), this, SLOT(on_send_clicked()));
+    connect(ui->sendMessage, SIGNAL(clicked()), this, SLOT(on_send_clicked()));
     ui->message1->setReadOnly(true);
     ui->message2->setReadOnly(true);
     ui->message3->setReadOnly(true);
@@ -32,17 +34,17 @@ Messages::Messages(QWidget *parent) : QWidget(parent), ui(new Ui::MessagesForm) 
     ui->message2->setPalette(*palette);
     ui->message3->setPalette(*palette);
 
-    ui->label1->setText("");
-    ui->label2->setText("");
-    ui->label3->setText("");
+    ui->messageInfo1->setText("");
+    ui->messageInfo2->setText("");
+    ui->messageInfo3->setText("");
 
 
-    ui->to->addItem("To Greg");
-    ui->to->addItem("To Mike");
-    ui->to->addItem("To Lauren");
-    ui->to->addItem("To Trevor");
-    ui->to->addItem("To Xinbo");
-    ui->to->addItem("To Jinzao");
+    ui->sendTo->addItem("To Greg");
+    ui->sendTo->addItem("To Mike");
+    ui->sendTo->addItem("To Lauren");
+    ui->sendTo->addItem("To Trevor");
+    ui->sendTo->addItem("To Xinbo");
+    ui->sendTo->addItem("To Jinzao");
 
     pullMessages();
 
@@ -63,22 +65,23 @@ void Messages::on_send_clicked(){
     qDebug() << QDateTime::currentDateTime();
     QString message = ui->message->toPlainText();
     QString subject = ui->subject->text();
-    QString rid = ui->to->currentText();
+    QString rid = ui->sendTo->currentText();
     rid.remove(0, 3);
     qDebug() << rid;
     QString user = dbmodel::username;
 
     if(ui->message->toPlainText()!="" && ui->subject->text() != ""){
 
-    QSqlQuery query;
-       query.prepare("INSERT INTO messages (rid, content, subject, sid, date) "
-                  "VALUES (:rid, :content, :subject, :sid, :date)");
-       query.bindValue(":rid", rid);
-           query.bindValue(":content", message);
-           query.bindValue(":subject", subject);
-           query.bindValue(":sid", user);
-           query.bindValue(":date", QDateTime::currentDateTime());
-    query.exec();
+        QSqlQuery query;
+        query.prepare("INSERT INTO messages (rid, content, subject, sid, date) "
+                        "VALUES (:rid, :content, :subject, :sid, :date)");
+        query.bindValue(":rid", rid);
+        query.bindValue(":content", message);
+        query.bindValue(":subject", subject);
+        query.bindValue(":sid", user);
+        query.bindValue(":date", QDateTime::currentDateTime());
+        query.exec();
+        statusBar->showMessage("Message sent to " + rid, 10000);
 
     }
 
@@ -98,9 +101,6 @@ void Messages::pullMessages(){
     qDebug() << "messagesssssß";
     QSqlQuery qry;
     QString user = dbmodel::username;
-    //QString rid = "mike";
-    //QString sid = "greg";
-    //std::vector<QObject> m {ui->message1,ui->message2,ui->message3,ui->message4,ui->message5,ui->message6};
     QVector<QString> s;
     s.reserve(6);
     s.resize(6);
@@ -111,29 +111,23 @@ void Messages::pullMessages(){
     ui->message2->clear();
     ui->message3->clear();
 
-    ui->label1->clear();
-    ui->label2->clear();
-    ui->label3->clear();
+    ui->messageInfo1->clear();
+    ui->messageInfo2->clear();
+    ui->messageInfo3->clear();
 
-
-    //s.append(*ui->message1);
     int count = 0;
     if(ui->category->currentText() == "Received"){
     if (qry.exec("SELECT content FROM messages WHERE rid='"+user+"'" )) {
 
         while (qry.next()) {
-            //qDebug() << qry.value(0).toString();
             s.push_front(qry.value(0).toString());
-            //qDebug() << s.at(count);
             count ++;
            }
     }
     if (qry.exec("SELECT subject FROM messages WHERE rid='"+user+"'" )) {
 
         while (qry.next()) {
-            //qDebug() << qry.value(0).toString();
             s2.push_front(qry.value(0).toString());
-            //qDebug() << s.at(count);
             count ++;
            }
     }
@@ -143,36 +137,30 @@ void Messages::pullMessages(){
     if (qry.exec("SELECT content FROM messages WHERE sid='"+user+"'" )) {
 
         while (qry.next()) {
-            //qDebug() << qry.value(0).toString();
             s.push_front(qry.value(0).toString());
-            //qDebug() << s.at(count);
             count ++;
            }
     }
     if (qry.exec("SELECT subject,rid FROM messages WHERE sid='"+user+"'" )) {
 
         while (qry.next()) {
-            //qDebug() << qry.value(0).toString();
-
             s2.push_front( "From: "+qry.value(1).toString() + " | Subject: " + qry.value(0).toString());
-            //qDebug() << s.at(count);
             count ++;
            }
     }
     }
         if(s.at(0)!=""){
             ui->message1->clear();
-            ui->label1->setText(s2.at(0));
+            ui->messageInfo1->setText(s2.at(0));
             qDebug() << s.at(0);
             ui->message1->setPlainText(s.at(0));
-           // qDebug() << s.at(0);
         }
         if(s.at(1)!=""){
-            ui->label2->setText(s2.at(1));
+            ui->messageInfo2->setText(s2.at(1));
             ui->message2->setPlainText(s.at(1));
         }
         if(s.at(2)!=""){
-            ui->label3->setText(s2.at(2));
+            ui->messageInfo3->setText(s2.at(2));
 
             ui->message3->setPlainText(s.at(2));
         }
