@@ -8,7 +8,7 @@ MainPage::MainPage(QWidget *parent, QString user_name, int user_role) : QWidget(
     dbmodel::myDb = QSqlDatabase::addDatabase("QSQLITE");
 
 
-    dbmodel::myDb.setDatabaseName("C:/Users/CHENX/Desktop/kingrepo/MicroManage/micro.db");
+    dbmodel::myDb.setDatabaseName("/Users/laurenbhagwandat/Desktop/Computing/C++/CISC-320/kingrepo/MicroManage/micro.db");
 
 
 

@@ -16,15 +16,15 @@ PropertyMain::PropertyMain(QWidget *parent) : QWidget(parent), ui(new Ui::Proper
     connect(ui->addButton, SIGNAL(clicked()), this, SLOT(add()));
 
     QImage image(":images/icons/propertyImage.jpg");
-    this->scene = new QGraphicsScene();
-    this->item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
-    this->scene->addItem(this->item);
+    scene = new QGraphicsScene();
+    item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+    scene->addItem(item);
     ui->graphicsView->setScene(scene);
 
-    this->propertyLayout = new QVBoxLayout();
-    this->propertyLayout->addSpacerItem(new QSpacerItem(600, 180, QSizePolicy::Expanding, QSizePolicy::Expanding));
-    this->widget = new QWidget();
-    this->widget->setLayout(this->propertyLayout);
+    propertyLayout = new QVBoxLayout();
+    propertyLayout->addSpacerItem(new QSpacerItem(600, 180, QSizePolicy::Expanding, QSizePolicy::Expanding));
+    widget = new QWidget();
+    widget->setLayout(propertyLayout);
     ui->scrollArea->setWidget(widget);
 
     son = new propDialog(this);
@@ -53,7 +53,9 @@ void PropertyMain::addProperty(QString thisAddress, QString numTenants){
      button->setObjectName("button");
      rightLayout->addWidget(button);
      QGraphicsView* graphicsView = new QGraphicsView();
-     graphicsView->setFixedSize(180, 135);
+     graphicsView->setFixedSize(135, 135);
+     QRegion circle(graphicsView->rect(), QRegion::Ellipse);
+     graphicsView->setMask(circle);
      graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
      graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
      QImage image(":images/icons/propertyImage.jpg");
@@ -69,7 +71,7 @@ void PropertyMain::addProperty(QString thisAddress, QString numTenants){
      connect(button, SIGNAL(remove(QWidget*)), this, SLOT(deleteOne(QWidget*)));
 
      propertyLayout->insertWidget(propertyLayout->count() - 1,newProperty);
-     widget->setLayout(this->propertyLayout);
+     widget->setLayout(propertyLayout);
      ui->scrollArea->setWidget(widget);
 }
 
@@ -80,7 +82,7 @@ void PropertyMain::add(){
 void PropertyMain::deleteOne(QWidget* property){
     propertyLayout->removeWidget(property);
     widget = new QWidget();
-    widget->setLayout(this->propertyLayout);
+    widget->setLayout(propertyLayout);
     ui->scrollArea->setWidget(widget);
 }
 
