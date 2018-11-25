@@ -20,6 +20,7 @@ Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm) {
     connect(ui->createNoticeButton, SIGNAL(clicked()), this, SLOT(createNotice()));
     ui->noticeTxt->setPlaceholderText("Notice");
 
+    ui->noticesTable->setAlternatingRowColors(true);
     int width(ui->noticesTable->width()/2);
     ui->noticesTable->horizontalHeader()->setDefaultSectionSize(width - 3);
     ui->noticesTable->horizontalHeader()->setMinimumSectionSize(width - 3);

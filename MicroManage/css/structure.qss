@@ -111,7 +111,7 @@ proper font styling*/
 	color: white;
 }
 
-#questionButton, #forgotPwButton::pressed, #newRow::pressed {
+#questionButton, #forgotPwButton::pressed, #newRow::pressed, #createNoticeButton::pressed {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -120,7 +120,7 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#forgotPwButton, #questionButton::pressed, #newRow {
+#forgotPwButton, #questionButton::pressed, #newRow, #createNoticeButton {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
