@@ -41,8 +41,9 @@ void Notices::refreshNotices() {
     QSqlQueryModel * modal = new QSqlQueryModel();
     QSqlQuery* qry = new QSqlQuery(dbmodel::myDb);
 
-    qry->prepare("SELECT date notices FROM notices WHERE uid='"+dbmodel::username+"'");
+    qry->prepare("SELECT notice, date FROM notices WHERE uid='"+dbmodel::username+"'");
     qry->exec();
+    qDebug() << qry->value(0);
     modal->setQuery(*qry);
     ui->noticesTable->setModel(modal);
     ui->noticesTable->repaint();
