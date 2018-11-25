@@ -14,7 +14,7 @@ class Notices : public QWidget {
         QToolButton* getMenuButton();
         ~Notices();
     public slots:
-        void getNotices();
+        void refreshNotices();
         void createNotice();
 
     private:

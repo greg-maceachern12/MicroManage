@@ -17,9 +17,7 @@ Notices::Notices(QWidget *parent) : QWidget(parent), ui(new Ui::NoticesForm) {
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
-    connect(ui->createButton, SIGNAL(clicked()), this, SLOT(createNotice()));
-    connect(ui->refreshButton, SIGNAL(clicked()), this, SLOT(getNotices()));
-
+    connect(ui->createNoticeButton, SIGNAL(clicked()), this, SLOT(createNotice()));
     ui->noticeTxt->setPlaceholderText("Notice");
 
 }
@@ -34,20 +32,20 @@ Notices::~Notices() {
     delete ui;
 }
 
-void Notices::getNotices() {
+void Notices::refreshNotices() {
     QSqlQueryModel * modal = new QSqlQueryModel();
     QSqlQuery* qry = new QSqlQuery(dbmodel::myDb);
 
     qry->prepare("SELECT date notices FROM notices WHERE uid='"+dbmodel::username+"'");
     qry->exec();
     modal->setQuery(*qry);
-    ui->tableView->setModel(modal);
+    ui->noticesTable->setModel(modal);
+    ui->noticesTable->repaint();
 }
 
 void Notices::createNotice() {
    
     QString notice = ui->noticeTxt->text();
-    
 
     QSqlQuery qry;
     QSqlQuery qryWrite;
@@ -61,7 +59,7 @@ void Notices::createNotice() {
     if (qryWrite.exec()) {
         ui->noticeTxt->setText("");
         
-        getNotices();
+        refreshNotices();
     } else {
         qDebug() << qryWrite.lastError();
     }

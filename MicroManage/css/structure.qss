@@ -154,7 +154,7 @@ proper font styling*/
 	font-size: 14px;
 }
 
-#maintenanceTable {
+QTableView {
 	font-family: "Avenir Next";
 	font-size: 14px;
 	alternate-background-color: rgb(241, 242, 242);
@@ -163,16 +163,16 @@ proper font styling*/
 
 }
 
-#maintenanceTable QHeaderView::section, #maintenanceTable QTableCornerButton::section {
+QTableView QHeaderView::section, QTableView QTableCornerButton::section {
 	background: rgb(198, 132, 78);
 	color: white;
 }
 
-#maintenanceTable QScrollBar {
+QScrollBar {
 	background: rgb(188, 190, 192);
 }
 
-#maintenanceTable QScrollBar::handle {
+QScrollBar::handle {
 	background: rgb(242, 101, 34);
 	border-radius: 7px;
 }
