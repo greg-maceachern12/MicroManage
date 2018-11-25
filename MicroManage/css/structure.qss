@@ -168,6 +168,15 @@ QTableView QHeaderView::section, QTableView QTableCornerButton::section {
 	color: white;
 }
 
+QScrollArea {
+	background: white;
+	border: none;
+}
+
+#propertiesWidget {
+	background: white;
+}
+
 QScrollBar {
 	background: rgb(188, 190, 192);
 }

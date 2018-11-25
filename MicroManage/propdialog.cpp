@@ -8,9 +8,6 @@ propDialog::propDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->addEdit->setText("123 King Street East,\nKingston, ON,\nK7L 2Z9, Canada");
-    ui->numEdit->setText("5");
-
     connect(ui->ok, SIGNAL(clicked()), this, SLOT(notifyParent()));
     connect(ui->ok, SIGNAL(clicked()), this, SLOT(onOKClicked()));
     connect(ui->cancel, SIGNAL(clicked()), this, SLOT(onCancelClicked()));

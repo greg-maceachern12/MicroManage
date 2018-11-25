@@ -24,8 +24,11 @@ PropertyMain::PropertyMain(QWidget *parent) : QWidget(parent), ui(new Ui::Proper
     propertyLayout = new QVBoxLayout();
     propertyLayout->addSpacerItem(new QSpacerItem(600, 180, QSizePolicy::Expanding, QSizePolicy::Expanding));
     widget = new QWidget();
+    widget->setObjectName("propertiesWidget");
     widget->setLayout(propertyLayout);
     ui->scrollArea->setWidget(widget);
+    ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
     son = new propDialog(this);
     connect(son,SIGNAL(setUp(QString, QString)),this,SLOT(addProperty(QString, QString)));
@@ -82,6 +85,7 @@ void PropertyMain::add(){
 void PropertyMain::deleteOne(QWidget* property){
     propertyLayout->removeWidget(property);
     widget = new QWidget();
+    widget->setObjectName("propertiesWidget");
     widget->setLayout(propertyLayout);
     ui->scrollArea->setWidget(widget);
 }
