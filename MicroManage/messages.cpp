@@ -17,6 +17,8 @@ Messages::Messages(QWidget *parent, QStatusBar *status_bar) : QWidget(parent), u
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
+    ui->verticalLayout->setSpacing(0);
+
     
     connect(ui->sendMessage, SIGNAL(clicked()), this, SLOT(on_send_clicked()));
     ui->message1->setReadOnly(true);
