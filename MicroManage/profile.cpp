@@ -3,10 +3,11 @@
 #include <QFileDialog>
 #include <QtGui>
 
-Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
+Profile::Profile(QStatusBar *status_bar, QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
 {
     ui->setupUi(this);
 
+    statusBar = status_bar;
     ui->menuButton->setCheckable(true);
     ui->menuButton->setShortcut(QKeySequence("M"));
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
@@ -20,23 +21,32 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     //set page size to 689 height to 547 width
 
     //setting text boxes tp read only
-    ui->contact->setReadOnly(true);
-    ui->description->setReadOnly(true);
-    ui->properties->setReadOnly(true);
-    ui->age->setReadOnly(true);
+    ui->myEmail->setReadOnly(true);
+    ui->aboutMe->setReadOnly(true);
+    ui->myProperties->setReadOnly(true);
+    ui->myAge->setReadOnly(true);
+    ui->myAddress->setReadOnly(true);
     ui->changePhotoButton->hide();
+    QRegion circle(ui->photoLabel->rect(), QRegion::Ellipse);
+    ui->photoLabel->setMask(circle);
+    ui->photoLabel->setScaledContents(true);
+    ui->photoLabel->setPixmap(QPixmap(":images/photo_temp.png"));
+    ui->aboutMe->setAlignment(Qt::AlignCenter);
+    ui->aboutMe->setPlaceholderText("Describe yourself!");
+    ui->myAddress->setPlaceholderText("Address\nCity\nPostal Code");
+    ui->myAddress->setAlignment(Qt::AlignRight);
 
         QSqlQuery query;
         qDebug() << dbmodel::username;
         query.exec("SELECT name, age, type, address, email, phone FROM user WHERE username='"+dbmodel::username+"'");
         while (query.next()) {
-             ui->name->setText(query.value(0).toString());
-             ui->age->setText(query.value(1).toString());
-             ui->landlord->setText(query.value(2).toString());
-             ui->address->setText(query.value(3).toString());
-             ui->properties->setText(query.value(3).toString());
-             ui->txtEmail->setText(query.value(4).toString());
-             ui->contact->setText(query.value(5).toString());
+             ui->myName->setText(query.value(0).toString());
+             ui->myAge->setText(query.value(1).toString());
+             ui->myRole->setText(query.value(2).toString());
+             ui->myAddress->setText(query.value(3).toString());
+             ui->myProperties->setText(query.value(3).toString());
+             ui->myEmail->setText(query.value(4).toString());
+             ui->myPhone->setText(query.value(5).toString());
 
         }
 
@@ -55,49 +65,61 @@ void Profile::updateProfile() {
     QSqlQuery query;
     query.exec("SELECT name, age, type, address, email, phone, description FROM user WHERE username='"+dbmodel::username+"'");
     while (query.next()) {
-         ui->name->setText(query.value(0).toString());
-         ui->age->setText(query.value(1).toString());
-         ui->landlord->setText(query.value(2).toString());
-         ui->address->setText(query.value(3).toString());
-         ui->properties->setText(query.value(3).toString());
-         ui->txtEmail->setText(query.value(4).toString());
-         ui->contact->setText(query.value(5).toString());
-         ui->description->setText(query.value(6).toString());
+         ui->myName->setText(query.value(0).toString());
+         ui->myAge->setText(query.value(1).toString());
+         ui->myRole->setText(query.value(2).toString());
+         ui->myAddress->setText(query.value(3).toString());
+         ui->myProperties->setText(query.value(3).toString());
+         ui->myEmail->setText(query.value(4).toString());
+         ui->myPhone->setText(query.value(5).toString());
+         ui->aboutMe->setText(query.value(6).toString());
+         ui->myAddress->setAlignment(Qt::AlignRight);
+         ui->aboutMe->setAlignment(Qt::AlignCenter);
     }
 }
 
 void Profile::makeEditable()
  {
     if (ui->editButton->isChecked() ){
-        ui->description->setReadOnly(false);
-        ui->contact->setReadOnly(false);
-        ui->properties->setReadOnly(false);
-        ui->age->setReadOnly(false);
+        ui->aboutMe->setReadOnly(false);
+        ui->myPhone->setReadOnly(false);
+        ui->myEmail->setReadOnly(false);
+        ui->myAddress->setReadOnly(false);
+        ui->myProperties->setReadOnly(false);
+        ui->myAge->setReadOnly(false);
         ui->changePhotoButton->show();
     }
    else{
-        ui->description->setReadOnly(true);
-        ui->contact->setReadOnly(true);
-        ui->properties->setReadOnly(true);
-        ui->age->setReadOnly(true);
+        ui->aboutMe->setReadOnly(true);
+        ui->myPhone->setReadOnly(true);
+        ui->myEmail->setReadOnly(true);
+        ui->myAddress->setReadOnly(true);
+        ui->myProperties->setReadOnly(true);
+        ui->myAge->setReadOnly(true);
+        ui->aboutMe->clearFocus();
+        ui->myPhone->clearFocus();
+        ui->myEmail->clearFocus();
+        ui->myAddress->clearFocus();
+        ui->myProperties->clearFocus();
+        ui->myAge->clearFocus();
         ui->changePhotoButton->hide();
 
         //saving edited info in database
         QString name1, age, address, email, phone, description;
-        name1 = ui->name->text();
-        age = ui->age->text();
-        address = ui->properties->text();
-        email = ui->txtEmail->text();
-        phone = ui->contact->text();
-        description = ui->description->toPlainText();
+        name1 = ui->myName->text();
+        age = ui->myAge->text();
+        address = ui->myProperties->text();
+        email = ui->myEmail->text();
+        phone = ui->myPhone->text();
+        description = ui->aboutMe->toPlainText();
 
         QSqlQuery qry1;
         qry1.prepare("update user set name='"+name1+"',age='"+age+"',address='"+address+"',email='"+email+"',phone='"+phone+"',description='"+description+"' where username='"+dbmodel::username+"'");
         if(qry1.exec()){
-            qDebug()<<"saved";
+            statusBar->showMessage("Changes saved.", 10000);
         }
         else{
-            qDebug()<<"error didnt save";
+            statusBar->showMessage("ERROR: Changes not saved.", 10000);
         }
 
 
@@ -124,8 +146,8 @@ void Profile::on_changePhotoButton_clicked()
     if (imagename != "") {
         QPixmap p;
         p.load(imagename, nullptr, Qt::AutoColor);
-        ui->image->setScaledContents(true);
-        ui->image->setPixmap(p);
+        ui->photoLabel->setScaledContents(true);
+        ui->photoLabel->setPixmap(p);
     }
 
 }

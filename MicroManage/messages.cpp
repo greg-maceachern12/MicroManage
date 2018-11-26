@@ -91,6 +91,7 @@ void Messages::on_send_clicked(){
     }
     ui->message->clear();
     ui->subject->clear();
+    on_refresh_clicked();
 }
 
 
@@ -168,6 +169,7 @@ void Messages::pullMessages(){
 
 void Messages::on_refresh_clicked(){
     pullMessages();
+    repaint();
  }
 
 
