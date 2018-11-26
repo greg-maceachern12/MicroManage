@@ -56,15 +56,24 @@ Maintenance::~Maintenance() {
 
 void Maintenance::on_newRow_clicked()
 {
-    QString uid, date, address, request, owner, status;
+    QString uid, address, request, owner, status;
     uid = dbmodel::username;
-    date = ui->dateTxt->text();
+    QDateTime date = QDateTime::currentDateTime();
     address = ui->addressTxt->text();
     request = ui->requestTxt->text();
     owner = ui->ownerTxt->text();
     status = ui->statusTxt->text();
     QSqlQuery qry1;
-    qry1.prepare("insert into logs (uid,date,address,request,owner,status) values ('"+uid+"','"+date+"','"+address+"','"+request+"','"+owner+"','"+status+"')");
+    qry1.prepare("INSERT INTO logs (uid, date, address, request, owner,status) "
+                    "VALUES (:uid, :date, :address, :request, :owner, :status)");
+    qry1.bindValue(":uid", uid);
+    qry1.bindValue(":date", QDateTime::currentDateTime());
+    qry1.bindValue(":address", address);
+    qry1.bindValue(":request", request);
+    qry1.bindValue(":owner", owner);
+    qry1.bindValue(":status", status);
+    //query.exec();
+    //qry1.prepare("insert into logs (uid,date,address,request,owner,status) values ('"+uid+"','"+date+"','"+address+"','"+request+"','"+owner+"','"+status+"')");
     if(qry1.exec()){
         qDebug()<<"saved";
     }
