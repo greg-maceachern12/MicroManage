@@ -55,6 +55,10 @@
 
 }
 
+QDialog { 
+	background-color: rgb(242, 101, 34);
+}
+
 
 #createProfileMenuButton, #homeMenuButton, #profileMenuButton, 
 #secondMenuButton, #noticesMenuButton, #maintenanceMenuButton, 
@@ -152,10 +156,17 @@ proper font styling*/
 	font-size: 14px;
 }
 
-#propertiesAddress, #propertiesTenantCount {
+#propertiesAddress, #propertiesTenantCount, #numEdit, #addEdit {
 	font-family: "Avenir Next";
 	font-size: 14px;
 	border: none;
+	background: white;
+}
+
+#addLabel, #numLabel {
+	color: white;
+	font-family: "Avenir Next";
+	font-size: 14px;
 }
 
 #propertiesTenantCount {
