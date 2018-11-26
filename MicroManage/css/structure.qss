@@ -245,7 +245,7 @@ QScrollBar::handle {
 
 #usernameLabel, #fullNameLabel, #emailLabel, #ageLabel, #addressLabel, 
 #typeOfUserLabel, #phoneNumberLabel, #passwordLabel, 
-#maintenanceDateLabel, #maintenanceAddressLabel, #maintenanceOwnerLabel, 
+#maintenanceAddressLabel, #maintenanceOwnerLabel, 
 #maintenanceRequestLabel, #maintenanceStatusLabel {
 	font-family: "Avenir Next LT Pro";
 	font-weight: bold;
