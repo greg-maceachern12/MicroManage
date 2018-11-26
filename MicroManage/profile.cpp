@@ -14,7 +14,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
     ui->editButton->setIcon(QIcon(":images/icons/edit_icon.png"));
-    ui->editButton->setIconSize(QSize(45, 45));
+    ui->editButton->setIconSize(QSize(35, 35));
     connect(ui->editButton, SIGNAL(clicked()), this, SLOT(makeEditable()));
 
     //set page size to 689 height to 547 width
@@ -24,7 +24,7 @@ Profile::Profile(QWidget *parent) :QWidget(parent), ui(new Ui::ProfileForm)
     ui->description->setReadOnly(true);
     ui->properties->setReadOnly(true);
     ui->age->setReadOnly(true);
-    ui->landlord->setReadOnly(true);
+    ui->changePhotoButton->hide();
 
         QSqlQuery query;
         qDebug() << dbmodel::username;
@@ -73,12 +73,14 @@ void Profile::makeEditable()
         ui->contact->setReadOnly(false);
         ui->properties->setReadOnly(false);
         ui->age->setReadOnly(false);
+        ui->changePhotoButton->show();
     }
    else{
         ui->description->setReadOnly(true);
         ui->contact->setReadOnly(true);
         ui->properties->setReadOnly(true);
         ui->age->setReadOnly(true);
+        ui->changePhotoButton->hide();
 
         //saving edited info in database
         QString name1, age, address, email, phone, description;
@@ -115,7 +117,7 @@ Profile::~Profile()
     delete ui;
 }
 
-void Profile::on_importButton_clicked()
+void Profile::on_changePhotoButton_clicked()
 {
     QString imagename = QFileDialog::getOpenFileName(this, "Open Image", "Image Files (*.png *.jpg *.bmp *.jpeg)");
 

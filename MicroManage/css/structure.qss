@@ -27,7 +27,7 @@
 
 #profileButton::pressed, #secondButton::pressed, #noticesButton::pressed, 
 #maintenanceButton::pressed, #messagesButton::pressed, #settingsButton::pressed,
-#menuButton::checked, #refreshButton::pressed, #editButton::pressed, #addButton::pressed {
+#menuButton::checked, #refreshButton::pressed, #editButton::checked, #addButton::pressed {
 	background-color: rgb(209, 211, 212);
 }
 
@@ -227,7 +227,7 @@ QScrollBar::handle {
 
 
 
-#signupButton, #loginButton, #changephotoButton, #requiredFieldsLabel {
+#signupButton, #loginButton, #changePhotoButton, #requiredFieldsLabel {
 	background: transparent;
 	font-family: "Avenir Next Medium";
 	font-size: 13px;
@@ -237,7 +237,7 @@ QScrollBar::handle {
 	color: white;
 }
 
-#loginButton, #changephotoButton {
+#loginButton, #changePhotoButton {
 	color: rgb(242, 101, 34);
 }
 

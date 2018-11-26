@@ -252,6 +252,7 @@ void MicroManage::openSignUpLandlord() {
             (*button)->setChecked(true);
         }
     }
+    showSideMenu();
 }
 void MicroManage::openSignUpTenant() {
     setUpCreateAccountMenu();
@@ -266,6 +267,7 @@ void MicroManage::openSignUpTenant() {
             (*button)->setChecked(true);
         }
     }
+    showSideMenu();
 }
 
 
@@ -279,6 +281,9 @@ void MicroManage::openSettings() {
         if ((*button)->text() == "Settings") {
             (*button)->setChecked(true);
         }
+    }
+    if (sideMenu->isVisible()) {
+        showSideMenu();
     }
 }
 
@@ -312,6 +317,9 @@ void MicroManage::openMainPage() {
             (*button)->setChecked(true);
         }
     }
+    if (sideMenu->isVisible()) {
+        showSideMenu();
+    }
 }
 
 
@@ -325,6 +333,9 @@ void MicroManage::openProfile() {
         if ((*button)->text() == "My Profile") {
             (*button)->setChecked(true);
         }
+    }
+    if (sideMenu->isVisible()) {
+        showSideMenu();
     }
 }
 
@@ -340,6 +351,9 @@ void MicroManage::openProperties() {
             (*button)->setChecked(true);
         }
     }
+    if (sideMenu->isVisible()) {
+        showSideMenu();
+    }
 }
 
 void MicroManage::openHelp() {
@@ -353,7 +367,9 @@ void MicroManage::openHelp() {
             (*button)->setChecked(true);
         }
     }
-
+    if (sideMenu->isVisible()) {
+        showSideMenu();
+    }
 }
 
 
@@ -368,6 +384,9 @@ void MicroManage::openNotices() {
         if ((*button)->text() == "Notices") {
             (*button)->setChecked(true);
         }
+    }
+    if (sideMenu->isVisible()) {
+        showSideMenu();
     }
 }
 
@@ -384,6 +403,9 @@ void MicroManage::openMaintenance() {
             (*button)->setChecked(true);
         }
     }
+    if (sideMenu->isVisible()) {
+        showSideMenu();
+    }
 }
 
 
@@ -398,6 +420,9 @@ void MicroManage::openMessages() {
         if ((*button)->text() == "Messages") {
             (*button)->setChecked(true);
         }
+    }
+    if (sideMenu->isVisible()) {
+        showSideMenu();
     }
 }
 
