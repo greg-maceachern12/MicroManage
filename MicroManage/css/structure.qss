@@ -71,7 +71,7 @@ QDialog {
 
 }
 
-QLineEdit {
+QLineEdit, QComboBox {
 	border-radius: 3px;
 	background: rgb(241, 242, 242);
 	border: 0.5px solid black;
@@ -113,7 +113,8 @@ proper font styling*/
 	color: white;
 }
 
-#questionButton, #forgotPwButton::pressed, #newRow::pressed, #createNoticeButton::pressed {
+#questionButton, #forgotPwButton::pressed, #newRow::pressed, 
+#createNoticeButton::pressed, #sendMessage::pressed {
 	background: white;
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -122,7 +123,8 @@ proper font styling*/
 	color: rgb(242, 101, 34);
 }
 
-#forgotPwButton, #questionButton::pressed, #newRow, #createNoticeButton {
+#forgotPwButton, #questionButton::pressed, #newRow, #createNoticeButton, 
+#sendMessage {
 	background: rgb(242, 101, 34);
 	border: 5px solid rgb(242, 101, 34);
 	border-radius: 5px;
@@ -280,5 +282,52 @@ QScrollBar::handle {
 #myAge, #myAddress {
 	border: none;
 	background: none;
+}
+
+QComboBox {
+	padding-top: 2px;
+	padding-left: 5px;
+}
+
+QComboBox::down-arrow {
+	background: none;
+	image: url(":images/icons/down_arrow.png");
+	width: 14px;
+	height: 10px;
+}
+
+QComboBox::drop-down {
+	width: 24px;
+	background: none;
+	border: none;
+}
+
+QComboBox::item:checked:on {
+	background: rgb(242, 101, 34);
+	color: white;
+}
+
+QComboBox::up-arrow {
+	background: none;
+	display: none;
+}
+
+#messageInfo1, #messageInfo2, #messageInfo3 {
+	background: rgb(230, 231, 232);
+	font-family: "Avenir Next LT Pro";
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+#message1, #message2, #message3 {
+	background: rgb(230, 231, 232);
+	font-family: "Avenir Next";
+	font-size: 14px;
+	color: black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 4px solid rgb(245, 128, 32);
 }
 

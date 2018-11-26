@@ -17,8 +17,9 @@ Messages::Messages(QWidget *parent, QStatusBar *status_bar) : QWidget(parent), u
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
 
+    ui->verticalLayout->setSpacing(0);
+
     
-    connect(ui->refresh, SIGNAL(clicked()), this, SLOT(on_refresh_clicked()));
     connect(ui->sendMessage, SIGNAL(clicked()), this, SLOT(on_send_clicked()));
     ui->message1->setReadOnly(true);
     ui->message2->setReadOnly(true);
@@ -46,6 +47,8 @@ Messages::Messages(QWidget *parent, QStatusBar *status_bar) : QWidget(parent), u
     ui->sendTo->addItem("To Xinbo");
     ui->sendTo->addItem("To Jinzao");
 
+    connect(ui->category, QOverload<const QString &>::of(&QComboBox::currentIndexChanged),
+        [=](const QString &text){ pullMessages(); });
     pullMessages();
 
 }
@@ -91,7 +94,7 @@ void Messages::on_send_clicked(){
     }
     ui->message->clear();
     ui->subject->clear();
-    on_refresh_clicked();
+    refreshMessages();
 }
 
 
@@ -167,7 +170,7 @@ void Messages::pullMessages(){
         }
 }
 
-void Messages::on_refresh_clicked(){
+void Messages::refreshMessages(){
     pullMessages();
     repaint();
  }

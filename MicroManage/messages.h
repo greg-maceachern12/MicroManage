@@ -13,6 +13,7 @@ class Messages : public QWidget {
         QToolButton* getMenuButton();
         void pullMessages();
         void sendMessage(char message, int uid);
+        void refreshMessages();
 
 
         ~Messages();
@@ -20,7 +21,6 @@ class Messages : public QWidget {
     signals:
 
     private slots:
-        void on_refresh_clicked();
         void on_send_clicked();
 
     private:
