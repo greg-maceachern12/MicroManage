@@ -124,10 +124,10 @@ void Messages::pullMessages(){
             count ++;
            }
     }
-    if (qry.exec("SELECT subject FROM messages WHERE rid='"+user+"'" )) {
+    if (qry.exec("SELECT subject,sid FROM messages WHERE rid='"+user+"'" )) {
 
         while (qry.next()) {
-            s2.push_front(qry.value(0).toString());
+            s2.push_front("From: "+qry.value(1).toString() + " | Subject: " + qry.value(0).toString());
             count ++;
            }
     }
@@ -144,7 +144,7 @@ void Messages::pullMessages(){
     if (qry.exec("SELECT subject,rid FROM messages WHERE sid='"+user+"'" )) {
 
         while (qry.next()) {
-            s2.push_front( "From: "+qry.value(1).toString() + " | Subject: " + qry.value(0).toString());
+            s2.push_front( "To: "+qry.value(1).toString() + " | Subject: " + qry.value(0).toString());
             count ++;
            }
     }
