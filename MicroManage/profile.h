@@ -20,7 +20,7 @@ class Profile : public QWidget {
         Q_OBJECT
 
     public:
-        explicit Profile(QWidget *parent = nullptr);
+        explicit Profile(QStatusBar *status_bar, QWidget *parent = nullptr);
         void updateProfile();
         Ui::ProfileForm* getUi();
         QToolButton* getMenuButton();
@@ -38,6 +38,7 @@ private slots:
 
 private:
         Ui::ProfileForm *ui;
+        QStatusBar *statusBar;
 
 };
 

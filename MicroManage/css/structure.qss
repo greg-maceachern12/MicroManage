@@ -250,5 +250,35 @@ QScrollBar::handle {
 	font-size: 14px;
 }
 
+#myRole {
+	font-family: "Avenir Next LT Pro Demi";
+	font-size: 30px;
+	color: rgb(242, 101, 34);
+}
 
+#aboutMe, #myProperties, #myEmail, #myPhone {
+	font-family: "Avenir Next";
+	font-size: 16px;
+	border: none;
+	background: none;
+}
+
+
+#myName {
+	font-family: "Avenir Next LT Pro";
+	font-size: 100px;
+	font-weight: bold;
+}
+
+#profilePropertiesLabel, #profileContactLabel, #profileAgeLabel, #myAge, 
+#myAddress {
+	font-family: "Avenir Next LT Pro";
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#myAge, #myAddress {
+	border: none;
+	background: none;
+}
 
