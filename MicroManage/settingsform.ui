@@ -30,7 +30,7 @@ font-size: 15px;</string>
     <string>Have Questions? Reach Out!</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="forgotPwButton">
+  <widget class="QPushButton" name="changePwButton">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -44,7 +44,7 @@ font-size: 15px;</string>
 font-size: 15px;</string>
    </property>
    <property name="text">
-    <string>Forgot Password</string>
+    <string>Change Password</string>
    </property>
   </widget>
   <widget class="QToolButton" name="menuButton">
@@ -90,7 +90,7 @@ font-size: 15px;</string>
   </widget>
   <zorder>Settings</zorder>
   <zorder>questionButton</zorder>
-  <zorder>forgotPwButton</zorder>
+  <zorder>changePwButton</zorder>
   <zorder>menuButton</zorder>
   <zorder>headerLabel</zorder>
  </widget>
