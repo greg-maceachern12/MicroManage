@@ -16,6 +16,9 @@ Messages::Messages(QWidget *parent, QStatusBar *status_bar) : QWidget(parent), u
     ui->menuButton->setIcon(QIcon(":images/icons/menu_icon.png"));
     ui->menuButton->setIconSize(QSize(25, 25));
     connect(ui->menuButton, SIGNAL(clicked()), parent, SLOT(showSideMenu()));
+    ui->refreshButton->setIcon(QIcon(":images/icons/refresh_icon.png"));
+    ui->refreshButton->setIconSize(QSize(35, 35));
+    connect(ui->refreshButton, SIGNAL(clicked()), this, SLOT(refreshMessages()));
 
     ui->verticalLayout->setSpacing(0);
 
